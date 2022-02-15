@@ -1,0 +1,19 @@
+.projects {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+    width: var(--global-width);
+    height: 50rem;
+}
+
+.selection {
+    height: 100%;
+    width: 20rem;
+    background-color: var(--color-accent-1);
+}
+
+.blog {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent-2);
+}

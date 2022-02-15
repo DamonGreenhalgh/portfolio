@@ -1,0 +1,56 @@
+import './App.css';
+import resume from './Resume.pdf';
+import Projects from './components/Projects';
+import Footer from './components/Footer';
+import { Link, animateScroll as scroll } from "react-scroll";
+import { useState } from 'react';
+
+function App() {
+  const [navLbl, setNavLbl] = useState(null);
+  return (
+    <div className="app">
+      <div className="home-header">
+        <h1 className="home-header-text">Hello, World!</h1>
+        <div className="code-window">
+          <div className="task-bar">
+            <div className="decorative-button red" />
+            <div className="decorative-button yellow" />
+            <div className="decorative-button green" />
+          </div>
+          <p>
+            Damon Greenhalgh Portfolio [Version 0.0.1]<br />
+            (c) 2022 Damon Greenhalgh. All rights reserved.
+          </p>
+          <div className="flex">
+            <p>C:\Users{">"}</p>
+            <p className="bright">cd DamonGreenhalgh</p>
+          </div>
+          <div className="flex">
+            <p>C:\Users\DamonGreenhalgh{">"}</p>
+            <p className="bright">dir</p>
+          </div>
+          <p>Directory of C:\Users\DamonGreenhalgh</p>
+          <nav className="flex-column">
+            <a href={resume} to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM                   Resume.pdf</a>
+            <Link to="about" onMouseEnter={() => setNavLbl("README.md")}>25/12/1999  06:28 PM                   README.md</Link>
+            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM    {"<DIR>"}          Projects</Link>
+            <Link to="tech" onMouseEnter={() => setNavLbl("cd Tech")}>22/02/2077  12:01 AM    {"<DIR>"}          Tech</Link>
+            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>14/08/2004  07:04 AM    {"<DIR>"}          Contact</Link>
+          </nav>
+          <div className="flex">
+            <p>C:\Users\DamonGreenhalgh{">"}</p>
+            <p className="bright">{navLbl}</p>
+            <div className="cmd-waiting" />
+          </div>
+        </div>  
+        
+      </div>
+
+      <div id="projects" />
+      <Projects />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
