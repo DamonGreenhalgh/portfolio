@@ -2,15 +2,36 @@ import './App.css';
 import resume from './Resume.pdf';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import { Link, animateScroll as scroll } from "react-scroll";
-import { useState } from 'react';
+import { Link } from "react-scroll";
+import { useEffect, useRef, useState } from 'react';
 
 function App() {
   const [navLbl, setNavLbl] = useState(null);
+  const [path, setPath] = useState("")
+  const navbar = useRef(null);
+
+  // This 'onscroll' listener is used for changing the navigation display 
+  // depending on where the user is on the page.
+  const listenScrollEvent = (event) => {
+    if (window.scrollY < 250) {
+      navbar.current.style.opacity = "0";
+    } else {
+      navbar.current.style.opacity = "1";
+      setPath(() => "\\Projects");
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', listenScrollEvent);
+  }, [])
+
   return (
     <div className="app">
+      <nav className="navbar flex" ref={navbar}>
+        <p>C:\Users\DamonGreenhalgh{path + ">"}</p>
+        <div className="cmd-waiting" />
+      </nav>
       <div className="home-header">
-        <h1 className="home-header-text">Hello, World!</h1>
         <div className="code-window">
           <div className="task-bar">
             <div className="decorative-button red" />
@@ -43,11 +64,8 @@ function App() {
             <div className="cmd-waiting" />
           </div>
         </div>  
-        
       </div>
-
-      <div id="projects" />
-      <Projects />
+      <Projects updateNav={setPath} />
       <Footer />
     </div>
   );

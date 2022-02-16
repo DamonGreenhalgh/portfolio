@@ -1,19 +1,43 @@
 .projects {
     display: flex;
-    gap: 2rem;
-    margin: 0 auto;
+    margin: 5rem auto;
     width: var(--global-width);
-    height: 50rem;
+    height: max-content;
+    gap: 4rem;
+    color: var(--color-800);
 }
 
-.selection {
-    height: 100%;
-    width: 20rem;
-    background-color: var(--color-accent-1);
+.filler {
+    z-index: -1;
+    position: absolute;
+    height: calc(100% + 10rem);
+    width: calc((100vw - var(--global-width)) / 2 + 8rem);
+    min-width: 8rem;
+    top: -5rem;
+    right: -2rem;
+    background-color: var(--color-100);
+    border-right: 2px solid var(--color-150);
 }
 
-.blog {
+.blog-hero {
+    max-width: 100%;
+}
+
+.project-card {
+    padding: 1rem;
     width: 100%;
-    height: 100%;
-    background-color: var(--color-accent-2);
+}
+
+.project-card:hover {
+    border-radius: .5rem;
+    background: var(--color-150);
+    outline: 1px solid var(--color-200);
+}
+
+.project-icon {
+    max-width: 4rem;
+}
+
+.screenshot {
+    max-width: 20rem;
 }

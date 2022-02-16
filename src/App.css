@@ -1,20 +1,33 @@
 * {
-  --color-100: #f6f6f6; 
+  --color-000: #ffffff; 
+  --color-100: #f5f7f9; 
+  --color-150: #edf0f3;
+  --color-175: #f0f0f0;
   --color-200: #c6d0d8;
-  --color-1000: #231e36;
-  --color-accent-1: #d3f0eb;
-  --color-accent-2: #d1caeb;
-  --color-accent-core: #4b3697;
+  --color-800: #3d3e44;
+  --color-1000: #221f2b;
   --color-green: #5fc252;
   --color-yellow: #f4c151;
   --color-red: #ec6a5c;
-  --global-width: 80rem;
+  --color-link: #0969da;
+  /* --color-accent-1: #d3f0eb;
+  --color-accent-2: #d1caeb; */
+  --color-accent-1: #a0e9dd;
+  --color-accent-2: #bbacf0;
   --gradient: linear-gradient(45deg, var(--color-accent-1), var(--color-accent-2));
-  box-sizing: border-box;
+  --global-width: 80rem;
+  box-sizing: border-box; 
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-2) transparent;
+}
+
+button {
+  border: none;
+  background: transparent;
 }
 
 a {
@@ -29,8 +42,10 @@ a {
 
 body {
   margin: 0;
-  background-color: var(--color-100);
-  font-family: 'Exo';
+  background-color: var(--color-000);
+  font-family: -apple-system,BlinkMacSystemFont,
+  "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji",
+  "Segoe UI Emoji";
 }
 
 p, h1, h2, h3, h4, h5 {
@@ -38,30 +53,45 @@ p, h1, h2, h3, h4, h5 {
 }
 
 @font-face {
-  font-family: 'Comfortaa';
-  src: url('./fonts/Comfortaa.ttf');
-}
-
-@font-face {
-  font-family: 'SourceCodePro';
-  src: url('./fonts/SourceCodePro.ttf');
-}
-
-@font-face {
-  font-family: 'Exo';
-  src: url('./fonts/Exo.ttf');
+  font-family: 'Consola';
+  src: url('./fonts/Consola.ttf');
 }
 
 .app {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+}
+.navbar {
+  z-index: 3;
+  opacity: 0;
+  position: fixed;
+  margin: 1rem;
+  font-family: 'Consola';
+  color: var(--color-200);
+  background-color: var(--color-1000);
+  height: 3rem;
+  border-radius: .5rem;
+  font-weight: 300;
+  padding: 1rem;
+  bottom: 0;
+  box-shadow: 0 .5rem 1rem rgba(42, 41, 124, 0.25);
+  transition: opacity .5s;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.divider-horizontal {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-200);
 }
 
 .divider-vertical {
   width: 2px;
   height: 100%;
-  background: var(--gradient);
+  background: var(--color-200);
 }
 
 .home-header {
@@ -92,9 +122,9 @@ p, h1, h2, h3, h4, h5 {
   background-color: var(--color-1000);
   padding: 3rem 1rem 1rem 1rem;
   border-radius: .5rem;
-  font-family: 'SourceCodePro';
+  font-family: 'Consola';
   font-weight: 300;
-  box-shadow: 0 1rem 1rem #b9b5cc;
+  box-shadow: 0 1rem 1rem rgba(149, 148, 209, 0.8);
   gap: 1rem;
 }
 
@@ -132,6 +162,22 @@ p, h1, h2, h3, h4, h5 {
   flex-direction: column;
 }
 
+.gap-sm {
+  gap: .5rem;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.gap-md {
+  gap: 2rem;
+}
+
+.relative {
+  position: relative;
+}
+
 .code-window a:hover {
   cursor: pointer;
   background-color: var(--color-100);
@@ -159,4 +205,10 @@ p, h1, h2, h3, h4, h5 {
   49% {opacity: 0;}
   50% {opacity: 1;}
   100% {opacity: 1;}
+}
+
+.link {
+  font-weight: bold;
+  color: var(--color-link);
+  font-style: italic;
 }
