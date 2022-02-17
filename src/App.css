@@ -4,12 +4,20 @@
   --color-150: #edf0f3;
   --color-175: #f0f0f0;
   --color-200: #c6d0d8;
+  --color-500: #6f7a86;
   --color-800: #3d3e44;
   --color-1000: #221f2b;
   --color-green: #5fc252;
   --color-yellow: #f4c151;
   --color-red: #ec6a5c;
+  --color-html: #dd4b25;
+  --color-css: #0091d5;
+  --color-js: #f5de19;
+  --color-java: #f8981d;
+  --color-react: #3dc5e7;
+  --color-github: #14191e;
   --color-link: #0969da;
+  --color-shadow: rgba(42, 41, 124, 0.1);
   /* --color-accent-1: #d3f0eb;
   --color-accent-2: #d1caeb; */
   --color-accent-1: #a0e9dd;
@@ -74,12 +82,8 @@ p, h1, h2, h3, h4, h5 {
   font-weight: 300;
   padding: 1rem;
   bottom: 0;
-  box-shadow: 0 .5rem 1rem rgba(42, 41, 124, 0.25);
+  box-shadow: 0 .5rem 1rem var(--color-shadow);
   transition: opacity .5s;
-}
-
-.hidden {
-  visibility: hidden;
 }
 
 .divider-horizontal {
@@ -102,7 +106,7 @@ p, h1, h2, h3, h4, h5 {
   gap: 3rem;
   width: 100%;
   height: 100vh;
-  background: var(--gradient); 
+  background: var(--gradient);
 }
 
 .home-header-text {
@@ -153,31 +157,6 @@ p, h1, h2, h3, h4, h5 {
 .yellow { background-color: var(--color-yellow); }
 .red { background-color: var(--color-red); }
 
-.flex {
-  display: flex;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.gap-sm {
-  gap: .5rem;
-}
-
-.gap {
-  gap: 1rem;
-}
-
-.gap-md {
-  gap: 2rem;
-}
-
-.relative {
-  position: relative;
-}
-
 .code-window a:hover {
   cursor: pointer;
   background-color: var(--color-100);
@@ -211,4 +190,42 @@ p, h1, h2, h3, h4, h5 {
   font-weight: bold;
   color: var(--color-link);
   font-style: italic;
+}
+
+
+
+
+/* Utility Classes */
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-sm {
+  gap: .5rem;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.gap-md {
+  gap: 2rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.disabled {
+  display: none;
 }

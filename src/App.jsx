@@ -7,17 +7,17 @@ import { useEffect, useRef, useState } from 'react';
 
 function App() {
   const [navLbl, setNavLbl] = useState(null);
-  const [path, setPath] = useState("")
+  const [path, setPath] = useState("");
   const navbar = useRef(null);
 
   // This 'onscroll' listener is used for changing the navigation display 
   // depending on where the user is on the page.
   const listenScrollEvent = (event) => {
-    if (window.scrollY < 250) {
-      navbar.current.style.opacity = "0";
-    } else {
-      navbar.current.style.opacity = "1";
-      setPath(() => "\\Projects");
+    let opacityValue;
+    window.scrollY < 250 ? opacityValue = "0" : opacityValue = "1";
+    navbar.current.style.opacity = opacityValue;
+    if (250 < window.scrollY && window.scrollY < 300) {
+      setPath(() => "\\Projects");  
     }
   }
 
@@ -65,7 +65,7 @@ function App() {
           </div>
         </div>  
       </div>
-      <Projects updateNav={setPath} />
+      <Projects updatePath={setPath} />
       <Footer />
     </div>
   );
