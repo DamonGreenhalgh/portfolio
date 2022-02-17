@@ -1,4 +1,14 @@
-.footer {
-    height: 10rem;
+.footer-wrapper {
+    height: 15rem;
     background: var(--color-150);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--global-width);
+    height: 100%;
+    margin: 0 auto;
+    color: var(--color-500);
 }
