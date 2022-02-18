@@ -54,10 +54,6 @@ const Projects = (props) => {
     }
     return (
         <div className="projects" id="projects">
-            <div className="title">
-                <h2>Projects</h2>
-                <Divider isHorizontal={true} />
-            </div>
             <div className="projects__panel">
                 <button 
                     className={"project-card " + (currentBlog[1] ? "project-card--active" : "")}
@@ -101,13 +97,13 @@ const Projects = (props) => {
                         </div>
                         <div className="flex gap-sm">
                             <a href="https://damongreenhalgh.github.io/xivtracker/">
-                                <CgWebsite className="social-icon" size={iconSize} title="XIV Tracker"/> 
+                                <CgWebsite className="" size={iconSize} title="XIV Tracker"/> 
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/xivtracker/archive/refs/heads/main.zip">
-                                <FaDownload className="social-icon" size={iconSize} title="Download"/>
+                                <FaDownload className="" size={iconSize} title="Download"/>
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/xivtracker">
-                                <FaGithub className="social-icon" size={iconSize} title="Github"/>   
+                                <FaGithub className="" size={iconSize} title="Github"/>   
                             </a>
                         </div>
                     </div>
@@ -155,10 +151,10 @@ const Projects = (props) => {
                         <FaJava size={iconSize} color="var(--color-html)" title="Java" />  
                         <div className="flex gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/conways-game-of-life-app/archive/refs/heads/main.zip">
-                                <FaDownload className="social-icon" size={iconSize} title="Download"/>
+                                <FaDownload className="" size={iconSize} title="Download"/>
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/conways-game-of-life-app">
-                                <FaGithub className="social-icon" size={iconSize} title="Github"/>   
+                                <FaGithub className="" size={iconSize} title="Github"/>   
                             </a>
                         </div>
                     </div>
@@ -222,10 +218,10 @@ const Projects = (props) => {
                         <FaJava size={iconSize} color="var(--color-html)" title="Java" />  
                         <div className="flex gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/matrix-package/archive/refs/heads/main.zip">
-                                <FaDownload className="social-icon" size={iconSize} title="Download"/>
+                                <FaDownload className="" size={iconSize} title="Download"/>
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/matrix-package">
-                                <FaGithub className="social-icon" size={iconSize} title="Github"/>   
+                                <FaGithub className="" size={iconSize} title="Github"/>   
                             </a>
                         </div>
                     </div>

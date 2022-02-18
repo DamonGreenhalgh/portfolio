@@ -3,6 +3,7 @@ import {
     FaGithub,
     FaLinkedinIn
 } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 const Footer = () => {
     const iconSize = "1.5em"
@@ -19,6 +20,9 @@ const Footer = () => {
                     </a>
                     <a href="https://www.linkedin.com/in/damon-greenhalgh-2a11b6191/">
                         <FaLinkedinIn size={iconSize} />
+                    </a>
+                    <a href="mailto: damonligreenhalgh@gmail.com">
+                        <MdEmail size={iconSize} />
                     </a>
                 </div>
                 

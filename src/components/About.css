@@ -1,13 +1,14 @@
 .about {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
     width: var(--global-width);
-    height: 100vh;
+    /* height: 100vh; */
     margin: 0 auto;
+    
 }
 
 .about__text {
@@ -22,4 +23,5 @@
     left: -9rem;
     border-radius: 100%;
     max-height: 15rem;
+    border: 1px solid var(--color-shadow);
 }
