@@ -7,13 +7,13 @@ import Techstack from './components/Techstack';
 import Footer from './components/Footer';
 import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from 'react';
-import { BsChevronDoubleDown } from 'react-icons/bs';
-import Divider from './components/Divider';
+import { BsChevronDoubleDown, BsChevronDown, BsChevronUp } from 'react-icons/bs';
 
 function App() {
   const [navLbl, setNavLbl] = useState(null);
   const [path, setPath] = useState("");
   const navbar = useRef(null);
+  const [expandNavbar, setExpandNavbar] = useState(false);
 
   // This 'onscroll' listener is used for changing the navigation display 
   // depending on where the user is on the page.
@@ -22,9 +22,9 @@ function App() {
     let opacityValue;
     window.scrollY < 250 ? opacityValue = "0" : opacityValue = "1";
     navbar.current.style.opacity = opacityValue;
-    if (800 < window.scrollY && window.scrollY < 900) {
+    if (800 < window.scrollY && window.scrollY < 1000) {
       setPath(() => "\\About");  
-    } else if (1100 < window.scrollY && window.scrollY < 1200) {
+    } else if (1000 < window.scrollY && window.scrollY < 1200) {
       setPath(() => "\\Projects"); 
     }
   }
@@ -35,10 +35,20 @@ function App() {
 
   return (
     <div className="app">
-      <nav className="navbar" ref={navbar}>
+      <nav className="navbar" ref={navbar} onClick={() => setExpandNavbar(expandNavbar ? false : true)}>
         <p>C:\Users\DamonGreenhalgh{path + ">"}</p>
+        <p className="console__text">{navLbl}</p>
         <div className="waiting-pointer" />
+        {expandNavbar ? <BsChevronUp />: <BsChevronDown />}
+        <div className={expandNavbar ? "navbar__selection" : "disabled"} onMouseLeave={() => setNavLbl("")}>
+          <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>{"cd .."}</Link>
+          <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>{"cd About"}</Link>
+          <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>{"cd Projects"}</Link>
+          <Link to="tech" onMouseEnter={() => setNavLbl("cd Tech")}>{"cd Tech"}</Link>
+          <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>{"cd Contact"}</Link>
+        </div>
       </nav>
+      
       <div className="home">
         <BsChevronDoubleDown className="scroll-down" size="3em" />
         <div className="console">
@@ -60,9 +70,9 @@ function App() {
             <p className="console__text">dir</p>
           </div>
           <p>Directory of C:\Users\DamonGreenhalgh</p>
-          <nav className="flex-column">
+          <nav className="flex-column" onMouseLeave={() => setNavLbl("")}>
             <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM                   Resume.pdf</a>
-            <Link to="about" onMouseEnter={() => setNavLbl("README.md")}>25/12/1999  06:28 PM    {"<DIR>"}          About</Link>
+            <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>25/12/1999  06:28 PM    {"<DIR>"}          About</Link>
             <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM    {"<DIR>"}          Projects</Link>
             <Link to="tech" onMouseEnter={() => setNavLbl("cd Tech")}>22/02/2077  12:01 AM    {"<DIR>"}          Tech</Link>
             <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>14/08/2004  07:04 AM    {"<DIR>"}          Contact</Link>
