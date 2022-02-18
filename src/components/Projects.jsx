@@ -1,4 +1,5 @@
 import './Projects.css';
+import Divider from './Divider';
 import { useRef, useState } from 'react';
 import { 
     FaGithub,
@@ -51,7 +52,7 @@ const Projects = (props) => {
         <div className="projects" id="projects">
             <div className="title">
                 <h2>Projects</h2>
-                <div className="divider-horizontal" />
+                <Divider isHorizontal={true} />
             </div>
             <div className="flex-column gap-md center relative">
                 <div className="filler" />   
@@ -118,7 +119,7 @@ const Projects = (props) => {
                         CONTENT IS PROPERTY OF SQUARE ENIX CO,. LTD.</b>
                     </p>
                     <h2>Features</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <p>Current features of the app include the following,</p>
                     <ul>
                         <li>Character Display</li>
@@ -130,7 +131,7 @@ const Projects = (props) => {
                         <li>Free Company</li>
                     </ul>
                     <h2>Screenshots</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <img src={xivtrackerSS1} alt="Home Page" />
                     <img src={xivtrackerSS2} alt="Equipment and Stats" />
                     <img src={xivtrackerSS3} alt="Minions and Hand/Land Jobs" />
@@ -152,10 +153,10 @@ const Projects = (props) => {
                     </div>
                     <img className="blog-hero" src={conwaysGameOfLifeHero} alt="Conway's Game of Life Hero"/>
                     <h2>Conway's Game of Life</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <p>A fun little application that simulates the rules and constraints of <b><i>Conway's Game of Life.</i></b></p>
                     <h2>Rules</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <p>
                         <i>How does the game work?</i> There exists a 
                         grid where each node on the grid is one of two 
@@ -191,7 +192,7 @@ const Projects = (props) => {
                         <img src={CGOLRules6} alt="Rule 3 After Iteration" />
                     </div>
                     <h2>Features</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <ul>
                         <li>Custom Patterns</li>
                         <li>Present Patterns</li>
@@ -200,7 +201,7 @@ const Projects = (props) => {
                         <li>Speed Slider</li>
                     </ul>
                     <h2>Screenshots</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <img src={conwaysGameOfLifeSS1} className="screenshot" alt="Light Theme" />
                     <img src={conwaysGameOfLifeSS2} className="screenshot" alt="Dark Theme" />
                 </div> 
@@ -218,13 +219,13 @@ const Projects = (props) => {
                         </div>
                     </div>
                     <h2>Matrix Package for Java</h2>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <p>
                         This package implements the matrix mathematical 
                         structure for Java.
                     </p>
                     <h3>Matrix Class</h3>
-                    <div className="divider-horizontal" />
+                    <Divider isHorizontal={true} />
                     <h4>Fields</h4>
                     <p>The following fields are used in the Matrix.java class.</p>
                 </div>   

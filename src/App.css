@@ -85,9 +85,15 @@ p, h1, h2, h3, h4, h5 {
   transition: opacity .5s;
 }
 
-.divider-horizontal {
+.divider--horizontal {
   width: 100%;
   height: 1px;
+  background-color: var(--color-200);
+}
+
+.divider--vertical {
+  width: 1px;
+  height: 100%;
   background-color: var(--color-200);
 }
 
@@ -150,7 +156,7 @@ p, h1, h2, h3, h4, h5 {
 .yellow { background-color: var(--color-yellow); }
 .red { background-color: var(--color-red); }
 
-.code-window a:hover {
+.console a:hover {
   cursor: pointer;
   background-color: var(--color-100);
   color: var(--color-1000);
