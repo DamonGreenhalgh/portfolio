@@ -1,4 +1,5 @@
 import './App.css';
+import './utility.css';
 import resume from './Resume.pdf';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
@@ -27,16 +28,16 @@ function App() {
 
   return (
     <div className="app">
-      <nav className="navbar flex" ref={navbar}>
+      <nav className="navbar" ref={navbar}>
         <p>C:\Users\DamonGreenhalgh{path + ">"}</p>
-        <div className="cmd-waiting" />
+        <div className="waiting-pointer" />
       </nav>
-      <div className="home-header">
-        <div className="code-window">
-          <div className="task-bar">
-            <div className="decorative-button red" />
-            <div className="decorative-button yellow" />
-            <div className="decorative-button green" />
+      <div className="home">
+        <div className="console">
+          <div className="titlebar">
+            <div className="titlebar__button red" />
+            <div className="titlebar__button yellow" />
+            <div className="titlebar__button green" />
           </div>
           <p>
             Damon Greenhalgh Portfolio [Version 0.0.1]<br />
@@ -44,15 +45,15 @@ function App() {
           </p>
           <div className="flex">
             <p>C:\Users{">"}</p>
-            <p className="bright">cd DamonGreenhalgh</p>
+            <p className="console__text">cd DamonGreenhalgh</p>
           </div>
           <div className="flex">
             <p>C:\Users\DamonGreenhalgh{">"}</p>
-            <p className="bright">dir</p>
+            <p className="console__text">dir</p>
           </div>
           <p>Directory of C:\Users\DamonGreenhalgh</p>
           <nav className="flex-column">
-            <a href={resume} to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM                   Resume.pdf</a>
+            <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM                   Resume.pdf</a>
             <Link to="about" onMouseEnter={() => setNavLbl("README.md")}>25/12/1999  06:28 PM                   README.md</Link>
             <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM    {"<DIR>"}          Projects</Link>
             <Link to="tech" onMouseEnter={() => setNavLbl("cd Tech")}>22/02/2077  12:01 AM    {"<DIR>"}          Tech</Link>
@@ -60,8 +61,8 @@ function App() {
           </nav>
           <div className="flex">
             <p>C:\Users\DamonGreenhalgh{">"}</p>
-            <p className="bright">{navLbl}</p>
-            <div className="cmd-waiting" />
+            <p className="console__text">{navLbl}</p>
+            <div className="waiting-pointer" />
           </div>
         </div>  
       </div>

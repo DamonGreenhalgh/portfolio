@@ -71,7 +71,7 @@ const Projects = (props) => {
                     <div className="default-project">
                         <FaFileCode size="2em" />
                         <div className="flex-column center-items">
-                            <h2>No Project Selected!</h2>
+                            <h2>No Projects Selected!</h2>
                             <p>Select a project on the left to view.</p>
                         </div>
                         
