@@ -7,11 +7,11 @@ import {
     FaCss3, 
     FaReact, 
     FaJava,
-    FaLink,
     FaDownload,
     FaFileCode } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';
 import { BsArrowReturnLeft } from 'react-icons/bs';
+import { CgWebsite } from 'react-icons/cg';
 
 import xivtrackerIcon from '../images/xivtracker.png';
 import xivtrackerHero from '../images/xivtracker-hero.png';
@@ -42,6 +42,10 @@ const Projects = (props) => {
         "\\Projects\\MatrixPackage"
     ];
     const iconSize = "1.5em";
+
+    // This function is used to set the current project to display.
+    // We set '1' at index to set that page visible, and '0' everwhere
+    // else.
     const setPage = (index) => {
         const newCurrentBlog = [0, 0, 0, 0];
         newCurrentBlog[index] = 1;
@@ -54,16 +58,24 @@ const Projects = (props) => {
                 <h2>Projects</h2>
                 <Divider isHorizontal={true} />
             </div>
-            <div className="flex-column gap-md center relative">
-                <div className="filler" />   
-                <button className={"project-card " + (currentBlog[1] ? "project-card--active" : "")} title="XIV Tracker" onClick={() => setPage(1)}>
-                    <img className="project-icon" src={xivtrackerIcon} alt="XIV Tracker Icon" />
+            <div className="projects__panel">
+                <button 
+                    className={"project-card " + (currentBlog[1] ? "project-card--active" : "")}
+                    title="XIV Tracker" 
+                    onClick={() => setPage(1)}>
+                    <img src={xivtrackerIcon} alt="XIV Tracker Icon" />
                 </button>
-                <button className={"project-card " + (currentBlog[2] ? "project-card--active" : "")} title="Conway's Game of Life" onClick={() => setPage(2)}>
-                    <img className="project-icon" src={conwaysGameOfLifeIcon} alt="Conway's Game of Life Icon"/>
+                <button 
+                    className={"project-card " + (currentBlog[2] ? "project-card--active" : "")} 
+                    title="Conway's Game of Life" 
+                    onClick={() => setPage(2)}>
+                    <img src={conwaysGameOfLifeIcon} alt="Conway's Game of Life Icon"/>
                 </button>
-                <button className={"project-card " + (currentBlog[3] ? "project-card--active" : "")} title="Matrix Package" onClick={() => setPage(3)}>
-                    <img className="project-icon" src={matrixPackageIcon} alt="Matrix Package Icon"/>
+                <button 
+                    className={"project-card " + (currentBlog[3] ? "project-card--active" : "")}
+                    title="Matrix Package" 
+                    onClick={() => setPage(3)}>
+                    <img src={matrixPackageIcon} alt="Matrix Package Icon"/>
                 </button>
             </div>
             <div className="relative" ref={blogs}>
@@ -75,13 +87,12 @@ const Projects = (props) => {
                             <h2>No Projects Selected!</h2>
                             <p>Select a project on the left to view.</p>
                         </div>
-                        
                         <BsArrowReturnLeft size="2em" />
                     </div>     
                 </div>
                 {/* XIV Tracker */}
                 <div className={currentBlog[1] ? "blog" : "disabled"}>
-                    <div className="blog-header">
+                    <div className="blog__header">
                         <div className="flex gap-sm">
                             <FaHtml5 size={iconSize} color="var(--color-html)" title="HTML5" />  
                             <FaCss3 size={iconSize} color="var(--color-css)" title="CSS3" />  
@@ -90,7 +101,7 @@ const Projects = (props) => {
                         </div>
                         <div className="flex gap-sm">
                             <a href="https://damongreenhalgh.github.io/xivtracker/">
-                                <FaLink className="social-icon" size={iconSize} title="XIV Tracker"/> 
+                                <CgWebsite className="social-icon" size={iconSize} title="XIV Tracker"/> 
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/xivtracker/archive/refs/heads/main.zip">
                                 <FaDownload className="social-icon" size={iconSize} title="Download"/>
@@ -100,7 +111,7 @@ const Projects = (props) => {
                             </a>
                         </div>
                     </div>
-                    <img className="blog-hero" src={xivtrackerHero} alt="XIV Tracker Hero"/>     
+                    <img className="blog__hero" src={xivtrackerHero} alt="XIV Tracker Hero"/>     
                     <p>
                         <a 
                         className="link" 
@@ -128,7 +139,7 @@ const Projects = (props) => {
                         <li>Collection (Mounts and Minions)</li>
                         <li>Jobs</li>
                         <li>Quests and Encounter Completion</li>
-                        <li>Free Company</li>
+                        <li>Free Company</li> 
                     </ul>
                     <h2>Screenshots</h2>
                     <Divider isHorizontal={true} />
@@ -140,7 +151,7 @@ const Projects = (props) => {
                 </div>
                 {/* Conway's Game of Life */}
                 <div className={currentBlog[2] ? "blog" : "disabled"}>
-                    <div className="blog-header">
+                    <div className="blog__header">
                         <FaJava size={iconSize} color="var(--color-html)" title="Java" />  
                         <div className="flex gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/conways-game-of-life-app/archive/refs/heads/main.zip">
@@ -151,7 +162,7 @@ const Projects = (props) => {
                             </a>
                         </div>
                     </div>
-                    <img className="blog-hero" src={conwaysGameOfLifeHero} alt="Conway's Game of Life Hero"/>
+                    <img className="blog__hero" src={conwaysGameOfLifeHero} alt="Conway's Game of Life Hero"/>
                     <h2>Conway's Game of Life</h2>
                     <Divider isHorizontal={true} />
                     <p>A fun little application that simulates the rules and constraints of <b><i>Conway's Game of Life.</i></b></p>
@@ -207,7 +218,7 @@ const Projects = (props) => {
                 </div> 
                 {/* Matrix Package */}
                 <div className={currentBlog[3] ? "blog" : "disabled"}>
-                    <div className="blog-header">
+                    <div className="blog__header">
                         <FaJava size={iconSize} color="var(--color-html)" title="Java" />  
                         <div className="flex gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/matrix-package/archive/refs/heads/main.zip">

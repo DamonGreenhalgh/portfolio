@@ -28,6 +28,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent-2) transparent;
+  scroll-snap-type: y proximity;
 }
 
 button {
@@ -38,6 +39,10 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+ol, ul {
+  margin: 0;
 }
 
 ::selection {
@@ -63,6 +68,7 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -104,13 +110,14 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .home {
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 3rem;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background: var(--gradient);
 }
 
@@ -177,9 +184,31 @@ p, h1, h2, h3, h4, h5 {
   animation-iteration-count: infinite;
 }
 
+.scroll-down {
+  position: absolute;
+  top: calc(90vh - 3em - 3rem);
+  color: var(--color-000);
+  animation: scroll-down 2s infinite ease-in-out;
+}
+
+@keyframes scroll-down {
+  0% {}
+  50% {transform: translate(0, -3rem);}
+}
+
 @keyframes waiting{
   0% {opacity: 0;}
   49% {opacity: 0;}
   50% {opacity: 1;}
   100% {opacity: 1;}
+}
+
+.filler {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: calc((100vw - var(--global-width)) / 2 + 8rem);
+  min-width: 8rem;
+  background-color: var(--color-100);
+  border-right: 1px solid var(--color-shadow);
 }

@@ -1,10 +1,13 @@
 import './App.css';
 import './utility.css';
 import resume from './Resume.pdf';
+import About from './components/About';
 import Projects from './components/Projects';
+import Techstack from './components/Techstack';
 import Footer from './components/Footer';
 import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from 'react';
+import { BsChevronDoubleDown } from 'react-icons/bs';
 
 function App() {
   const [navLbl, setNavLbl] = useState(null);
@@ -33,6 +36,7 @@ function App() {
         <div className="waiting-pointer" />
       </nav>
       <div className="home">
+        <BsChevronDoubleDown className="scroll-down" size="3em" />
         <div className="console">
           <div className="titlebar">
             <div className="titlebar__button red" />
@@ -66,7 +70,10 @@ function App() {
           </div>
         </div>  
       </div>
+      <div className="filler" />
+      <About />
       <Projects updatePath={setPath} />
+      {/* <Techstack /> */}
       <Footer />
     </div>
   );

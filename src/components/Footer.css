@@ -4,6 +4,7 @@
 }
 
 .footer {
+    scroll-snap-align: end;
     display: flex;
     justify-content: space-between;
     align-items: center;
