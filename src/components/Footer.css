@@ -4,6 +4,7 @@
 }
 
 .footer {
+    text-align: center;
     scroll-snap-align: start;
     display: flex;
     justify-content: space-between;
@@ -12,4 +13,12 @@
     height: 100%;
     margin: 0 auto;
     color: var(--color-500);
+}
+
+@media only screen and (max-device-width: 850px) {
+    .footer {
+        font-size: .8rem;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }

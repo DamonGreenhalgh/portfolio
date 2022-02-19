@@ -3,7 +3,6 @@ import './utility.css';
 import resume from './Resume.pdf';
 import About from './components/About';
 import Projects from './components/Projects';
-import Techstack from './components/Techstack';
 import Footer from './components/Footer';
 import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from 'react';
@@ -19,9 +18,7 @@ function App() {
   // depending on where the user is on the page.
   const listenScrollEvent = () => {
     console.log(window.scrollY);
-    let opacityValue;
-    window.scrollY < 250 ? opacityValue = "0" : opacityValue = "1";
-    navbar.current.style.opacity = opacityValue;
+    navbar.current.style.opacity = window.scrollY < 250 ? "0" : "1";
     if (800 < window.scrollY && window.scrollY < 1000) {
       setPath(() => "\\About");  
     } else if (1000 < window.scrollY && window.scrollY < 1200) {
@@ -44,7 +41,6 @@ function App() {
           <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>{"cd .."}</Link>
           <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>{"cd About"}</Link>
           <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>{"cd Projects"}</Link>
-          <Link to="tech" onMouseEnter={() => setNavLbl("cd Tech")}>{"cd Tech"}</Link>
           <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>{"cd Contact"}</Link>
         </div>
       </nav>
@@ -74,7 +70,6 @@ function App() {
             <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM                   Resume.pdf</a>
             <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>25/12/1999  06:28 PM    {"<DIR>"}          About</Link>
             <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM    {"<DIR>"}          Projects</Link>
-            <Link to="tech" onMouseEnter={() => setNavLbl("cd Tech")}>22/02/2077  12:01 AM    {"<DIR>"}          Tech</Link>
             <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>14/08/2004  07:04 AM    {"<DIR>"}          Contact</Link>
           </nav>
           <div className="flex">
@@ -87,7 +82,6 @@ function App() {
       <div className="filler" />
       <About />
       <Projects updatePath={setPath} />
-      {/* <Techstack /> */}
       <Footer />
     </div>
   );

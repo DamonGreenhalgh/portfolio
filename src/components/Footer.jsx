@@ -14,7 +14,7 @@ const Footer = () => {
                     Designed and Developed by Damon Greenhalgh<br />
                     © 2022 Damon Greenhalgh. All rights reserved.
                 </p>
-                    <div className="flex gap-sm">
+                <div className="flex gap-sm">
                     <a href="https://github.com/DamonGreenhalgh/portfolio">
                         <FaGithub size={iconSize} />
                     </a>
@@ -25,9 +25,9 @@ const Footer = () => {
                         <MdEmail size={iconSize} />
                     </a>
                 </div>
-                
             </div>
         </div>
+        
     );
 }
 

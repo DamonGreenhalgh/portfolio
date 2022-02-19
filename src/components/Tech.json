@@ -1,0 +1,46 @@
+{
+    "python": {
+        "name": "Python",
+        "icon": "/python/python-original.svg"
+    },
+    "java": {
+        "name": "Java",
+        "icon": "/java/java-original.svg"
+    },
+    "c": {
+        "name": "C",
+        "icon": "/c/c-original.svg"
+    },
+    "cpp": {
+        "name": "C++",
+        "icon": "/cplusplus/cplusplus-original.svg"
+    },
+    "html": {
+        "name": "HTML5",
+        "icon": "/html5/html5-plain.svg"
+    },
+    "css": {
+        "name": "CSS3",
+        "icon": "/css3/css3-plain.svg"
+    },
+    "js": {
+        "name": "Javascript",
+        "icon": "/javascript/javascript-plain.svg"
+    },
+    "git": {
+        "name": "Git",
+        "icon": "/git/git-original.svg"
+    },
+    "gh" : {
+        "name": "Github",
+        "icon": "/github/github-original.svg"
+    },
+    "reactjs" : {
+        "name": "ReactJS",
+        "icon": "/react/react-original.svg"
+    },
+    "electronjs": {
+        "name": "ElectronJS",
+        "icon": "/electron/electron-original.svg"
+    }
+}
