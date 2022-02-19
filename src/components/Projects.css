@@ -22,7 +22,7 @@
 
 .project-card {
     padding: 1rem;
-    width: 100%;
+    width: 6rem;
     border-radius: .5rem;
     outline: 1px solid transparent;
     transition: all .25s;
@@ -54,6 +54,12 @@
     border-radius: .5rem;
 }
 
+.default-project__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .blog {
     display: flex;
     flex-direction: column;
@@ -73,4 +79,22 @@
     justify-content: space-between;
     margin-bottom: 1rem;
     color: var(--color-500);
+}
+
+@media only screen and (max-device-width: 900px) {
+
+    .projects {
+        flex-direction:  column;
+    }
+
+    .projects__panel {
+        flex-direction: row;
+        justify-content: center;
+        height: max-content;
+    }
+
+    .blog {
+        width: var(--global-width);
+    }
+    
 }

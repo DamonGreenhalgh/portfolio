@@ -33,11 +33,13 @@ function App() {
   return (
     <div className="app">
       <nav className="navbar" ref={navbar} onClick={() => setExpandNavbar(expandNavbar ? false : true)}>
-        <p>C:\Users\DamonGreenhalgh{path + ">"}</p>
-        <p className="console__text">{navLbl}</p>
-        <div className="waiting-pointer" />
-        {expandNavbar ? <BsChevronUp />: <BsChevronDown />}
-        <div className={expandNavbar ? "navbar__selection" : "disabled"} onMouseLeave={() => setNavLbl("")}>
+        <div className="flex center-items">
+          <p>C:\Users\DamonGreenhalgh{path + ">"}</p>
+          <p className="console__text">{navLbl}</p>
+          <div className="waiting-pointer" />
+          {expandNavbar ? <BsChevronUp />: <BsChevronDown />}
+        </div>
+        <div className={expandNavbar ? "flex-column" : "disabled"} onMouseLeave={() => setNavLbl("")}>
           <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>{"cd .."}</Link>
           <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>{"cd About"}</Link>
           <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>{"cd Projects"}</Link>
@@ -46,6 +48,7 @@ function App() {
       </nav>
       
       <div className="home">
+        <h1 className="home__header">Hi there!</h1>
         <BsChevronDoubleDown className="scroll-down" size="3em" />
         <div className="console">
           <div className="titlebar">

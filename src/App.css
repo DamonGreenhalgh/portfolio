@@ -29,7 +29,6 @@
   --color-electron: #2c2e3a;
 
   --global-width: 50rem;
-  --height-console: 30rem;
   box-sizing: border-box; 
 }
 
@@ -37,7 +36,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent) transparent;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 }
 
 button {
@@ -90,8 +89,9 @@ p, h1, h2, h3, h4, h5 {
 
 .navbar {
   display: flex;
+  flex-direction: column;
   z-index: 3;
-  opacity: 1;
+  opacity: 0;
   position: fixed;
   margin-top: 1rem;
   align-self: center;
@@ -99,7 +99,7 @@ p, h1, h2, h3, h4, h5 {
   font-weight: 300;
   color: var(--color-200);
   background-color: var(--color-1000);
-  height: 3rem;
+  height: max-content;
   width: var(--global-width);
   border-radius: .5rem;
   padding: 1rem;
@@ -108,19 +108,6 @@ p, h1, h2, h3, h4, h5 {
 
 .navbar:hover {
   cursor: pointer;
-}
-
-.navbar__selection {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem 1rem 1rem;
-  z-index: 3;
-  border-radius: 0 0 .5rem .5rem;
-  position: fixed;
-  margin-top: 1.5rem;
-  margin-left: -1rem;
-  width: var(--global-width);
-  background-color: var(--color-1000);
 }
 
 .divider--horizontal {
@@ -147,13 +134,19 @@ p, h1, h2, h3, h4, h5 {
   background: var(--color-accent);
 }
 
+.home__header {
+  display: none;
+  font-size: 4rem;
+  color: var(--color-000);
+}
+
 .console {
   /* white-space: pre; */
   position: relative;
   display: flex;
   flex-direction: column;
   width: var(--global-width);
-  height: var(--height-console);
+  height: 30rem;
   color: var(--color-200);
   background-color: var(--color-1000);
   padding: 3rem 1rem 1rem 1rem;
@@ -219,8 +212,8 @@ p, h1, h2, h3, h4, h5 {
 
 .scroll-down {
   position: absolute;
-  /* top: calc(90vh - 3em - 4rem); */
-  top: calc(33rem + ((90vh - 30rem) / 2));
+  /* top: calc(33rem + ((90vh - 30rem) / 2)); */
+  top: calc(90vh - 3em - 4rem);
   color: var(--color-000);
   animation: scroll-down 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -248,28 +241,27 @@ p, h1, h2, h3, h4, h5 {
 }
 
 
-/* Phones */
-@media only screen and (max-device-width: 500px) {
+/* Phones and Tablets */
+@media only screen and (max-device-width: 900px) {
+
   * {
-    --height-console: 30rem;
     --global-width: calc(100vw - 4rem);
   }
 
   .filler {
     display: none;
   }
-}
 
-/* Tablet portrait */
-@media only screen and (max-device-width: 900px) {
-  .filler {
+  .navbar {
     display: none;
   }
-}
 
-/* Phone while landscape */
-@media screen and (orientation: landscape) and (max-device-width: 950px){
-  .home {
-    height: 100vh;
+  .console {
+    display: none;
   }
+
+  .home__header {
+    display: flex;
+  }
+
 }

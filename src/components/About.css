@@ -42,12 +42,15 @@
     max-height: 1.5rem;
 }
 
-@media only screen and (max-device-width: 850px) {
+@media only screen and (max-device-width: 900px) {
+
     .about {
         flex-direction: column;
     }
 
     .about__header {
         text-align: center;
+        font-size: 2rem;
     }
+    
 }
