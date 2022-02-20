@@ -38,7 +38,7 @@ const Projects = (props) => {
     const paths = [
         "\\Projects",
         "\\Projects\\XIVTracker",
-        "\\Projects\\ConwaysGameOfLife",
+        "\\Projects\\Conway",
         "\\Projects\\MatrixPackage"
     ];
     const iconSize = "1.5em";

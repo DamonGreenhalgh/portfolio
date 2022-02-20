@@ -3,21 +3,36 @@ import './utility.css';
 import resume from './Resume.pdf';
 import About from './components/About';
 import Projects from './components/Projects';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { Link } from "react-scroll";
 import { useEffect, useRef, useState } from 'react';
 import { BsChevronDoubleDown, BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 function App() {
   const [navLbl, setNavLbl] = useState(null);
   const [path, setPath] = useState("");
-  const navbar = useRef(null);
   const [expandNavbar, setExpandNavbar] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const navbar = useRef(null);
+  const isMobile = window.innerWidth < 900 ? true : false;
+  let pathBase = isMobile ? "C:" : "C:\\Users\\DamonGreenhalgh";
+
+  // Determine the appropriate orientation of the expand
+  // and contract searchbar icons.
+  let expandIcon, contractIcon;
+  if (isMobile) {
+    expandIcon = <BsChevronDown />;
+    contractIcon = <BsChevronUp />;
+  } else {
+    expandIcon = <BsChevronUp />;
+    contractIcon = <BsChevronDown />;
+  }
 
   // This 'onscroll' listener is used for changing the navigation display 
   // depending on where the user is on the page.
   const listenScrollEvent = () => {
-    console.log(window.scrollY);
     navbar.current.style.opacity = window.scrollY < 250 ? "0" : "1";
     if (800 < window.scrollY && window.scrollY < 1000) {
       setPath(() => "\\About");  
@@ -32,12 +47,12 @@ function App() {
 
   return (
     <div className="app">
-      <nav className="navbar" ref={navbar} onClick={() => setExpandNavbar(expandNavbar ? false : true)}>
+      <div className="searchbar" ref={navbar} onClick={() => setExpandNavbar(expandNavbar ? false : true)}>
         <div className="flex center-items">
-          <p>C:\Users\DamonGreenhalgh{path + ">"}</p>
+          <p>{pathBase + path + ">"}</p>  
           <p className="console__text">{navLbl}</p>
           <div className="waiting-pointer" />
-          {expandNavbar ? <BsChevronUp />: <BsChevronDown />}
+          {expandNavbar ? expandIcon : contractIcon}
         </div>
         <div className={expandNavbar ? "flex-column" : "disabled"} onMouseLeave={() => setNavLbl("")}>
           <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>{"cd .."}</Link>
@@ -45,8 +60,10 @@ function App() {
           <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>{"cd Projects"}</Link>
           <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>{"cd Contact"}</Link>
         </div>
-      </nav>
-      
+      </div>
+      <button className={"theme-toggle theme--" + (isDarkMode ? "dark" : "light")} onClick={() => setIsDarkMode(isDarkMode ? false : true)}>
+        {isDarkMode ? <MdLightMode size="2.5em" />: <MdDarkMode size="2.5em" />}
+      </button>
       <div className="home">
         <h1 className="home__header">Hi there!</h1>
         <BsChevronDoubleDown className="scroll-down" size="3em" />
@@ -70,10 +87,10 @@ function App() {
           </div>
           <p>Directory of C:\Users\DamonGreenhalgh</p>
           <nav className="flex-column" onMouseLeave={() => setNavLbl("")}>
-            <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM                   Resume.pdf</a>
-            <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>25/12/1999  06:28 PM    {"<DIR>"}          About</Link>
-            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM    {"<DIR>"}          Projects</Link>
-            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>14/08/2004  07:04 AM    {"<DIR>"}          Contact</Link>
+            <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM {"     "} Resume.pdf</a>
+            <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>25/12/1999  06:28 PM {"<DIR>"} About</Link>
+            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM {"<DIR>"} Projects</Link>
+            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>14/08/2004  07:04 AM {"<DIR>"} Contact</Link>
           </nav>
           <div className="flex">
             <p>C:\Users\DamonGreenhalgh{">"}</p>
@@ -85,6 +102,7 @@ function App() {
       <div className="filler" />
       <About />
       <Projects updatePath={setPath} />
+      <Contact />
       <Footer />
     </div>
   );

@@ -7,10 +7,12 @@
   --color-500: #6f7a86;
   --color-800: #3d3e44;
   --color-1000: #221f2b;
+  --color-accent-shadow: #acadff;
+  --color-accent-light: #a0a2f8;
   --color-accent: #585bd5;
   --color-accent-mid: #5152a7;
   --color-sub-accent: #3c3d6b;
-  --color-shadow: rgba(42, 41, 124, 0.1);
+  --color-shadow: rgba(42, 41, 124, .15);
  
   --color-green: #5fc252;
   --color-yellow: #f4c151;
@@ -40,8 +42,13 @@ html {
 }
 
 button {
+  cursor: pointer;
   border: none;
   background: transparent;
+}
+
+textarea {
+  padding: 0;
 }
 
 a {
@@ -87,27 +94,51 @@ p, h1, h2, h3, h4, h5 {
   gap: 20rem;
 }
 
-.navbar {
+.searchbar {
+  z-index: 3;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  z-index: 3;
-  opacity: 0;
-  position: fixed;
-  margin-top: 1rem;
   align-self: center;
+  top: 1rem;
+  gap: .5rem;
   font-family: 'Consola';
   font-weight: 300;
+  width: var(--global-width);
+  height: max-content;
   color: var(--color-200);
   background-color: var(--color-1000);
-  height: max-content;
-  width: var(--global-width);
   border-radius: .5rem;
   padding: 1rem;
   transition: opacity .5s;
 }
 
-.navbar:hover {
+.searchbar:hover {
   cursor: pointer;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  box-shadow: 0 .5rem 1rem var(--color-shadow);
+}
+
+.theme--dark {
+  color: var(--color-1000);
+  background-color: var(--color-000);
+}
+
+.theme--light {
+  color: var(--color-000);
+  background-color: var(--color-1000);
 }
 
 .divider--horizontal {
@@ -189,7 +220,7 @@ p, h1, h2, h3, h4, h5 {
   color: var(--color-1000);
 }
 
-.navbar a:hover {
+.searchbar a:hover {
   cursor: pointer;
   background-color: var(--color-100);
   color: var(--color-1000);
@@ -240,19 +271,20 @@ p, h1, h2, h3, h4, h5 {
   100% {opacity: 1;}
 }
 
-
-/* Phones and Tablets */
+/* Phones */
 @media only screen and (max-device-width: 900px) {
 
   * {
     --global-width: calc(100vw - 4rem);
   }
 
-  .filler {
-    display: none;
+  .searchbar {
+    top: auto;
+    bottom: 1rem;
+    flex-direction: column-reverse;
   }
 
-  .navbar {
+  .filler {
     display: none;
   }
 
