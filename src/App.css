@@ -160,9 +160,9 @@ p, h1, h2, h3, h4, h5 {
   gap: 3rem;
   width: 100%;
   height: 90vh;
-  background: linear-gradient(27deg, rgb(80, 105, 189), rgba(255,0,0,0) 80%),
-              linear-gradient(149deg, rgb(125, 216, 186), rgba(0,255,0,0) 80%),
-              linear-gradient(263deg, rgb(105, 179, 201), rgba(0,0,255,0) 80%);
+  background: linear-gradient(27deg, rgb(203, 228, 192), rgba(255,0,0,0) 80%),
+              linear-gradient(120deg, rgb(182, 184, 221), rgba(0,255,0,0) 80%),
+              linear-gradient(263deg, rgb(209, 184, 184), rgba(0,0,255,0) 80%);
 }
 
 .brand {
@@ -173,7 +173,7 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .brand img {
-  height: 3rem;
+  height: 5rem;
 }
 
 .console {
@@ -260,7 +260,11 @@ p, h1, h2, h3, h4, h5 {
   height: calc(100% - 90vh);
   width: calc((100vw - var(--global-width)) / 2 + 8rem);
   min-width: 8rem;
-  background-color: var(--color-100);
+  /* background-color: var(--color-100); */
+  background: linear-gradient(120deg, rgb(203, 228, 192), rgba(255,0,0,0) 80%),
+              linear-gradient(210deg, rgb(206, 227, 201), rgba(255,0,0,0) 80%),
+              linear-gradient(263deg, rgb(223, 224, 245), rgba(0,255,0,0) 80%),
+              linear-gradient(27deg, rgb(209, 184, 184), rgba(0,0,255,0) 80%);
   border-right: 1px solid var(--color-shadow);
 }
 

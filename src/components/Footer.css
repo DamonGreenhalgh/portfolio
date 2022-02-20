@@ -1,5 +1,6 @@
 .footer-wrapper {
     height: 15rem;
+    border-top: 1px solid var(--color-shadow);
     background: var(--color-150);
 }
 

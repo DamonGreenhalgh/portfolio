@@ -17,6 +17,7 @@ function App() {
   const [expandNavbar, setExpandNavbar] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const navbar = useRef(null);
+  const linkOffset = -200;
   const isMobile = window.innerWidth < 900 ? true : false;
   let pathBase = isMobile ? "C:" : "C:\\Users\\DamonGreenhalgh";
 
@@ -48,7 +49,7 @@ function App() {
 
   return (
     <div className="app">
-      <Link to="home" className="brand interactable"><img src={logo} /></Link>
+      <a href="" className="brand interactable"><img src={logo} /></a>
       <div 
         className="searchbar interactable" 
         ref={navbar} 
@@ -67,13 +68,13 @@ function App() {
           <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>
             {"cd .."}
           </Link>
-          <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>
+          <Link to="about" onMouseEnter={() => setNavLbl("cd About")} offset={linkOffset}>
             {"cd About"}
           </Link>
-          <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>
+          <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")} offset={linkOffset}>
             {"cd Projects"}
           </Link>
-          <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>
+          <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")} offset={linkOffset}>
             {"cd Contact"}
           </Link>
         </div>
@@ -111,13 +112,13 @@ function App() {
             <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>
               {"28/10/2017  03:15 PM                   Resume.pdf"}
             </a>
-            <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>
+            <Link to="about" onMouseEnter={() => setNavLbl("cd About")} offset={linkOffset}>
               {"25/12/1999  06:28 PM    <DIR>          About"}
             </Link>
-            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>
+            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")} offset={linkOffset}>
               {"15/02/2022  10:59 PM    <DIR>          Projects"}
             </Link>
-            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>
+            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")} offset={linkOffset}>
               {"14/08/2004  07:04 AM    <DIR>          Contact"}
             </Link>
           </nav>
