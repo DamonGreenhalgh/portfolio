@@ -1,4 +1,5 @@
 .contact {
+    scroll-snap-align: center;
     width: var(--global-width);
     margin: 0 auto;
     display: flex;

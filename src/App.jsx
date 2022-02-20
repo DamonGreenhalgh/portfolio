@@ -1,5 +1,6 @@
 import './App.css';
 import './utility.css';
+import logo from './images/logo.png';
 import resume from './Resume.pdf';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -47,6 +48,8 @@ function App() {
 
   return (
     <div className="app">
+      <div className="home__background" />
+      <Link to="home" className="brand"><img src={logo} /></Link>
       <div className="searchbar" ref={navbar} onClick={() => setExpandNavbar(expandNavbar ? false : true)}>
         <div className="flex center-items">
           <p>{pathBase + path + ">"}</p>  
@@ -65,7 +68,7 @@ function App() {
         {isDarkMode ? <MdLightMode size="2.5em" />: <MdDarkMode size="2.5em" />}
       </button>
       <div className="home">
-        <h1 className="home__header">Hi there!</h1>
+        <h1 className="home__header">Hi There!</h1>
         <BsChevronDoubleDown className="scroll-down" size="3em" />
         <div className="console">
           <div className="titlebar">

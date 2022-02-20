@@ -7,7 +7,7 @@
   --color-500: #6f7a86;
   --color-800: #3d3e44;
   --color-1000: #221f2b;
-  --color-accent-shadow: #acadff;
+  --color-accent-shadow: #b1b3ff;
   --color-accent-light: #a0a2f8;
   --color-accent: #585bd5;
   --color-accent-mid: #5152a7;
@@ -38,7 +38,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent) transparent;
-  /* scroll-snap-type: y proximity; */
+  scroll-snap-type: y proximity;
 }
 
 button {
@@ -110,6 +110,7 @@ p, h1, h2, h3, h4, h5 {
   background-color: var(--color-1000);
   border-radius: .5rem;
   padding: 1rem;
+  box-shadow: 0 .5rem 1rem var(--color-shadow);
   transition: opacity .5s;
 }
 
@@ -153,7 +154,17 @@ p, h1, h2, h3, h4, h5 {
   background-color: var(--color-200);
 }
 
+.home__background {
+  z-index: 1;
+  position: absolute;
+  background-color: var(--color-000);
+  top: 0;
+  width: 100%;
+  height: 90vh;
+}
+
 .home {
+  z-index: 2;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -162,17 +173,34 @@ p, h1, h2, h3, h4, h5 {
   gap: 3rem;
   width: 100%;
   height: 90vh;
-  background: var(--color-accent);
+  background: linear-gradient(27deg, rgb(80, 105, 189), rgba(255,0,0,0) 80%),
+              linear-gradient(149deg, rgb(125, 216, 186), rgba(0,255,0,0) 80%),
+              linear-gradient(263deg, rgb(105, 179, 201), rgba(0,0,255,0) 80%);
 }
 
 .home__header {
   display: none;
   font-size: 4rem;
   color: var(--color-000);
+
+}
+
+.brand {
+  z-index: 3;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+.brand img {
+  height: 3rem;
+}
+
+.brand:hover {
+  cursor: pointer;
 }
 
 .console {
-  /* white-space: pre; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -243,7 +271,6 @@ p, h1, h2, h3, h4, h5 {
 
 .scroll-down {
   position: absolute;
-  /* top: calc(33rem + ((90vh - 30rem) / 2)); */
   top: calc(90vh - 3em - 4rem);
   color: var(--color-000);
   animation: scroll-down 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
