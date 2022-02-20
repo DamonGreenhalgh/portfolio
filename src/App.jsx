@@ -48,7 +48,6 @@ function App() {
 
   return (
     <div className="app">
-      <div className="home__background" />
       <Link to="home" className="brand interactable"><img src={logo} /></Link>
       <div 
         className="searchbar interactable" 
