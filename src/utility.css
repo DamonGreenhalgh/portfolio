@@ -38,4 +38,8 @@
   .disabled {
     display: none;
   }
+
+  .interactable:hover {
+    cursor: pointer;
+  }
   

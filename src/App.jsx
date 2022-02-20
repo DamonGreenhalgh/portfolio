@@ -49,27 +49,46 @@ function App() {
   return (
     <div className="app">
       <div className="home__background" />
-      <Link to="home" className="brand"><img src={logo} /></Link>
-      <div className="searchbar" ref={navbar} onClick={() => setExpandNavbar(expandNavbar ? false : true)}>
+      <Link to="home" className="brand interactable"><img src={logo} /></Link>
+      <div 
+        className="searchbar interactable" 
+        ref={navbar} 
+        onClick={() => setExpandNavbar(expandNavbar ? false : true)}
+      >
         <div className="flex center-items">
           <p>{pathBase + path + ">"}</p>  
           <p className="console__text">{navLbl}</p>
           <div className="waiting-pointer" />
           {expandNavbar ? expandIcon : contractIcon}
         </div>
-        <div className={expandNavbar ? "flex-column" : "disabled"} onMouseLeave={() => setNavLbl("")}>
-          <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>{"cd .."}</Link>
-          <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>{"cd About"}</Link>
-          <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>{"cd Projects"}</Link>
-          <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>{"cd Contact"}</Link>
+        <div 
+          className={expandNavbar ? "flex-column" : "disabled"} 
+          onMouseLeave={() => setNavLbl("")}
+        >
+          <Link to="home" onMouseEnter={() => setNavLbl("cd ..")}>
+            {"cd .."}
+          </Link>
+          <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>
+            {"cd About"}
+          </Link>
+          <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>
+            {"cd Projects"}
+          </Link>
+          <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>
+            {"cd Contact"}
+          </Link>
         </div>
       </div>
-      <button className={"theme-toggle theme--" + (isDarkMode ? "dark" : "light")} onClick={() => setIsDarkMode(isDarkMode ? false : true)}>
+      <button 
+        className={"theme-toggle theme--" + (isDarkMode ? "dark" : "light")} 
+        onClick={() => setIsDarkMode(isDarkMode ? false : true)}
+      >
         {isDarkMode ? <MdLightMode size="2.5em" />: <MdDarkMode size="2.5em" />}
       </button>
       <div className="home">
-        <h1 className="home__header">Hi There!</h1>
-        <BsChevronDoubleDown className="scroll-down" size="3em" />
+        <Link to="about">
+          <BsChevronDoubleDown className="scroll-down interactable" size="3em" />
+        </Link>
         <div className="console">
           <div className="titlebar">
             <div className="titlebar__button red" />
@@ -90,10 +109,18 @@ function App() {
           </div>
           <p>Directory of C:\Users\DamonGreenhalgh</p>
           <nav className="flex-column" onMouseLeave={() => setNavLbl("")}>
-            <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>28/10/2017  03:15 PM {"     "} Resume.pdf</a>
-            <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>25/12/1999  06:28 PM {"<DIR>"} About</Link>
-            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>15/02/2022  10:59 PM {"<DIR>"} Projects</Link>
-            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>14/08/2004  07:04 AM {"<DIR>"} Contact</Link>
+            <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>
+              {"28/10/2017  03:15 PM                   Resume.pdf"}
+            </a>
+            <Link to="about" onMouseEnter={() => setNavLbl("cd About")}>
+              {"25/12/1999  06:28 PM    <DIR>          About"}
+            </Link>
+            <Link to="projects" onMouseEnter={() => setNavLbl("cd Projects")}>
+              {"15/02/2022  10:59 PM    <DIR>          Projects"}
+            </Link>
+            <Link to="contact" onMouseEnter={() => setNavLbl("cd Contact")}>
+              {"14/08/2004  07:04 AM    <DIR>          Contact"}
+            </Link>
           </nav>
           <div className="flex">
             <p>C:\Users\DamonGreenhalgh{">"}</p>

@@ -11,7 +11,7 @@ const Contact = () => {
                 <input className="contact__input" name="Email" id="email" type="email" placeholder="Email" required  />
             </div>
             <textarea cols="30" rows="5" className="contact__input contact__message" name="Message" id="message" type="text" placeholder="Message" required/>
-            <input className="contact__button" type="submit" value="Send" />
+            <input className="contact__button interactable" type="submit" value="Send" />
         </form>
     );
 }

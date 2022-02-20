@@ -38,7 +38,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--color-accent) transparent;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 }
 
 button {
@@ -114,10 +114,6 @@ p, h1, h2, h3, h4, h5 {
   transition: opacity .5s;
 }
 
-.searchbar:hover {
-  cursor: pointer;
-}
-
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -178,13 +174,6 @@ p, h1, h2, h3, h4, h5 {
               linear-gradient(263deg, rgb(105, 179, 201), rgba(0,0,255,0) 80%);
 }
 
-.home__header {
-  display: none;
-  font-size: 4rem;
-  color: var(--color-000);
-
-}
-
 .brand {
   z-index: 3;
   position: fixed;
@@ -196,11 +185,8 @@ p, h1, h2, h3, h4, h5 {
   height: 3rem;
 }
 
-.brand:hover {
-  cursor: pointer;
-}
-
 .console {
+  white-space: pre;
   position: relative;
   display: flex;
   flex-direction: column;
