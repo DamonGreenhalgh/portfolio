@@ -1,4 +1,5 @@
 .contact {
+    position: relative;
     scroll-snap-align: center;
     width: var(--global-width);
     margin: 0 auto;
@@ -62,6 +63,17 @@
     gap: 1rem;
 }
 
+.socials {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    width: 4rem;
+    left: 1rem;
+    top: 6rem;
+}
+
 /* Phones */
 @media only screen and (max-device-width: 900px)  {
 
@@ -71,6 +83,14 @@
 
     .contact__row {
         flex-direction: column;
+    }
+
+    .socials {
+        flex-direction: row;
+        justify-content: center;
+        top: calc(100% + 1rem);
+        left: 0;
+        width: 100%;
     }
 
 }

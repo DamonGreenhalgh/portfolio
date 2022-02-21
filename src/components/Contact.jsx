@@ -1,9 +1,20 @@
 import './Contact.css';
 import Divider from './Divider';
+import { 
+    FaGithub,
+    FaLinkedinIn
+} from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+
 
 const Contact = () => {
     return (
         <form className="contact" action="https://public.herotofu.com/v1/5adb50a0-91ea-11ec-8462-6960be7ce578" method="post">
+            <div className="socials">
+                <a href="https://github.com/DamonGreenhalgh"><FaGithub size="2em" /></a>
+                <a href="https://www.linkedin.com/in/damon-greenhalgh-2a11b6191/" ><FaLinkedinIn size="2em" /></a>
+                <a href="mailto: damonligreenhalgh@gmail.com"><MdEmail size="2em" /></a>
+            </div>
             <h2 className="contact__header">Let's Talk!</h2>
             <Divider isHorizontal={true} />
             <div className="contact__row">

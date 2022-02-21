@@ -253,14 +253,13 @@ p, h1, h2, h3, h4, h5 {
   animation: scroll-down 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.filler {
+.sidebar {
   position: absolute;
   z-index: -1;
   top: 90vh;
   height: calc(100% - 90vh);
   width: calc((100vw - var(--global-width)) / 2 + 8rem);
   min-width: 8rem;
-  /* background-color: var(--color-100); */
   background: linear-gradient(120deg, rgb(203, 228, 192), rgba(255,0,0,0) 80%),
               linear-gradient(210deg, rgb(206, 227, 201), rgba(255,0,0,0) 80%),
               linear-gradient(263deg, rgb(223, 224, 245), rgba(0,255,0,0) 80%),
@@ -293,7 +292,7 @@ p, h1, h2, h3, h4, h5 {
     flex-direction: column-reverse;
   }
 
-  .filler {
+  .sidebar {
     display: none;
   }
 

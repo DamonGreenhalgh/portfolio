@@ -3,7 +3,7 @@
 All changes to the project will be documented within this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-> Started changelog at the end of the project lifecycle, so we begin at [0.8.0].
+> Started changelog at the end of the project lifespan, so we begin at [0.8.0].
 ## Unreleased
 ## [0.8.0] - 2022-02-21
 ### Fixed
@@ -13,3 +13,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Added gradient background to sidebar.
 ### Changed
 - Updated brand icon with a new design.
+- Renamed *'filler'* class to *'sidebar'* for better readability.

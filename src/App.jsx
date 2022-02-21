@@ -129,7 +129,7 @@ function App() {
           </div>
         </div>  
       </div>
-      <div className="filler" />
+      <div className="sidebar" />
       <About />
       <Projects updatePath={setPath} />
       <Contact />
