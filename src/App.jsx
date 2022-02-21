@@ -86,9 +86,6 @@ function App() {
         {isDarkMode ? <MdLightMode size="2.5em" />: <MdDarkMode size="2.5em" />}
       </button>
       <div className="home">
-        <Link to="about">
-          <BsChevronDoubleDown className="scroll-down interactable" size="3em" />
-        </Link>
         <div className="console">
           <div className="titlebar">
             <div className="titlebar__button red" />
@@ -96,7 +93,7 @@ function App() {
             <div className="titlebar__button green" />
           </div>
           <p>
-            Damon Greenhalgh Portfolio [Version 0.4.1]<br />
+            Damon Greenhalgh Portfolio [Version 0.8.0]<br />
             (c) 2022 Damon Greenhalgh. All rights reserved.
           </p>
           <div className="flex">
@@ -110,7 +107,7 @@ function App() {
           <p>Directory of C:\Users\DamonGreenhalgh</p>
           <nav className="flex-column" onMouseLeave={() => setNavLbl("")}>
             <a href="" to="contact" onMouseEnter={() => setNavLbl("Resume.pdf")}>
-              {"28/10/2017  03:15 PM                   Resume.pdf"}
+              {"28/10/2077  03:15 PM                   Resume.pdf"}
             </a>
             <Link to="about" onMouseEnter={() => setNavLbl("cd About")} offset={linkOffset}>
               {"25/12/1999  06:28 PM    <DIR>          About"}
@@ -128,8 +125,12 @@ function App() {
             <div className="waiting-pointer" />
           </div>
         </div>  
+        <Link to="about" offset={linkOffset}>
+          <BsChevronDoubleDown className="scroll-down interactable" size="3em" />
+        </Link>
       </div>
       <div className="sidebar" />
+      <div className="mainbar" />
       <About />
       <Projects updatePath={setPath} />
       <Contact />

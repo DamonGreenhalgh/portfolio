@@ -1,15 +1,11 @@
 import './Projects.css';
 import Divider from './Divider';
+import techJSON from './Tech.json';
 import { useRef, useState } from 'react';
 import { 
     FaGithub,
-    FaHtml5, 
-    FaCss3, 
-    FaReact, 
-    FaJava,
     FaDownload,
     FaFileCode } from 'react-icons/fa';
-import { SiJavascript } from 'react-icons/si';
 import { BsArrowReturnLeft } from 'react-icons/bs';
 import { CgWebsite } from 'react-icons/cg';
 
@@ -31,6 +27,7 @@ import CGOLRules4 from '../images/screenshots/conways-game-of-life/rules-4.png';
 import CGOLRules5 from '../images/screenshots/conways-game-of-life/rules-5.png';
 import CGOLRules6 from '../images/screenshots/conways-game-of-life/rules-6.png';
 import matrixPackageIcon from '../images/matrix-package.png';
+import { tab } from '@testing-library/user-event/dist/tab';
 
 const Projects = (props) => {
     const [currentBlog, setCurrentBlog] = useState([1, 0, 0, 0]);
@@ -42,6 +39,7 @@ const Projects = (props) => {
         "\\Projects\\MatrixPackage"
     ];
     const iconSize = "1.5em";
+    const linkBase = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
 
     // This function is used to set the current project to display.
     // We set '1' at index to set that page visible, and '0' everwhere
@@ -90,20 +88,20 @@ const Projects = (props) => {
                 <div className={currentBlog[1] ? "blog" : "disabled"}>
                     <div className="blog__header">
                         <div className="flex gap-sm">
-                            <FaHtml5 size={iconSize} color="var(--color-html)" title="HTML5" />  
-                            <FaCss3 size={iconSize} color="var(--color-css)" title="CSS3" />  
-                            <SiJavascript size={iconSize} color="var(--color-js)" title="Javascript" />  
-                            <FaReact size={iconSize} color="var(--color-react)" title="ReactJS"/> 
+                            <img src={linkBase + techJSON.html.icon} className="blog__tools" title={techJSON.html.name} alt={techJSON.html.name} />
+                            <img src={linkBase + techJSON.css.icon} className="blog__tools" title={techJSON.css.name} alt={techJSON.css.name} />
+                            <img src={linkBase + techJSON.js.icon} className="blog__tools" title={techJSON.js.name} alt={techJSON.js.name} />
+                            <img src={linkBase + techJSON.reactjs.icon} className="blog__tools" title={techJSON.reactjs.name} alt={techJSON.reactjs.name} />
                         </div>
                         <div className="flex gap-sm">
                             <a href="https://damongreenhalgh.github.io/xivtracker/">
-                                <CgWebsite className="" size={iconSize} title="XIV Tracker"/> 
+                                <CgWebsite size={iconSize} title="XIV Tracker"/> 
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/xivtracker/archive/refs/heads/main.zip">
-                                <FaDownload className="" size={iconSize} title="Download"/>
+                                <FaDownload size={iconSize} title="Download"/>
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/xivtracker">
-                                <FaGithub className="" size={iconSize} title="Github"/>   
+                                <FaGithub size={iconSize} title="Github"/>   
                             </a>
                         </div>
                     </div>
@@ -148,13 +146,13 @@ const Projects = (props) => {
                 {/* Conway's Game of Life */}
                 <div className={currentBlog[2] ? "blog" : "disabled"}>
                     <div className="blog__header">
-                        <FaJava size={iconSize} color="var(--color-html)" title="Java" />  
+                        <img src={linkBase + techJSON.java.icon} className="blog__tools" title={techJSON.java.name} alt={techJSON.java.name} />
                         <div className="flex gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/conways-game-of-life-app/archive/refs/heads/main.zip">
-                                <FaDownload className="" size={iconSize} title="Download"/>
+                                <FaDownload size={iconSize} title="Download"/>
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/conways-game-of-life-app">
-                                <FaGithub className="" size={iconSize} title="Github"/>   
+                                <FaGithub size={iconSize} title="Github"/>   
                             </a>
                         </div>
                     </div>
@@ -177,7 +175,7 @@ const Projects = (props) => {
                         <b>1. </b>Alive nodes<b> die </b>due to loneliness 
                         if there exists<b> 1 or fewer </b>neighbours around it.
                     </p>
-                    <div className="flex gap">
+                    <div className="blog__display">
                         <img src={CGOLRules1} alt="Rule 1 Before Iteration" />
                         <img src={CGOLRules2} alt="Rule 1 After Iteration" />
                     </div>
@@ -185,7 +183,7 @@ const Projects = (props) => {
                         <b>2. </b>Alive nodes<b> die </b>due to overcrowding 
                         if there exists<b> 4 or more </b>neighbours around it.
                     </p>
-                    <div className="flex gap">
+                    <div className="blog__display">
                         <img src={CGOLRules3} alt="Rule 2 Before Iteration" />
                         <img src={CGOLRules4} alt="Rule 2 After Iteration" />
                     </div>
@@ -194,7 +192,7 @@ const Projects = (props) => {
                         repopulation if there exists<b> exactly 3 </b>
                         neighbours around it.
                     </p>
-                    <div className="flex gap">
+                    <div className="blog__display">
                         <img src={CGOLRules5} alt="Rule 3 Before Iteration" />
                         <img src={CGOLRules6} alt="Rule 3 After Iteration" />
                     </div>
@@ -215,13 +213,13 @@ const Projects = (props) => {
                 {/* Matrix Package */}
                 <div className={currentBlog[3] ? "blog" : "disabled"}>
                     <div className="blog__header">
-                        <FaJava size={iconSize} color="var(--color-html)" title="Java" />  
+                        <img src={linkBase + techJSON.java.icon} className="blog__tools" title={techJSON.java.name} alt={techJSON.java.name} />
                         <div className="flex gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/matrix-package/archive/refs/heads/main.zip">
-                                <FaDownload className="" size={iconSize} title="Download"/>
+                                <FaDownload size={iconSize} title="Download"/>
                             </a>
                             <a href="https://github.com/DamonGreenhalgh/matrix-package">
-                                <FaGithub className="" size={iconSize} title="Github"/>   
+                                <FaGithub size={iconSize} title="Github"/>   
                             </a>
                         </div>
                     </div>
@@ -235,6 +233,206 @@ const Projects = (props) => {
                     <Divider isHorizontal={true} />
                     <h4>Fields</h4>
                     <p>The following fields are used in the Matrix.java class.</p>
+                    <table className="blog__table">
+                        <tr>
+                            <th>Type</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>double[][]</td>
+                            <td>matrix</td>
+                            <td>The underlying data structure used to represent the matrix structure</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>rows</td>
+                            <td>The number of rows of the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>columns</td>
+                            <td>The number of columns of the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>int</td>
+                            <td>rank</td>
+                            <td>The rank of the matrix.</td>
+                        </tr>
+                    </table>
+                    <h4>Constructors</h4>
+                    <p>The following constructors can be used to instantiate the matrix object.</p>
+                    <table className="blog__table">
+                        <tr>
+                            <th>Constructor</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Matrix()</td>
+                            <td>This default non-arg constructor, instantiates a 3x3 zero matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>Matrix(int rows, int columns)</td>
+                            <td>This contructor creates a rows x columns zero matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>Matrix(int rows, int columns, MatrixType type)</td>
+                            <td>This constructor creates a rows x columns preset matrix determined by the parameter type.</td>
+                        </tr>
+                        <tr>
+                            <td>Matrix(double[][] array)</td>
+                            <td>This constructor creates an array based on the parameter two-dimensional array.</td>
+                        </tr>
+                    </table>
+                    <h4>Accessors/Mutators</h4>
+                    <p>The following methods can be used to access and modify certain fields of the matrix object.</p>
+                    <table className="blog__table">
+                        <tr>
+                            <th>Accessor/Mutator</th>
+                            <th>Return</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>getNumRows()</td>
+                            <td>int</td>
+                            <td>Returns the rows field.</td>
+                        </tr>
+                        <tr>
+                            <td>getNumColumns()</td>
+                            <td>int</td>
+                            <td>Returns the columns field.</td>
+                        </tr>
+                        <tr>
+                            <td>getRow(int index)</td>
+                            <td>Matrix</td>
+                            <td>Returns the row of a matrix at the given index.</td>
+                        </tr>
+                        <tr>
+                            <td>getColumn(int index)</td>
+                            <td>Matrix</td>
+                            <td>Returns the column of the matrix at the given index.</td>
+                        </tr>
+                        <tr>
+                            <td>getElement(int row, int column)</td>
+                            <td>double</td>
+                            <td>Returns the element at the given parameter index.</td>
+                        </tr>
+                        <tr>
+                            <td>setElement(int row, int column, int value)</td>
+                            <td>void</td>
+                            <td>Sets the element at the parameter index to the new parameter value.</td>
+                        </tr>
+                        <tr>
+                            <td>getRank()</td>
+                            <td>int</td>
+                            <td>Returns the rank field.</td>
+                        </tr>
+                    </table>
+                    <h4>Methods</h4>
+                    <p>Below are the following methods that have been implemented in the Matrix.java class.</p>
+                    <table className="blog__table">
+                        <tr>
+                            <th>Method</th>
+                            <th>Return</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>toString()</td>
+                            <td>String</td>
+                            <td>This method returns a string representation of the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>clone()</td>
+                            <td>String</td>
+                            <td>This method returns a new matrix, which is a clone of the original matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>transpose()</td>
+                            <td>String</td>
+                            <td>This method a new matrix, which is the transpose of the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>multiply(double value)</td>
+                            <td>String</td>
+                            <td>This method multiplies the matrix with the scalar parameter value.</td>
+                        </tr>
+                        <tr>
+                            <td>multiply(Matrix m)</td>
+                            <td>String</td>
+                            <td>This method returns a new matrix, which is the product of the matrix and the parameter. The matrix is right multiplied by the parameter matrix m.</td>
+                        </tr>
+                        <tr>
+                            <td>add(double value)</td>
+                            <td>String</td>
+                            <td>This method adds the scalar parameter value to every element of the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>add(Matrix m)</td>
+                            <td>String</td>
+                            <td>This method adds the parameter matrix to the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>power(int value)</td>
+                            <td>String</td>
+                            <td>This method returns a new matrix, which is the result of the matrix to the power of the parameter value.</td>
+                        </tr>
+                        <tr>
+                            <td>echelonForm(int end)</td>
+                            <td>String</td>
+                            <td>This method reduces the matrix to Reduced Row Echelon Form through the use of Gaussian Elimination.</td>
+                        </tr>
+                        <tr>
+                            <td>join(Matrix m)</td>
+                            <td>String</td>
+                            <td>This method appends the parameter matrix to the end of the matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>submatrix(int[] indices)</td>
+                            <td>String</td>
+                            <td>This method returns a submatrix of the matrix determined by the parameter.</td>
+                        </tr>
+                        <tr>
+                            <td>inverse()</td>
+                            <td>String</td>
+                            <td>This method returns the inverse of the matrix, if it exists.</td>
+                        </tr>
+                        <tr>
+                            <td>solve(Matrix b)</td>
+                            <td>String</td>
+                            <td>This method solves a system of linear equations in the form Ax = b, where A is the matrix, b is the parameter vector and x is the vector to solve. The return value is the vector x.</td>
+                        </tr>
+                        <tr>
+                            <td>determinant()</td>
+                            <td>String</td>
+                            <td>This method returns the determinant of the matrix, if it exists.</td>
+                        </tr>
+                    </table>
+                    <h3>MatrixType Enum</h3>
+                    <Divider isHorizontal={true} />
+                    <p>Below are the following enums for the MatrixType.enum file.</p>
+                    <h4>Enums</h4>
+                    <table className="blog__table">
+                        <tr>
+                            <th>Enum</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>DEFAULT</td>
+                            <td>nxm zero matrix</td>
+                        </tr>
+                        <tr>
+                            <td>IDENTITY</td>
+                            <td>nxn identity matrix.</td>
+                        </tr>
+                        <tr>
+                            <td>RANDOM</td>
+                            <td>nxm matrix with random integers as elements.</td>
+                        </tr>
+                        <tr>
+                            <td>ONE</td>
+                            <td>nxm matrix with integer 1 for all elements.</td>
+                        </tr>
+                    </table>
                 </div>   
             </div>
         </div>

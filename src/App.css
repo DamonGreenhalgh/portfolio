@@ -18,17 +18,9 @@
   --color-yellow: #f4c151;
   --color-red: #ec6a5c;
 
-  --color-python: #ffd23f;
-  --color-java: #f8981d;
-  --color-cpp: #005697;
-  --color-cs: #3a0094;
-  --color-html: #dd4b25;
-  --color-css: #0091d5;
-  --color-js: #f5de19;
-  --color-git: #f05133;
-  --color-gh: #14191e;
-  --color-react: #3dc5e7;
-  --color-electron: #2c2e3a;
+  --color-gradient-1: #b3e5e9;
+  --color-gradient-2: #b4eed6;
+  --color-gradient-3: #a4c4ec;
 
   --global-width: 50rem;
   box-sizing: border-box; 
@@ -37,7 +29,7 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-accent) transparent;
+  scrollbar-color: #79cacf transparent;
   /* scroll-snap-type: y proximity; */
 }
 
@@ -69,6 +61,19 @@ ol, ul {
   margin: 0;
 }
 
+th, td {
+  border: 1px solid var(--color-200);
+  padding: .5rem;
+}
+
+th {
+  background: white;
+}
+
+tr:nth-child(odd) {
+  background: #f6f8fa;
+}
+
 body {
   margin: 0;
   color: var(--color-sub-accent);
@@ -95,6 +100,7 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .searchbar {
+  opacity: 0;
   z-index: 3;
   position: fixed;
   display: flex;
@@ -159,12 +165,11 @@ p, h1, h2, h3, h4, h5 {
   justify-content: center;
   gap: 3rem;
   width: 100%;
-  height: 90vh;
-  background: linear-gradient(27deg, rgb(203, 228, 192), rgba(255,0,0,0) 80%),
-              linear-gradient(120deg, rgb(182, 184, 221), rgba(0,255,0,0) 80%),
-              linear-gradient(263deg, rgb(209, 184, 184), rgba(0,0,255,0) 80%);
+  height: 100vh;
+  background: linear-gradient(250deg,  var(--color-gradient-2), rgba(0,255,0,0) 60%),
+              linear-gradient(160deg,  var(--color-gradient-3), rgba(0,255,0,0) 60%),
+              linear-gradient(to top,  var(--color-gradient-1), rgba(0,255,0,0) 80%);
 }
-
 .brand {
   z-index: 3;
   position: fixed;
@@ -173,7 +178,7 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .brand img {
-  height: 5rem;
+  height: 3rem;
 }
 
 .console {
@@ -248,23 +253,33 @@ p, h1, h2, h3, h4, h5 {
 
 .scroll-down {
   position: absolute;
-  top: calc(90vh - 3em - 4rem);
-  color: var(--color-000);
+  top: calc(100vh - 3em - 5rem);
+  color: var(--color-1000);
   animation: scroll-down 2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .sidebar {
   position: absolute;
   z-index: -1;
-  top: 90vh;
-  height: calc(100% - 90vh);
-  width: calc((100vw - var(--global-width)) / 2 + 8rem);
+  top: 100vh;
+  height: calc(100% - 100vh);
+  width: calc((100vw - var(--global-width)) / 2 + 20rem);
   min-width: 8rem;
-  background: linear-gradient(120deg, rgb(203, 228, 192), rgba(255,0,0,0) 80%),
-              linear-gradient(210deg, rgb(206, 227, 201), rgba(255,0,0,0) 80%),
-              linear-gradient(263deg, rgb(223, 224, 245), rgba(0,255,0,0) 80%),
-              linear-gradient(27deg, rgb(209, 184, 184), rgba(0,0,255,0) 80%);
-  border-right: 1px solid var(--color-shadow);
+  background: linear-gradient(to bottom, var(--color-gradient-1), rgba(255,0,0,0) 80%),
+              linear-gradient(263deg, var(--color-gradient-2), rgba(0,255,0,0) 80%),
+              linear-gradient(27deg, var(--color-gradient-3), rgba(0,0,255,0) 80%);
+}
+
+.mainbar {
+  position: absolute;
+  z-index: -1;
+  top: 100vh;
+  right: 0;
+  height: calc(100% - 100vh);
+  border-radius: 5rem 0 0 0;
+  width: calc(var(--global-width) - 8rem + (100vw - var(--global-width)) / 2);
+  min-width: 8rem;
+  background-color: var(--color-000);
 }
 
 @keyframes scroll-down {
@@ -283,7 +298,7 @@ p, h1, h2, h3, h4, h5 {
 @media only screen and (max-device-width: 900px) {
 
   * {
-    --global-width: calc(100vw - 4rem);
+    --global-width: calc(100vw - 2rem);
   }
 
   .searchbar {
@@ -293,6 +308,10 @@ p, h1, h2, h3, h4, h5 {
   }
 
   .sidebar {
+    display: none;
+  }
+
+  .mainbar {
     display: none;
   }
 

@@ -24,6 +24,7 @@
 }
 
 .about__header {
+    color: var(--color-accent);
     font-size: 3.5rem;
     font-family: 'Consola';
 }

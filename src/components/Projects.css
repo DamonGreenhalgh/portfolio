@@ -81,6 +81,19 @@
     color: var(--color-500);
 }
 
+.blog__display {
+    display: flex;
+    gap: 1rem;
+}
+
+.blog__tools {
+    height: 1.5em;
+}
+
+.blog__table {
+    border-collapse: collapse;
+}
+
 @media only screen and (max-device-width: 900px) {
 
     .projects {
@@ -97,4 +110,12 @@
         width: var(--global-width);
     }
     
+}
+
+@media only screen and (max-device-width: 570px) {
+
+    .blog__display {
+        flex-direction: column;
+    }
+
 }

@@ -16,6 +16,7 @@ const Contact = () => {
                 <a href="mailto: damonligreenhalgh@gmail.com"><MdEmail size="2em" /></a>
             </div>
             <h2 className="contact__header">Let's Talk!</h2>
+            <h3 className="contact__sub-header">Got an interesting idea? Feedback on this site, or projects I've worked on? Send me a message!</h3>
             <Divider isHorizontal={true} />
             <div className="contact__row">
                 <input className="contact__input" name="Name" id="name" type="text" placeholder="Name" required />
