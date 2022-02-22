@@ -8,8 +8,8 @@ import { MdEmail } from 'react-icons/md';
 const Footer = () => {
     const iconSize = "1.5em"
     return (
-        <div className="footer-wrapper">
-            <div className="footer">
+        <div className="footer">
+            <div className="footer__content">
                 <p>
                     Designed and Developed by Damon Greenhalgh<br />
                     © 2022 Damon Greenhalgh. All rights reserved.

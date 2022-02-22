@@ -4,10 +4,14 @@
     width: var(--global-width);
     margin: 0 auto;
     display: flex;
+    gap: 6rem;
+}
+
+.contact__form {
+    display: flex;
     flex-direction: column;
-    text-align: center;
     gap: 2rem;
-    padding-left: 10rem;
+    text-align: center;
 }
 
 .contact__header {
@@ -69,21 +73,19 @@
 }
 
 .socials {
-    position: absolute;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 1rem;
     gap: 1rem;
     width: 4rem;
-    left: 1rem;
-    top: 12.5rem;
 }
 
 /* Phones */
 @media only screen and (max-device-width: 900px)  {
 
     .contact {
-        padding-left: 0;
+        flex-direction: column-reverse;
     }
 
     .contact__row {
@@ -92,10 +94,6 @@
 
     .socials {
         flex-direction: row;
-        justify-content: center;
-        top: calc(100% + 1rem);
-        left: 0;
         width: 100%;
     }
-
 }

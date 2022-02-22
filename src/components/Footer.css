@@ -1,9 +1,9 @@
-.footer-wrapper {
+.footer {
     height: 15rem;
     background: var(--color-150);
 }
 
-.footer {
+.footer__content {
     text-align: center;
     scroll-snap-align: start;
     display: flex;
@@ -16,7 +16,7 @@
 }
 
 @media only screen and (max-device-width: 850px) {
-    .footer {
+    .footer__content {
         font-size: .8rem;
         flex-direction: column;
         justify-content: space-around;

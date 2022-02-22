@@ -1,7 +1,5 @@
-const Divider = (props) => {
-    return (
-        <div className={"divider--" + (props.isHorizontal ? "horizontal" : "vertical")} />
-    );
+const Divider = () => {
+    return (<div className={"divider"} />);
 }
 
 export default Divider;
