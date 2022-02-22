@@ -6,7 +6,7 @@
     justify-content: center;
     gap: 3rem;
     width: 100%;
-    max-width: var(--global-width);
+    max-width: var(--width);
     margin: 0 auto;
 }
 
@@ -25,7 +25,7 @@
     margin: 4.5rem 0 auto 0;
     border-radius: 100%;
     max-height: 15rem;
-    box-shadow: -.5rem 1rem .25rem var(--color-shadow);
+    box-shadow: -.5rem 1rem .25rem var(--shadow-500);
 }
 
 .about__header-text {
@@ -51,7 +51,7 @@
 .about__header-pointer {
     width: 2px;
     height: 4rem;
-    background-color: var(--color-sub-accent);
+    background-color: var(--accent-700);
     animation: waiting 1s .25s infinite;
 }
 

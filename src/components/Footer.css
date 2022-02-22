@@ -1,6 +1,6 @@
 .footer {
     height: 15rem;
-    background: var(--color-150);
+    background: var(--base-600);
 }
 
 .footer__content {
@@ -9,10 +9,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: var(--global-width);
+    width: var(--width);
     height: 100%;
     margin: 0 auto;
-    color: var(--color-500);
+    color: var(--base-800);
 }
 
 @media only screen and (max-device-width: 850px) {

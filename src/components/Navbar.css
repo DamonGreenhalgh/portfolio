@@ -5,21 +5,21 @@
 .searchbar {
     position: fixed;
     z-index: 3;
-    opacity: 1;
+    opacity: 0;
     display: flex;
     flex-direction: column;
     top: 1rem;
-    left: calc((100vw - var(--global-width)) / 2);
+    left: calc((100vw - var(--width)) / 2);
     height: max-content;
     gap: .5rem;
     font-family: 'Consola';
     font-weight: 300;
-    width: var(--global-width);
-    color: var(--color-200);
-    background-color: var(--color-1000);
+    width: var(--width);
+    color: var(--base-700);
+    background-color: var(--base-900);
     border-radius: .5rem;
     padding: 1rem;
-    box-shadow: 0 .5rem 1rem var(--color-shadow);
+    box-shadow: 0 .5rem 1rem var(--shadow-500);
     transition: opacity .5s;
 }
   
@@ -34,17 +34,17 @@
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
-    box-shadow: 0 .5rem 1rem var(--color-shadow);
+    box-shadow: 0 .5rem 1rem var(--shadow-500);
 }
   
 .theme--dark {
-    color: var(--color-1000);
-    background-color: var(--color-000);
+    color: var(--base-900);
+    background-color: var(--base-100);
 }
   
 .theme--light {
-    color: var(--color-000);
-    background-color: var(--color-1000);
+    color: var(--base-100);
+    background-color: var(--base-900);
 }
   
 .brand {
@@ -61,6 +61,17 @@
 
 .searchbar a:hover {
     cursor: pointer;
-    background-color: var(--color-100);
-    color: var(--color-1000);
+    background-color: var(--base-500);
+    color: var(--base-900);
 }
+
+/* Phones */
+@media only screen and (max-device-width: 900px) {
+  
+    .searchbar {
+      top: auto;
+      bottom: 1rem;
+      flex-direction: column-reverse;
+    }
+  
+  }

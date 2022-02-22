@@ -8,9 +8,9 @@
     gap: 3rem;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(250deg,  var(--color-gradient-2), rgba(0,255,0,0) 60%),
-                linear-gradient(160deg,  var(--color-gradient-3), rgba(0,255,0,0) 60%),
-                linear-gradient(to top,  var(--color-gradient-1), rgba(0,255,0,0) 80%);
+    background: linear-gradient(250deg,  var(--gradient-500), rgba(0,255,0,0) 60%),
+                linear-gradient(160deg,  var(--gradient-600), rgba(0,255,0,0) 60%),
+                linear-gradient(to top,  var(--gradient-400), rgba(0,255,0,0) 80%);
 }
   
   
@@ -19,16 +19,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    width: var(--global-width);
+    width: var(--width);
     height: 30rem;
-    color: var(--color-200);
-    background-color: var(--color-1000);
+    color: var(--base-700);
+    background-color: var(--base-900);
     padding: 3rem 1rem 1rem 1rem;
     border-radius: .5rem;
     font-family: 'Consola';
     font-weight: 300;
     animation: fade-in 1s ease-in-out;
-    box-shadow: 0 .5rem 1rem var(--color-shadow);
+    box-shadow: 0 .5rem 1rem var(--shadow-500);
     gap: 1rem;
     margin: 1rem;
 }
@@ -44,7 +44,7 @@
     width: 100%;
     border-radius: .25rem .25rem 0 0;
     height: 2rem;
-    background-color: var(--color-100);
+    background-color: var(--base-500);
 }
   
 .titlebar__button {
@@ -56,8 +56,8 @@
   
 .console a:hover {
     cursor: pointer;
-    background-color: var(--color-100);
-    color: var(--color-1000);
+    background-color: var(--base-500);
+    color: var(--base-900);
 }
 
 @media only screen and (max-device-width: 900px) {

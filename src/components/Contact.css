@@ -1,7 +1,7 @@
 .contact {
     position: relative;
     scroll-snap-align: center;
-    width: var(--global-width);
+    width: var(--width);
     margin: 0 auto;
     display: flex;
     gap: 6rem;
@@ -19,7 +19,7 @@
 }
 
 .contact__sub-header {
-    color: var(--color-accent-mid);
+    color: var(--accent-600);
     font-weight: 600;
 }
 
@@ -32,17 +32,17 @@
 .contact__input {
     padding: 1rem;
     font-size: 1rem;
-    color: var(--color-sub-accent);
-    background-color: var(--color-100);
+    color: var(--accent-700);
+    background-color: var(--base-500);
     width: 100%;
     border: none;
-    outline: 1px solid var(--color-shadow);
+    outline: 1px solid var(--shadow-500);
     border-radius: .5rem;
 }
 
 .contact__input:focus {
-    outline: 1px solid var(--color-accent-light);
-    color: var(--color-accent);
+    outline: 1px solid var(--accent-400);
+    color: var(--accent-500);
 }
 
 .contact__message {
@@ -54,8 +54,8 @@
 .contact__button {
     border: none;
     border-radius: .5rem;
-    color: var(--color-000);
-    background-color: var(--color-accent);
+    color: var(--base-100);
+    background-color: var(--accent-500);
     font-size: 1.5rem;
     font-weight: bold;
     font-family: -apple-system,BlinkMacSystemFont,

@@ -13,7 +13,7 @@ function App() {
   const [path, setPath] = useState("");
   const offset = -200;
   const isMobile = window.innerWidth < 900 ? true : false;
-  const [displayNav, setDisplayNav] = useState(true);
+  const [displayNav, setDisplayNav] = useState(false);
 
   // This 'onscroll' listener is used for changing the navigation display 
   // depending on where the user is on the page.
