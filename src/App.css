@@ -1,22 +1,4 @@
 * {
-  --base-100: #ffffff; 
-  --base-500: #f5f7f9; 
-  --base-600: #edf0f3;
-  --base-700: #c6d0d8;
-  --base-800: #6f7a86;
-  --base-900: #221f2b;
-  
-  --accent-400: #a0a2f8;
-  --accent-500: #585bd5;
-  --accent-600: #5152a7;
-  --accent-700: #3c3d6b;
-
-  --shadow-500: rgba(42, 41, 124, .15);
-
-  --gradient-400: #c5e5e6;
-  --gradient-500: #c7ebdd;
-  --gradient-600: #b6cce7;
-
   --width: 50rem;
 
   box-sizing: border-box; 
@@ -57,7 +39,7 @@ ol, ul {
 }
 
 th, td {
-  border: 1px solid var(--base-700);
+  border: 1px solid var(--base-600);
   padding: .5rem;
 }
 
@@ -76,7 +58,7 @@ p, h1, h2, h3, h4, h5 {
 body {
   margin: 0;
   color: var(--accent-700);
-  background-color: var(--base-100);
+  background-color: var(--base-300);
   font-family: -apple-system,BlinkMacSystemFont,
   "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji",
   "Segoe UI Emoji";
@@ -92,11 +74,11 @@ body {
 .divider {
   width: 100%;
   height: 1px;
-  background-color: var(--base-700);
+  background-color: var(--base-600);
 }
 
 .console__text {
-  color: var(--base-500);
+  color: var(--base-400);
   font-weight: 500;
 }
 
@@ -104,7 +86,7 @@ body {
   margin: auto auto 0 0;
   width: .6rem;
   height: .25rem;
-  background-color: var(--base-500);
+  background-color: var(--base-400);
   animation-name: waiting;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -114,7 +96,7 @@ body {
   position: absolute;
   opacity: 0;
   top: calc(100vh - 3em - 5rem);
-  color: var(--base-900);
+  color: var(--base-800);
   animation: scroll-down 2s 1s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -139,7 +121,7 @@ body {
   border-radius: 2rem 0 0 0;
   width: calc(var(--width) - 8rem + (100vw - var(--width)) / 2);
   min-width: 8rem;
-  background-color: var(--base-100);
+  background-color: var(--base-300);
 }
 
 @font-face {

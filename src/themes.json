@@ -1,0 +1,40 @@
+{
+    "light": {
+        "name": "light",
+        "colors": {
+            "--base-300": "#ffffff",
+            "--base-400" : "#f5f7f9",
+            "--base-500" : "#edf0f3",
+            "--base-600" : "#c6d0d8",
+            "--base-700" : "#6f7a86",
+            "--base-800" : "#221f2b",
+            "--accent-400" : "#a0a2f8",
+            "--accent-500" : "#585bd5",
+            "--accent-600" : "#5152a7",
+            "--accent-700" : "#3c3d6b",
+            "--shadow-500" : "rgba(42, 41, 124, .15)",
+            "--gradient-400" : "#c5e5e6",
+            "--gradient-500" : "#c7ebdd",
+            "--gradient-600" : "#b6cce7"
+        }
+    },
+    "dark": {
+        "name": "dark",
+        "colors": {
+            "--base-300": "#1f1e22",
+            "--base-400" : "#2a2931",
+            "--base-500" : "#18191b",
+            "--base-600" : "#33373a",
+            "--base-700" : "#36363b",
+            "--base-800" : "#dde6e7",
+            "--accent-400" : "#9f91ec",
+            "--accent-500" : "#624fca",
+            "--accent-600" : "#9394e5",
+            "--accent-700" : "#dcdcf3",
+            "--shadow-500" : "rgba(7, 7, 14, 0.5)",
+            "--gradient-400" : "#8036bd",
+            "--gradient-500" : "#5134b9",
+            "--gradient-600" : "#333cbe"
+        }
+    }
+}

@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', listenScrollEvent);
   }, [])
-
+  
   return (
     <div className="app">
       <Navbar isMobile={isMobile} offset={offset} path={path} displayNav={displayNav}/>

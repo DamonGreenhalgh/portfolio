@@ -7,12 +7,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## Unreleased
 
 
-## [0.8.1] - 2022-02-22
+## [0.9.0] - 2022-02-22
 ### Added
+- Themes (Dark and Light).
 - Added animations for console and scroll down helper.
 - Added `<tbody>` and `<thead>` tags to avoid DOM tree errors.
-- Added pointer to 
+- Added pointer to the end of the about me section.
 ### Changed
+- CSS variables names being more logical.
 - Refactoring of navbar and home components.
 - Changed animation type of the scroll down helper.
 

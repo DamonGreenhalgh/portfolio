@@ -1,6 +1,7 @@
 import './Navbar.css';
+import themesJSON from '../themes.json';
 import logo from '../images/logo.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from "react-scroll";
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
@@ -14,6 +15,24 @@ const Navbar = (props) => {
     // Determine the appropriate orientation of the expand/contract icons.
     const expandIcon = props.isMobile ? <BsChevronDown /> : <BsChevronUp />;
     const contractIcon = props.isMobile ? <BsChevronUp /> : <BsChevronDown />;
+
+
+    const changeTheme = () => {
+
+        setIsDarkMode(isDarkMode ? false : true)
+        const type = isDarkMode ? "dark" : "light";
+        
+        const keys = Object.keys(themesJSON[type].colors);
+        const values = Object.values(themesJSON[type].colors)
+        for (let i = 0; i < 14; i++) {
+            document.documentElement.style.setProperty(keys[i], values[i]);
+        }
+
+    }
+
+    useEffect(() => {
+        changeTheme();
+    }, [])
 
     return (
         <nav className="navbar">
@@ -47,7 +66,7 @@ const Navbar = (props) => {
             </div>
             <button 
                 className={"theme-toggle theme--" + (isDarkMode ? "dark" : "light")} 
-                onClick={() => setIsDarkMode(isDarkMode ? false : true)}
+                onClick={changeTheme}
             >
                 {isDarkMode ? <MdLightMode size="2.5em" />: <MdDarkMode size="2.5em" />}
             </button>

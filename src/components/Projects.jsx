@@ -1,6 +1,6 @@
 import './Projects.css';
 import Divider from './Divider';
-import techJSON from './Tech.json';
+import techJSON from '../techstack.json';
 import { useRef, useState } from 'react';
 import { 
     FaGithub,
