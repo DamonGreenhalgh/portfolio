@@ -1,6 +1,7 @@
 import './Navbar.css';
 import themesJSON from '../themes.json';
-import logo from '../images/logo.png';
+import darkLogo from '../images/logo-dark.png';
+import lightLogo from '../images/logo-light.png';
 import { useEffect, useState } from 'react';
 import { Link } from "react-scroll";
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
@@ -36,7 +37,7 @@ const Navbar = (props) => {
 
     return (
         <nav className="navbar">
-            <a href="" className="brand interactable"><img src={logo} /></a>
+            <a href="" className="brand interactable"><img src={isDarkMode ? lightLogo : darkLogo} /></a>
             <div 
                 className="searchbar interactable" 
                 onClick={() => setExpandNavbar(expandNavbar ? false : true)}
@@ -65,10 +66,10 @@ const Navbar = (props) => {
             </div>
             </div>
             <button 
-                className={"theme-toggle theme--" + (isDarkMode ? "dark" : "light")} 
+                className="theme" 
                 onClick={changeTheme}
             >
-                {isDarkMode ? <MdLightMode size="2.5em" />: <MdDarkMode size="2.5em" />}
+                {isDarkMode ? <MdDarkMode size="2.5em" /> : <MdLightMode size="2.5em" />}
             </button>
       </nav>
     );

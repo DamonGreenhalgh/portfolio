@@ -23,7 +23,7 @@
     transition: opacity .5s;
 }
   
-.theme-toggle {
+.theme {
     top: 1rem;
     right: 1rem;
     position: fixed;
@@ -34,17 +34,9 @@
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
-    box-shadow: 0 .5rem 1rem var(--shadow-500);
-}
-  
-.theme--dark {
-    color: var(--base-800);
-    background-color: var(--base-300);
-}
-  
-.theme--light {
     color: var(--base-300);
     background-color: var(--base-800);
+    box-shadow: 0 .5rem 1rem var(--shadow-500);
 }
   
 .brand {

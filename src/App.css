@@ -1,6 +1,5 @@
 * {
   --width: 50rem;
-
   box-sizing: border-box; 
 }
 
@@ -44,11 +43,11 @@ th, td {
 }
 
 th {
-  background: white;
+  background: var(--base-300);
 }
 
 tr:nth-child(odd) {
-  background: #f6f8fa;
+  background: var(--base-400);
 }
 
 p, h1, h2, h3, h4, h5 {
