@@ -2,8 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
-    background-color: var(--accent-500);
+    height: 100vh;
+    /* background-color: var(--accent-500); */
+    background-image: url('../images/home.png');
+    background-position: center;
+    background-size: cover;
 }
   
 .console {
@@ -55,7 +58,7 @@
 .scroll-down {
     position: absolute;
     opacity: 0;
-    top: calc(80vh - 3em - 5rem);
+    top: calc(100vh - 3em - 5rem);
     color: white;
     animation: scroll-down 2s 1s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
