@@ -1,9 +1,10 @@
 .projects {
-    display: flex;
     position: relative;
-    margin: 0 auto;
-    width: var(--width);
-    height: max-content;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: var(--base-400);
+    padding: 5rem 0;
     gap: 4rem;
 }
 
@@ -12,7 +13,6 @@
 }
 
 .projects__panel {
-    scroll-snap-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -108,6 +108,7 @@
 
     .blog {
         width: var(--width);
+        margin: auto;
     }
     
 }

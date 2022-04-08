@@ -1,10 +1,8 @@
 import './Navbar.css';
 import themesJSON from '../themes.json';
-import darkLogo from '../images/logo-dark.png';
-import lightLogo from '../images/logo-light.png';
+import brand from '../images/logo.png';
 import { useEffect, useState } from 'react';
 import { Link } from "react-scroll";
-import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 const Navbar = (props) => {
@@ -12,11 +10,6 @@ const Navbar = (props) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [command, setCommand] = useState("");
     let basePath = props.isMobile ? "C:" : "C:\\Users\\DamonGreenhalgh";
-
-    // Determine the appropriate orientation of the expand/contract icons.
-    const expandIcon = props.isMobile ? <BsChevronDown /> : <BsChevronUp />;
-    const contractIcon = props.isMobile ? <BsChevronUp /> : <BsChevronDown />;
-
 
     const changeTheme = () => {
 
@@ -37,20 +30,19 @@ const Navbar = (props) => {
 
     return (
         <nav className="navbar">
-            <a href="" className="brand interactable"><img src={isDarkMode ? lightLogo : darkLogo} /></a>
+            <a href="" className="brand interactable"><img src={brand} /></a>
             <div 
                 className="searchbar interactable" 
-                onClick={() => setExpandNavbar(expandNavbar ? false : true)}
+                onMouseEnter={() => setExpandNavbar(expandNavbar ? false : true)}
                 onMouseLeave={() => {setCommand(""); setExpandNavbar(false)}}
                 style={{opacity: props.displayNav ? "1" : "0"}}
             >
-            <div className="flex center-items">
+            <div className="row align-center">
                 <p>{basePath + props.path + ">"}</p>  
                 <p className="console__text">{command}</p>
                 <div className="waiting-pointer" />
-                {expandNavbar ? expandIcon : contractIcon}
             </div>
-            <div className={expandNavbar ? "flex-column" : "disabled"} >
+            <div className={expandNavbar ? "options options--active" : "options"} >
                 <Link to="home" onMouseEnter={() => setCommand("cd ..")}>
                     {"cd .."}
                 </Link>
@@ -69,7 +61,7 @@ const Navbar = (props) => {
                 className="theme" 
                 onClick={changeTheme}
             >
-                {isDarkMode ? <MdDarkMode size="2.5em" /> : <MdLightMode size="2.5em" />}
+                {isDarkMode ? <MdDarkMode size="2em" /> : <MdLightMode size="2em" />}
             </button>
       </nav>
     );

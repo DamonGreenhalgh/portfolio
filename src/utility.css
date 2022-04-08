@@ -1,45 +1,101 @@
-.flex {
-    display: flex;
-  }
-  
-  .flex-column {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .center-items {
-    align-items: center;
-  }
-  
-  .center-content {
-    justify-content: center;
-  }
-  
-  .gap-sm {
-    gap: .5rem;
-  }
-  
-  .gap {
-    gap: 1rem;
-  }
-  
-  .gap-md {
-    gap: 2rem;
-  }
-  
-  .relative {
-    position: relative;
-  }
-  
-  .absolute {
-    position: absolute;
-  }
-  
-  .disabled {
-    display: none;
-  }
+.row {
+  display: flex;
+  flex-direction: row;
+}
 
-  .interactable:hover {
-    cursor: pointer;
-  }
-  
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.gap-sm {
+  gap: .5rem
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.gap-lg {
+  gap: 2rem;
+}
+
+.pad-sm {
+  padding: .5rem;
+}
+
+.pad {
+  padding: 1rem;
+}
+
+.pad-lg {
+  padding: 2rem;
+}
+
+.radius-sm {
+  border-radius: .25rem;
+}
+
+.radius {
+  border-radius: .5rem;
+}
+
+.rounded {
+  border-radius: 100%;
+}
+
+.interactable:hover {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.disabled {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,23 +1,15 @@
-.footer {
-    height: 15rem;
-    background: var(--base-500);
-}
 
-.footer__content {
-    text-align: center;
-    scroll-snap-align: start;
+.footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: var(--width);
-    height: 100%;
-    margin: 0 auto;
+    padding: 5rem calc((100vw - var(--width)) / 2);
+    background-color: var(--base-500);
     color: var(--base-700);
+    font-size: .8rem;
 }
 
 @media only screen and (max-device-width: 850px) {
     .footer__content {
-        font-size: .8rem;
         flex-direction: column;
         justify-content: space-around;
     }

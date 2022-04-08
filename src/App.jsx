@@ -42,8 +42,6 @@ function App() {
       <Projects setPath={setPath} />
       <Contact />
       <Footer />
-      <div className="sidebar" />
-      <div className="mainbar" />
     </div>
   );
 }

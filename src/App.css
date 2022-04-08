@@ -5,8 +5,7 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-500) transparent;
+  /* scroll-snap-type: y mandatory; */
 }
 
 button {
@@ -67,7 +66,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 20rem;
 }
 
 .divider {
@@ -89,38 +87,6 @@ body {
   animation-name: waiting;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-}
-
-.scroll-down {
-  position: absolute;
-  opacity: 0;
-  top: calc(100vh - 3em - 5rem);
-  color: var(--base-800);
-  animation: scroll-down 2s 1s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.sidebar {
-  position: absolute;
-  z-index: -1;
-  top: 100vh;
-  height: calc(100% - 100vh);
-  width: calc((100vw - var(--width)) / 2 + 10rem);
-  min-width: 8rem;
-  background: linear-gradient(to bottom, var(--gradient-400), rgba(255,0,0,0) 80%),
-              linear-gradient(263deg, var(--gradient-500), rgba(0,255,0,0) 80%),
-              linear-gradient(27deg, var(--gradient-600), rgba(0,0,255,0) 80%);
-}
-
-.mainbar {
-  position: absolute;
-  z-index: -1;
-  top: 100vh;
-  right: 0;
-  height: calc(100% - 100vh);
-  border-radius: 2rem 0 0 0;
-  width: calc(var(--width) - 8rem + (100vw - var(--width)) / 2);
-  min-width: 8rem;
-  background-color: var(--base-300);
 }
 
 @font-face {
@@ -152,14 +118,6 @@ body {
 
   * {
     --width: calc(100vw - 2rem);
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .mainbar {
-    display: none;
   }
 
 }

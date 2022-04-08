@@ -86,13 +86,13 @@ const Projects = (props) => {
                 {/* XIV Tracker */}
                 <div className={currentBlog[1] ? "blog" : "disabled"}>
                     <div className="blog__header">
-                        <div className="flex gap-sm">
+                        <div className="row gap-sm">
                             <img src={linkBase + techJSON.html.icon} className="blog__tools" title={techJSON.html.name} alt={techJSON.html.name} />
                             <img src={linkBase + techJSON.css.icon} className="blog__tools" title={techJSON.css.name} alt={techJSON.css.name} />
                             <img src={linkBase + techJSON.js.icon} className="blog__tools" title={techJSON.js.name} alt={techJSON.js.name} />
                             <img src={linkBase + techJSON.reactjs.icon} className="blog__tools" title={techJSON.reactjs.name} alt={techJSON.reactjs.name} />
                         </div>
-                        <div className="flex gap-sm">
+                        <div className="row gap-sm">
                             <a href="https://damongreenhalgh.github.io/xivtracker/">
                                 <CgWebsite size={iconSize} title="XIV Tracker"/> 
                             </a>
@@ -146,7 +146,7 @@ const Projects = (props) => {
                 <div className={currentBlog[2] ? "blog" : "disabled"}>
                     <div className="blog__header">
                         <img src={linkBase + techJSON.java.icon} className="blog__tools" title={techJSON.java.name} alt={techJSON.java.name} />
-                        <div className="flex gap-sm">
+                        <div className="row gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/conways-game-of-life-app/archive/refs/heads/main.zip">
                                 <FaDownload size={iconSize} title="Download"/>
                             </a>
@@ -213,7 +213,7 @@ const Projects = (props) => {
                 <div className={currentBlog[3] ? "blog" : "disabled"}>
                     <div className="blog__header">
                         <img src={linkBase + techJSON.java.icon} className="blog__tools" title={techJSON.java.name} alt={techJSON.java.name} />
-                        <div className="flex gap-sm">
+                        <div className="row gap-sm">
                             <a href="https://github.com/DamonGreenhalgh/matrix-package/archive/refs/heads/main.zip">
                                 <FaDownload size={iconSize} title="Download"/>
                             </a>

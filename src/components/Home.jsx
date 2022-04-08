@@ -18,16 +18,16 @@ const Home = (props) => {
             Damon Greenhalgh Portfolio [Version 0.8.0]<br />
             (c) 2022 Damon Greenhalgh. All rights reserved.
           </p>
-          <div className="flex">
+          <div className="row">
             <p>C:\Users{">"}</p>
             <p className="console__text">cd DamonGreenhalgh</p>
           </div>
-          <div className="flex">
+          <div className="row">
             <p>C:\Users\DamonGreenhalgh{">"}</p>
             <p className="console__text">dir</p>
           </div>
           <p>Directory of C:\Users\DamonGreenhalgh</p>
-          <nav className="flex-column">
+          <nav className="col">
             <a href="" to="contact" onMouseEnter={() => setCommand("Resume.pdf")}>
               {"28/10/2077  03:15 PM                   Resume.pdf"}
             </a>
@@ -41,7 +41,7 @@ const Home = (props) => {
               {"14/08/2004  07:04 AM    <DIR>          Contact"}
             </Link>
           </nav>
-          <div className="flex">
+          <div className="row">
             <p>C:\Users\DamonGreenhalgh{">"}</p>
             <p className="console__text">{command}</p>
             <div className="waiting-pointer" />

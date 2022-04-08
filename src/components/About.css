@@ -1,36 +1,17 @@
 .about {
-    scroll-snap-align: center;
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    width: 100%;
-    max-width: var(--width);
-    margin: 0 auto;
-}
-
-.about__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.about__header {
-    display: flex;
-    width: 100%;
+    width: var(--width);
+    margin: auto;
+    gap: 5rem;
+    padding: 5rem 0;
 }
 
 .about__portrait {
-    margin: 4.5rem 0 auto 0;
-    border-radius: 100%;
+    margin-top: 5rem;
     max-height: 15rem;
-    box-shadow: -.5rem 1rem .25rem var(--shadow-500);
-}
-
-.about__header-text {
-    font-family: 'Consola';
-    font-size: 3.5rem;
+    max-width: 15rem;
+    box-shadow: 0 .5rem 1rem var(--shadow-500);
 }
 
 .techstack {
@@ -48,6 +29,11 @@
     max-height: 1.5rem;
 }
 
+.about__header-text {
+    font-family: 'Consola';
+    font-size: 3.5rem;
+}
+
 .about__header-pointer {
     width: 2px;
     height: 4rem;
@@ -59,10 +45,6 @@
 
     .about {
         flex-direction: column;
-    }
-
-    .about__header {
-        justify-content: center;
     }
 
     .about__header-text {

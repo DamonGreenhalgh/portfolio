@@ -8,8 +8,8 @@ const About = () => {
     return (
         <div className="about" id="about">
             <img src={portrait} className="about__portrait" alt="Portrait" />
-            <div className="about__text">
-                <div className="about__header">
+            <div className="col gap">
+                <div className="row max-width">
                     <h2 className="about__header-text">"Hello, World!"</h2>
                     <div className="about__header-pointer" />
                 </div>

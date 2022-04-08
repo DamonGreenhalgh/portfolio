@@ -9,12 +9,12 @@
             "--base-700" : "#6f7a86",
             "--base-800" : "#221f2b",
             "--accent-400" : "#a0a2f8",
-            "--accent-500" : "#585bd5",
+            "--accent-500" : "#404eed",
             "--accent-600" : "#5152a7",
             "--accent-700" : "#3c3d6b",
             "--shadow-500" : "rgba(42, 41, 124, .15)",
             "--gradient-400" : "#c5e5e6",
-            "--gradient-500" : "#c7ebdd",
+            "--gradient-500" : "#404eed",
             "--gradient-600" : "#b6cce7"
         }
     },
@@ -28,7 +28,7 @@
             "--base-700" : "#343442",
             "--base-800" : "#ffffff",
             "--accent-400" : "#9f91ec",
-            "--accent-500" : "#614bdd",
+            "--accent-500" : "#404eed",
             "--accent-600" : "#9394e5",
             "--accent-700" : "#dcdcf3",
             "--shadow-500" : "rgba(15, 15, 19, 0.5)",

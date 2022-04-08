@@ -7,20 +7,32 @@
     z-index: 3;
     opacity: 0;
     display: flex;
-    flex-direction: column;
-    top: 1rem;
-    left: calc((100vw - var(--width)) / 2);
+    flex-direction: column-reverse;
+    bottom: 1rem;
+    left: 1rem;
     height: max-content;
-    gap: .5rem;
     font-family: 'Consola';
     font-weight: 300;
-    width: var(--width);
     color: var(--base-600);
     background-color: var(--base-800);
     border-radius: .5rem;
     padding: 1rem;
     box-shadow: 0 .5rem 1rem var(--shadow-500);
     transition: opacity .5s;
+}
+
+.options {
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    transition: height .5s;
+}
+
+.options--active {
+    height: 6rem;
 }
   
 .theme {
@@ -31,8 +43,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 100%;
     color: var(--base-300);
     background-color: var(--base-800);
@@ -56,14 +68,3 @@
     background-color: var(--base-400);
     color: var(--base-800);
 }
-
-/* Phones */
-@media only screen and (max-device-width: 900px) {
-  
-    .searchbar {
-      top: auto;
-      bottom: 1rem;
-      flex-direction: column-reverse;
-    }
-  
-  }
