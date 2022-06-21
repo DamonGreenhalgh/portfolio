@@ -1,6 +1,9 @@
 .about {
+    scroll-snap-align: center;
+    height: 100vh;
     position: relative;
     display: flex;
+    align-items: center;
     width: var(--width);
     margin: auto;
     gap: 5rem;
@@ -8,10 +11,12 @@
 }
 
 .about__portrait {
-    margin-top: 5rem;
+    align-self: flex-start;
     max-height: 15rem;
     max-width: 15rem;
-    box-shadow: 0 .5rem 1rem var(--shadow-500);
+    margin-top: 8.5rem;
+    border: 1rem solid transparent;
+    outline: 1px solid var(--base-600);
 }
 
 .techstack {
@@ -35,7 +40,8 @@
 }
 
 .about__header-pointer {
-    width: 2px;
+    margin-left: auto;
+    width: .75rem;
     height: 4rem;
     background-color: var(--accent-700);
     animation: waiting 1s .25s infinite;

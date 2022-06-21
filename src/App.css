@@ -1,11 +1,22 @@
 * {
   --width: 50rem;
   box-sizing: border-box; 
+  --base-300: #ffffff;
+  --base-400 : #f1f4ff;
+  --base-500 : #edf0f3;
+  --base-600 : #c6d0d8;
+  --base-700 : #6f7a86;
+  --base-800 : #221f2b;
+  --accent-400 : #a0a2f8;
+  --accent-500 : #404eed;
+  --accent-600 : #5152a7;
+  --accent-700 : #3c3d6b;
+  --shadow-500 : rgba(42, 41, 124, .15);
 }
 
 html {
   scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
 }
 
 button {
@@ -34,19 +45,6 @@ b {
 
 ol, ul {
   margin: 0;
-}
-
-th, td {
-  border: 1px solid var(--base-600);
-  padding: .5rem;
-}
-
-th {
-  background: var(--base-300);
-}
-
-tr:nth-child(odd) {
-  background: var(--base-400);
 }
 
 p, h1, h2, h3, h4, h5 {
@@ -118,6 +116,10 @@ body {
 
   * {
     --width: calc(100vw - 2rem);
+  }
+
+  html {
+    scroll-snap-type: none;
   }
 
 }

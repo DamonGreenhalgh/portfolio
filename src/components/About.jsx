@@ -1,6 +1,6 @@
 import './About.css';
 import portrait from '../images/portrait.png';
-import techJSON from '../techstack.json';
+import techJSON from '../data/techstack.json';
 import Divider from './Divider';
 
 const About = () => {
