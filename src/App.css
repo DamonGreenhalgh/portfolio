@@ -1,12 +1,14 @@
 * {
   --width: 50rem;
   box-sizing: border-box; 
+  --transparent-400: #f5f7f93a;
   --base-300: #ffffff;
-  --base-400 : #f1f4ff;
+  --base-400 : #f5f7f9;
   --base-500 : #edf0f3;
   --base-600 : #c6d0d8;
   --base-700 : #6f7a86;
   --base-800 : #221f2b;
+  --accent-300 : #d7d8e6;
   --accent-400 : #a0a2f8;
   --accent-500 : #404eed;
   --accent-600 : #5152a7;

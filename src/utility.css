@@ -1,101 +1,113 @@
 .row {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .col {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrap {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .align-center {
-  align-items: center;
+    align-items: center;
 }
 
 .justify-center {
-  justify-content: center;
+    justify-content: center;
 }
 
 .justify-end {
-  justify-content: end;
+    justify-content: end;
 }
 
 .justify-between {
-  justify-content: space-between;
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.margin {
+    margin: auto;
 }
 
 .max-width {
-  width: 100%;
+    width: 100%;
+}
+
+.gap-xsm {
+    gap: .25rem;
 }
 
 .gap-sm {
-  gap: .5rem
+    gap: .5rem
 }
 
 .gap {
-  gap: 1rem;
+    gap: 1rem;
 }
 
 .gap-lg {
-  gap: 2rem;
+    gap: 2rem;
 }
 
 .pad-sm {
-  padding: .5rem;
+    padding: .5rem;
 }
 
 .pad {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .pad-lg {
-  padding: 2rem;
+    padding: 2rem;
 }
 
 .radius-sm {
-  border-radius: .25rem;
+    border-radius: .25rem;
 }
 
 .radius {
-  border-radius: .5rem;
+    border-radius: .5rem;
 }
 
 .rounded {
-  border-radius: 100%;
+    border-radius: 100%;
 }
 
 .interactable:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .relative {
-  position: relative;
+    position: relative;
 }
 
 .absolute {
-  position: absolute;
+    position: absolute;
 }
 
 .disabled {
-  display: none !important;
+    display: none !important;
 }
 
 .hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .blur {
-  filter: blur(5px);
+    filter: blur(5px);
 }
 
 .text-end {
-  text-align: end;
+    text-align: end;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }

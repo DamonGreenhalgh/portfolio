@@ -35,12 +35,24 @@
         "name": "Github",
         "icon": "/github/github-original.svg"
     },
-    "reactjs" : {
-        "name": "ReactJS",
+    "react" : {
+        "name": "React",
         "icon": "/react/react-original.svg"
     },
     "electronjs": {
         "name": "ElectronJS",
         "icon": "/electron/electron-original.svg"
+    },
+    "firebase": {
+        "name": "Firebase",
+        "icon": "/firebase/firebase-plain.svg"
+    },
+    "mongodb": {
+        "name": "MongoDB",
+        "icon": "/mongodb/mongodb-original.svg"
+    },
+    "sass": {
+        "name": "Sass",
+        "icon": "/sass/sass-original.svg"
     }
 }
