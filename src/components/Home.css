@@ -62,11 +62,3 @@
     color: white;
     animation: scroll-down 2s 1s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
-@media only screen and (max-device-width: 900px) {
-
-    .home {
-      display: none;
-    }
-  
-}

@@ -1,6 +1,6 @@
 .project-card {
+    z-index: 2;
     scroll-snap-align: center;
-    cursor: pointer;
     position: relative;
     background-color: var(--base-400);
     min-width: 480px;
@@ -12,17 +12,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: height .5s, transform .5s, background-color .5s;
+    transition: min-width .5s, height .5s, transform .5s, background-color .5s;
 }
 
 .project-card--active {
     height: 32rem;
     box-shadow: 0 1rem 2rem var(--shadow-500);
+    /* border: 2px solid var(--accent-500); */
 }
 
 .project-card:hover {
-    transform: translate(0, -10px);
     background-color: var(--base-300);
+    /* transform: translate(0, -10px); */
 }
 
 .project-card__content {

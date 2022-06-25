@@ -24,6 +24,7 @@
     height: 100vh;
     padding: 1rem 100vw;
     gap: 8rem;
+    transition: padding 1s;
 }
 
 .projects-container::-webkit-scrollbar {
@@ -31,6 +32,7 @@
 }
 
 .projects__navigation {
+    z-index: 3;
     position: absolute;
     bottom: 5rem;
     display: flex;
@@ -58,13 +60,11 @@
 }
 
 .project-arrow {
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     color: var(--accent-300);
-    height: 32rem;
-    padding: .5rem;
-    border-radius: .25rem;
-    transition: color .25s, transform .25s;
+    padding: 1rem;
+    transition: color .25s, transform .25s, left .5s, right .5s;
 }
 
 .project-arrow:hover {
@@ -78,4 +78,11 @@
     height: 40rem;
     border-radius: 100%;
     outline: 1px solid var(--accent-300);
+    transition: width .5s, height .5s;
+}
+
+.flair--expanded {
+    width: calc(100vw - 4rem);
+    height: calc(100vh - 4rem);
+    border-radius: .5rem;
 }

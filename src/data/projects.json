@@ -7,7 +7,8 @@
             "github": "https://github.com/UoaWDCC/VPS",
             "download": "https://github.com/UoaWDCC/VPS/archive/refs/heads/master.zip",
             "website": "https://vps-uoa.netlify.app/"
-        }
+        },
+        "tags": ["website", "health", "education", "tool"]
     },
     "xivtracker": {
         "title": "XIV Tracker",
@@ -17,7 +18,8 @@
             "github": "https://github.com/DamonGreenhalgh/xivtracker",
             "download": "https://github.com/DamonGreenhalgh/xivtracker/archive/refs/heads/main.zip",
             "website": "https://www.xivtracker.gg/"
-        }
+        },
+        "tags": ["website", "stats", "profile"]
     },
     "gameoflife": {
         "title": "Conway's Game of Life",
@@ -26,7 +28,8 @@
         "link": {
             "github": "https://github.com/DamonGreenhalgh/conways-game-of-life",
             "download": "https://github.com/DamonGreenhalgh/conways-game-of-life/archive/refs/heads/main.zip"
-        }
+        },
+        "tags": ["app", "simulation", "game"]
     },
     "matrix": {
         "title": "Matrix Package",
@@ -35,6 +38,7 @@
         "link": {
             "github": "https://github.com/DamonGreenhalgh/matrix-package",
             "download": "https://github.com/DamonGreenhalgh/matrix-package/archive/refs/heads/main.zip"
-        }
+        },
+        "tags": ["matrix", "math", "tool"]
     }
 }

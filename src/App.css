@@ -89,6 +89,16 @@ body {
   animation-iteration-count: infinite;
 }
 
+.icon-button {
+  transition: transform .25s, color .25s;
+}
+
+.icon-button:hover {
+  transform: scale(1.25, 1.25);
+  color: var(--accent-500);
+}
+
+
 @font-face {
   font-family: 'Consola';
   src: url('./fonts/Consola.ttf');
@@ -118,10 +128,6 @@ body {
 
   * {
     --width: calc(100vw - 2rem);
-  }
-
-  html {
-    scroll-snap-type: none;
   }
 
 }
