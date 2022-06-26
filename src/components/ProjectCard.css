@@ -17,13 +17,8 @@
 
 .project-card--active {
     height: 32rem;
-    box-shadow: 0 1rem 2rem var(--shadow-500);
-    /* border: 2px solid var(--accent-500); */
-}
-
-.project-card:hover {
     background-color: var(--base-300);
-    /* transform: translate(0, -10px); */
+    box-shadow: 0 1rem 2rem var(--shadow-500);
 }
 
 .project-card__content {

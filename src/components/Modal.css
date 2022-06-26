@@ -32,8 +32,9 @@
 
 .modal__panel {
     overflow-y: scroll;
+    scrollbar-width: none;
     background-color: var(--base-400);
-    border-radius: .25rem;
+    border-radius: .5rem;
     width: 60%;
     height: 100%;
     display: flex;
