@@ -63,7 +63,7 @@ const Projects = () => {
     const [links, setLinks] = useState(null);
     const [tech, setTech] = useState(null);
     useEffect(() => {
-        containerRef.current.scrollTo(500 + 480 * index, 0);
+        containerRef.current.style.translate = "calc((-480px - 8rem) *" + index + ")";
         setLinks(Object.keys(projectsJSON[projectNames[index]].link).map((item, key) => 
             <a 
                 href={projectsJSON[projectNames[index]].link[item]} 
