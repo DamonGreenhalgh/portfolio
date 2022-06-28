@@ -10,43 +10,46 @@
 }
   
 .console {
-    white-space: pre;
-    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     width: var(--width);
     height: 30rem;
     color: var(--base-600);
     background-color: var(--base-800);
-    border-radius: .5rem;
-    font-family: 'Consola';
-    font-weight: 300;
-    animation: fade-in 1s ease-in-out;
     box-shadow: 0 .5rem 1rem var(--shadow-500);
-    gap: 1rem;
-    padding: 3rem 1rem 1rem 1rem;
+    outline: 1px solid var(--base-800);
     margin: auto;
+    animation: fade-in 1s ease-in-out;
+    transition: height .5s, width .5s;
+}
+
+.console--maximized {
+    height: 100vh;
+    width: calc(100vw - 1rem);
 }
   
 .titlebar {
-    position: absolute;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
+    color: var(--base-800);
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: .25rem .25rem 0 0;
     height: 2rem;
-    padding: .5rem;
-    gap: .5rem;
-    background-color: var(--base-400);
+    background-color: var(--base-500);
 }
   
 .titlebar__button {
+    margin: auto 0;
+    padding: .5rem 1rem;
     z-index: 2;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 100%;
+}
+
+.titlebar__button:hover {
+    background-color: var(--accent-300);
 }
   
 .console a:hover {
@@ -58,7 +61,48 @@
 .scroll-down {
     position: absolute;
     opacity: 0;
-    top: calc(100vh - 3em - 5rem);
+    bottom: -10rem;
     color: white;
     animation: scroll-down 2s 1s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.console__content {
+    white-space: pre;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: 'Consola';
+    font-weight: 300;
+}
+
+::selection {
+    background-color: var(--base-400);
+    color: var(--base-800);
+}
+
+.console__input {
+    background-color: transparent;
+    font-family: 'Consola';
+    font-weight: 300;
+    font-size: medium;
+    color: var(--base-400);
+    outline: none;
+    border: none;
+    caret-color: transparent;
+    width: 1rem;
+    padding: 0;
+}
+
+.waiting-pointer {
+    margin: auto auto 0 0;
+    width: .6rem;
+    height: .25rem;
+    opacity: 0;
+    background-color: var(--base-400);
+    animation-name: waiting;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }

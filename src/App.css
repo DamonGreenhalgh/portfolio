@@ -22,6 +22,7 @@ html {
 }
 
 button {
+  padding: 0;
   cursor: pointer;
   border: none;
   background: transparent;
@@ -77,16 +78,6 @@ body {
 .console__text {
   color: var(--base-400);
   font-weight: 500;
-}
-
-.waiting-pointer {
-  margin: auto auto 0 0;
-  width: .6rem;
-  height: .25rem;
-  background-color: var(--base-400);
-  animation-name: waiting;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
 }
 
 .icon-button {
