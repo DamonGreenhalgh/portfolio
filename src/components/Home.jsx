@@ -8,45 +8,55 @@ import {
   VscChromeRestore,
   VscClose
 } from 'react-icons/vsc';
+import { AiFillCode } from 'react-icons/ai';
 
+/**
+ * This is a container that houses the console component.
+ * @returns Home container
+ */
 const Home = () => {
   const [command, setCommand] = useState("");
-  const inputRef = useRef(null);
-  const consoleRef = useRef(null);
   const [maximized, setMaximized] = useState(false);
   const [minimized, setMinimized] = useState(false);
   const [closed, setClosed] = useState(false);
   const [output, setOutput] = useState([]);
   const [drag, setDrag] = useState(false);
   const [initialMouse, setInitialMouse] = useState([]);
+  const inputRef = useRef(null);
+  const consoleRef = useRef(null);
 
+  /**
+   * This variable holds command content, errors and codes.
+   */
   const commandTree = {
     "cd": {
+      "..": {
+        "content": <p>Return to root directory</p>,
+        "multiplier": 0
+      },
       "about": {
         "content": <p>Change directory to About</p>,
-        "code": 0
+        "multiplier": 1
       },
       "projects": {
         "content": <p>Change directory to Projects</p>,
-        "code": 1
+        "multiplier": 2
       },
       "contact": {
         "content": <p>Change directory to Contact</p>,
-        "code": 2
+        "multiplier": 3
       },
-      "..": {
-        "content": <p>Return to root directory</p>,
-        "code": 5
-      },
-      "code": 11
+      "content": null,
+      "code": 0,
+      "error": <p>The system cannot find the path specified.</p>
     },
     "cls": {
-      "content": <p>Clear screen ...</p>,
-      "code": 3
+      "content": <p>Clearing console output ...</p>,
+      "code": 1
     },
     "exit": {
       "content": <p>Exit</p>,
-      "code": 4
+      "code": 2
     },
     "help": {
       "content": 
@@ -54,8 +64,11 @@ const Home = () => {
         CD    Change directory <br />
         CLS   Clear console window <br />
         EXIT  Close console <br />
-        DIR   List all items within a directory
-      </p>
+        DIR   List all items within a directory <br />
+        MAX   Maximize console window <br />
+        MIN   Minimize console widnow <br />
+      </p>,
+      "code": -1
     },
     "dir": {
       "content": 
@@ -76,8 +89,21 @@ const Home = () => {
           </Link>
         </nav>
       </>,
-      "code": 6
-    }
+      "code": -1
+    },
+    "max": {
+      "content": <p>Maximize console window</p>,
+      "code": 3
+    },
+    "min": {
+      "content": <p>Minimize console window</p>,
+      "code": 4
+    },
+    "restore": {
+      "content": <p>Restore console window</p>,
+      "code": 5
+    },
+    "error": <p>{"'" + command + "' is not recognized as an internal or external command,\noperable program or batch file."}</p>
   }
 
   /**
@@ -88,28 +114,19 @@ const Home = () => {
   const submitCommand = (e) => {
     e.preventDefault(); 
     let commandResponse, commandCode;;
-    let path = commandTree;
 
     // Turn command to lowercase and split into an array of subcommands
     const subcommands = command.toLowerCase().split(" ");
 
-    // Iterate through each subcommand of the string and
-    // path through the commandTree. If we hit a key error
-    // return error state.
+    // Get command content and code
     try {
-      for (let i = 0; i < subcommands.length; i++) {
-
-          path = path[subcommands[i]];
-        
-      };
-      commandResponse = path.content;
-      commandCode = path.code;
-
+      commandResponse = commandTree[subcommands[0]].content;
+      commandCode = commandTree[subcommands[0]].code;
     } catch (error) {
-      commandResponse = <p>{"'" + command + "' is not recognized as an internal or external command,\noperable program or batch file."}</p>
+      commandResponse = commandTree.error;
     }
 
-    // Update console with response
+    // update console with command content
     setOutput(
       [
         output, 
@@ -121,49 +138,84 @@ const Home = () => {
       ]
     )
 
-    // Apply command logic
+    // Apply command logic based on the command code
     switch (commandCode) {
-      case 0:
-        window.scrollTo(0, window.innerHeight);
+      case 0:    // 'cd' - change directory
+        try {
+          window.scrollTo(0, commandTree[subcommands[0]][subcommands[1]].multiplier * window.innerHeight);
+          commandResponse = commandTree[subcommands[0]][subcommands[1]].content;
+        } catch (error) {
+          commandResponse = commandTree[subcommands[0]].error;
+        }
+        
+        setOutput(
+          [
+            output, 
+            <div className="row">
+              <p>C:\Users\DamonGreenhalgh{">"}</p>
+              <p className="console__text">{command}</p>
+            </div>,
+            commandResponse
+          ]
+        )
+        
         break;
-      case 1:
-        window.scrollTo(0, window.innerHeight * 2);
+      case 1:    // 'cls' - clear screen 
+        console.log("check");
+        setOutput([]);    
         break;
-      case 2:
-        window.scrollTo(0, window.innerHeight * 3);
+      case 2:    // 'exit' - close window
+        setClosed(true);
         break;
-      case 3:    // 'cls' - clear screen command, clear console output
-        setOutput([]);
+      case 3:    // 'max' - maximize window
+        setMaximized(true);
         break;
-      case 4:    // 'exit' - close window
-        window.open('','_self').close();
+      case 4:    // 'min' - minimize window
+        setMinimized(true);
         break;
-      case 5:
-        window.scrollTo(0, 0);
+      case 5:    // 'restore' - restore window
+        setMaximized(false);
         break;
-      default:
+      default:    // code = -1, no action required
     }
-    setCommand("");
+
+    setCommand("");    // reset command input field
   } 
 
+  /**
+   * This useEffect hook just updates the width of the 
+   * console input field to reduce the gap between the pointer and text.
+   */
   useEffect(() => {
     inputRef.current.style.width = Math.max(1, command.length * 0.55) + "em";
   }, [command])
 
   return (
     <div className="home">
+      <button 
+        className="console__button"
+        onClick={() => setMinimized(minimized ? false : true)}
+      >
+        <AiFillCode size="4em" />
+      </button>
       <div 
-        className={"console" + (maximized ? " console--maximized" : "") + (minimized ? " console--minimized" : "") + (closed ? " disabled" : "") + (drag ? " console--dragging" : "")} 
+        className={
+          "console" 
+          + (maximized ? " console--maximized" : "") 
+          + (minimized ? " console--minimized" : "") 
+          + (closed ? " disabled" : "") 
+          + (drag ? " console--dragging" : "")
+        } 
         onMouseLeave={() => setCommand("")}
         ref={consoleRef}
       >
         <div 
-          className="titlebar" 
+          className="titlebar"
           onMouseDown={(e) => {
             setDrag(true);
             setInitialMouse([Math.abs(e.clientX - consoleRef.current.getBoundingClientRect().left), Math.abs(e.clientY - consoleRef.current.getBoundingClientRect().top)]);
           }}
-          onMouseUp={(e) => {
+          onMouseUp={() => {
             setDrag(false);
           }}
           onMouseMove={(e) => {
@@ -173,15 +225,22 @@ const Home = () => {
             }
           }}
         >
+          <div className="row gap" style={{marginRight: "auto", paddingLeft: ".5rem"}}>
+            <AiFillCode size="1.5em" />
+            <p>Command Prompt</p>
+          </div>
+          
           <button 
             className="titlebar__button"
             onClick={() => setMinimized(true)}
+            title="Minimize"
           >
             <VscChromeMinimize size="1.25em" />
           </button>
           <button 
             className="titlebar__button"
             onClick={() => {setMaximized(maximized ? false : true)}}
+            title={maximized ? "Restore Down" : "Maximize"}
           >
             {
               maximized ?
@@ -192,6 +251,7 @@ const Home = () => {
           <button 
             className="titlebar__button"
             onClick={() => setClosed(true)}
+            title="Close"
           >
             <VscClose size="1.25em" />
           </button>
