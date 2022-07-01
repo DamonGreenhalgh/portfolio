@@ -1,5 +1,5 @@
 .modal {
-    z-index: 3;
+    z-index: 4;
     pointer-events: none;
     position: absolute;
     display: flex;
@@ -32,9 +32,7 @@
 
 .modal__panel {
     overflow-y: scroll;
-    scrollbar-width: none;
     background-color: var(--base-400);
-    border-radius: .5rem;
     width: 60%;
     height: 100%;
     display: flex;
@@ -50,7 +48,7 @@
     position: absolute;
     top: 1rem;
     left: calc(80%);
-    color: var(--accent-300);
+    color: var(--base-500);
     transition: color .25s, transform .25s;
     padding: 1rem;
 }
@@ -62,6 +60,4 @@
 
 .modal__tag {
     padding: .25rem .5rem;
-    background-color: var(--accent-300);
-    border-radius: .25rem;
 }

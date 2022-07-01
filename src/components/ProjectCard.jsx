@@ -1,5 +1,5 @@
 
-import './ProjectCard.css';
+import '../styles/ProjectCard.css';
 import { FiMaximize } from 'react-icons/fi';
 
 const iconSize = "1.25em";
@@ -19,14 +19,17 @@ const ProjectCard = (props) => {
     } = props;
 
     return (
-        <div onClick={() => setIndex(id)} className={"project-card" + (id === index ? " project-card--active" : "")}>            
-            <img src={banner} style={{maxHeight: "270px"}} />
+        <div 
+            onClick={() => setIndex(id)} 
+            className={"project-card" + (id === index ? " project-card--active" : "")}
+        >            
+            <img src={banner} style={{maxHeight: "270px"}} alt="Project banner" />
             <div className="project-card__content">
                 <div className="row align-center justify-between">
                     <h3>{title}</h3>
-                    <img src={icon} style={{height: "2.5rem"}} />
+                    <img src={icon} style={{height: "2.5rem"}} alt="Project brand" />
                 </div>
-                <p style={{color: "var(--base-700)"}}>{description}</p>
+                <p>{description}</p>
                 <div 
                     className="row align-center justify-between" 
                     style={{marginTop: "auto"}}

@@ -1,4 +1,4 @@
-import './Modal.css';
+import '../styles/Modal.css';
 import Divider from './Divider';
 import { IoClose } from 'react-icons/io5';
 
@@ -20,11 +20,11 @@ const Modal = (props) => {
         >
             <button className="modal__close-button" onClick={() => setExpanded(false)}><IoClose size="2.5em" /></button>
             <div className={"modal__panel" + (expanded ? " modal__panel--expanded" : "")}>
-                <img src={screenshots[0]} className="modal__banner" />
+                <img src={screenshots[0]} className="modal__banner" alt="Project banner"/>
                 <div className="modal__content">
                     <div className="row justify-between">
                         <div className="row gap align-center">
-                            <img src={logo} style={{height: "2.5rem"}} />
+                            <img src={logo} style={{height: "2.5rem"}} alt="Project brand"/>
                             <h2>{name}</h2>
                         </div>
                         <div className="row gap align-center">
@@ -57,6 +57,7 @@ const Modal = (props) => {
                                         src={ss} 
                                         className="screenshot"
                                         key={index}
+                                        alt="Example screenshot of project"
                                     />
                                 )
                             }

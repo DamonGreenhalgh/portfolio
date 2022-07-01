@@ -1,4 +1,4 @@
-import './About.css';
+import '../styles/About.css';
 import portrait from '../images/portrait.png';
 import techJSON from '../data/techstack.json';
 import Divider from './Divider';
@@ -11,7 +11,7 @@ const About = () => {
             <div className="col gap">
                 <div className="row max-width">
                     <h2 className="about__header-text">"Hello, World!"</h2>
-                    <div className="about__header-pointer" />
+                    <div className="waiting-pointer waiting-pointer--about" />
                 </div>
                 <Divider />
                 <p>

@@ -1,4 +1,4 @@
-import './Projects.css';
+import '../styles/Projects.css';
 import Modal from './Modal';
 import ProjectCard from './ProjectCard';
 import projectsJSON from '../data/projects.json';
@@ -26,7 +26,7 @@ const linkIcons = {
 
 function importAll(r) {
     let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    r.keys().map((item, index) => images[item.replace('./', '')] = r(item));
     return images;
 }
 
@@ -87,6 +87,7 @@ const Projects = () => {
 
     return (
         <div className="projects" id="projects">
+            <h2 className="section-header">PROJECTS</h2>
             <Modal
                 name={projectsJSON[projectNames[index]].title}
                 description={projectsJSON[projectNames[index]].description}
@@ -98,16 +99,16 @@ const Projects = () => {
                 expanded={expanded}
                 setExpanded={setExpanded}
             />
-            <div className={"flair" + (expanded ? " flair--expanded" : "")} />
+            <div className="flair" />
             <button 
-                className="project-arrow"
+                className={"project-arrow" + (expanded ? " project-arrow--modal" : "")}
                 style={{right: expanded ? "calc(100vw / 2 + 30%)" : "calc(100vw / 2 + 240px)"}}
                 onClick={() => setIndex(Math.max(index - 1, 0))}
             >
                 <FaArrowLeft size="2em" />
             </button>
             <button 
-                className="project-arrow"
+                className={"project-arrow" + (expanded ? " project-arrow--modal" : "")}
                 style={{left: expanded ? "calc(100vw / 2 + 30%)" : "calc(100vw / 2 + 240px)"}}
                 onClick={() => setIndex(Math.min(index + 1, 3))}
             >

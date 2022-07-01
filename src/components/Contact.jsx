@@ -1,4 +1,4 @@
-import './Contact.css';
+import '../styles/Contact.css';
 import Divider from './Divider';
 
 const Contact = () => {
@@ -6,7 +6,10 @@ const Contact = () => {
         <div className="contact" action="https://public.herotofu.com/v1/5adb50a0-91ea-11ec-8462-6960be7ce578" method="post">
             <form className="col gap-lg text-center">
                 <h2>Let's Talk!</h2>
-                <h3>Got an interesting idea? Feedback on this site, or projects I've worked on? Send me a message!</h3>
+                <p>
+                    Got an <b>interesting</b> idea? <b>Feedback</b> on this 
+                    site, or projects I've worked on? <b>Send me a message!</b>
+                </p>
                 <Divider />
                 <div className="contact__row">
                     <input className="contact__input" name="Name" id="name" type="text" placeholder="Name" required />

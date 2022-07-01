@@ -16,7 +16,7 @@
     max-width: 15rem;
     margin-top: 8.5rem;
     border: 1rem solid transparent;
-    outline: 1px solid var(--base-600);
+    outline: 1px solid var(--base-500);
 }
 
 .techstack {
@@ -37,14 +37,6 @@
 .about__header-text {
     font-family: 'Consola';
     font-size: 3.5rem;
-}
-
-.about__header-pointer {
-    margin-left: auto;
-    width: .75rem;
-    height: 4rem;
-    background-color: var(--accent-700);
-    animation: waiting 1s .25s infinite;
 }
 
 @media only screen and (max-device-width: 900px) {

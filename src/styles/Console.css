@@ -1,24 +1,15 @@
-.home {
-    scroll-snap-align: center;
-    height: 100vh;
-    background-image: url('../images/home.png');
-    background-position: center;
-    background-size: cover;
-}
-  
 .console {
-    z-index: 4;
     word-wrap: break-word;
     resize: both;
     position: fixed;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: var(--width);
-    height: 30rem;
+    width: 40rem;
+    height: 20rem;
     top: 1rem;
-    left: calc(2rem + 4em);
-    color: var(--base-600);
+    left: calc(3rem + 4em);
+    color: var(--base-500);
     background-color: var(--base-800);
     box-shadow: 0 .5rem 2rem var(--shadow-500);
     outline: 1px solid var(--base-800);
@@ -28,9 +19,9 @@
 
 .console--maximized {
     top: 1rem !important;
-    left: calc(2rem + 4em) !important;
+    left: calc(3rem + 4em) !important;
     height: calc(100vh - 2rem) !important;
-    width: calc(100vw - 4rem - 4em) !important;
+    width: calc(100vw - 5rem - 4em) !important;
 }
 
 .console--minimized {
@@ -52,31 +43,38 @@
     color: var(--base-800);
     width: 100%;
     min-height: 2rem;
-    background-color: var(--base-500);
+    background-color: var(--base-400);
 }
   
 .titlebar__button {
     padding: .5rem 1rem;
     z-index: 2;
-    transition: background-color .25s;
+    transition: background-color .25s, color .25s;
 }
 
 .titlebar__button:hover {
-    background-color: var(--accent-300);
+    background-color: var(--base-300);
+}
+
+.titlebar__button--close:hover {
+    color: var(--base-300);
+    background-color: #e81123;
 }
 
 .console__button {
     z-index: 5;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    color: var(--base-800);
+    color: var(--accent-500);
+    margin-bottom: auto;
     transition: color .25s, transform .25s;
 }
 
 .console__button:hover {
-    transform: scale(1.25, 1.25);
+    transform: scale(1.1, 1.1);
     color: var(--accent-500);
+}
+
+.console__button--minimized {
+    color: var(--text-500);
 }
   
 .console a:hover {
@@ -86,7 +84,7 @@
 }
 
 .console__content {
-    /* white-space: pre; */
+    white-space: pre;
     overflow-y: scroll;
     height: 100%;
     padding: 1rem;
@@ -117,16 +115,5 @@
     caret-color: transparent;
     width: 1rem;
     padding: 0;
-    outline: 1px solid var(--base-700);
-}
-
-.waiting-pointer {
-    margin: auto auto 0 0;
-    width: .6rem;
-    height: .25rem;
-    opacity: 0;
-    background-color: var(--base-400);
-    animation-name: waiting;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    outline: 1px solid var(--base-300);
 }
