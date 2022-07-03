@@ -1,51 +1,55 @@
 
 import '../styles/ProjectCard.css';
-import { FiMaximize } from 'react-icons/fi';
+import { useEffect, useRef, useState } from 'react';
 
-const iconSize = "1.25em";
+/**
+ * ProjectCard Component
+ * This component is a card that represents a project. Clicking
+ * on the card will display the Modal component.
+ */
 const ProjectCard = (props) => {
+    const [active, setActive] = useState(false);
+    const cardRef = useRef(null);
     const { 
         banner, 
         icon, 
         title, 
         description, 
-        tech, 
         link,
+        tech,
         id,
-        index, 
         setIndex,
-        expanded,
         setExpanded 
     } = props;
 
+    useEffect(() => {
+        setTimeout(() => {
+            setActive(true);
+        }, id / 4 * 1000)
+    }, [id])
+
     return (
         <div 
-            onClick={() => setIndex(id)} 
-            className={"project-card" + (id === index ? " project-card--active" : "")}
+            onClick={() => {setIndex(id); setExpanded(true);}} 
+            className={"project-card" + (active ? " project-card--active" : "")}
+            ref={cardRef}
         >            
-            <img src={banner} style={{maxHeight: "270px"}} alt="Project banner" />
+            <img src={banner} style={{maxHeight: "225px"}} alt="Project banner" />
             <div className="project-card__content">
                 <div className="row align-center justify-between">
-                    <h3>{title}</h3>
-                    <img src={icon} style={{height: "2.5rem"}} alt="Project brand" />
-                </div>
-                <p>{description}</p>
-                <div 
-                    className="row align-center justify-between" 
-                    style={{marginTop: "auto"}}
-                >
-                    <div className="row gap-sm">
-                        {tech}
-                    </div>
-                    <div className="row gap algin-center">
+                    <img 
+                        src={icon} 
+                        style={{maxHeight: "2.5rem", maxWidth: "4rem"}} 
+                        alt="Project brand" 
+                    />
+                    <div className="project__items">
                         {link}
-                        <button 
-                            onClick={() => setExpanded(expanded ? false : true)}
-                            className="icon-button"
-                        >
-                            <FiMaximize size={iconSize} /> 
-                        </button>
                     </div>
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <div className="project__items project__items--tech">
+                    {tech}
                 </div>
             </div>
         </div>

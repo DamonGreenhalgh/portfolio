@@ -1,31 +1,30 @@
 .about {
     position: relative;
     scroll-snap-align: center;
-    height: 100vh;
     display: flex;
     align-items: center;
     width: var(--width);
     margin: auto;
-    gap: 5rem;
-    padding: 5rem 0;
+    gap: 3rem;
+    padding: 5rem 1rem;
 }
 
 .about__portrait {
     align-self: flex-start;
     max-height: 15rem;
     max-width: 15rem;
-    margin-top: 8.5rem;
+    margin-top: 5rem;
     border: 1rem solid transparent;
     outline: 1px solid var(--base-500);
 }
 
 .techstack {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(7, 1.5rem);
     grid-auto-flow: column;
     gap: .5rem;
-    margin: .5rem 2rem;
+    margin-top: 1rem;
 }
 
 .tech {

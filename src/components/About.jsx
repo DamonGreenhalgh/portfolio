@@ -7,7 +7,6 @@ const About = () => {
     const linkBase = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
     return (
         <div className="about" id="about">
-            <img src={portrait} className="about__portrait" alt="Portrait" />
             <div className="col gap">
                 <div className="row max-width">
                     <h2 className="about__header-text">"Hello, World!"</h2>
@@ -43,11 +42,12 @@ const About = () => {
                     {Object.values(techJSON).map((tech, index) => 
                         <div className="tech" title={tech.name} key={index}>
                             <img src={linkBase + tech.icon} alt={tech.name}/>
-                            <p>{tech.name}</p>
+                            <p style={{fontFamily: "Consola"}}>{tech.name}</p>
                         </div>
                     )}
                 </div>   
             </div>
+            <img src={portrait} className="about__portrait" alt="Portrait" />
         </div>
     );
 }

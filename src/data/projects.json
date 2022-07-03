@@ -1,44 +1,93 @@
 {
+    "spaceshiptitanic": {
+        "title": "Spaceship Titanic",
+        "description": "Analysis of an imaginary dataset inspired by the idea of a Spaceship Titanic. Part of the Kaggle's introduction to Machine Learning competitions.",
+        "content": [
+            {
+                "name": "Brief",
+                "content": "Welcome to the year 2912, where your data science skills are needed to solve a cosmic mystery. We've received a transmission from four lightyears away and things aren't looking good. The Spaceship Titanic was an interstellar passenger liner launched a month ago. With almost 13,000 passengers on board, the vessel set out on its maiden voyage transporting emigrants from our solar system to three newly habitable exoplanets orbiting nearby stars. While rounding Alpha Centauri en route to its first destination—the torrid 55 Cancri E—the unwary Spaceship Titanic collided with a spacetime anomaly hidden within a dust cloud. Sadly, it met a similar fate as its namesake from 1000 years before. Though the ship stayed intact, almost half of the passengers were transported to an alternate dimension! To help rescue crews and retrieve the lost passengers, you are challenged to predict which passengers were transported by the anomaly using records recovered from the spaceship’s damaged computer system. Help save them and change history!"
+            },
+            {
+                "name": "Acknowledgements",
+                "content": "Photos by Joel Filipe, Richard Gatley and ActionVance on Unsplash."
+            },
+            {
+                "name": "Evaluation",
+                "content": "Submissions are evaluated based on their classification accuracy, the percentage of predicted labels that are correct."
+            }
+        ],
+        "stack": ["python", "numpy", "pandas"],
+        "link": {
+            "github": "https://github.com/DamonGreenhalgh/kaggle/tree/main/spaceship-titanic"
+        },
+        "tags": ["machine learning", "data analysis"]
+    },
     "vps": {
-        "title": "Virtual Patient System",
+        "title": "Virtual Patient Simulator",
         "description": "This project aims to provide Medical and Health Science students at the University of Auckland with a tool that supports interactive and immersive education through virtual patient scenarios.",
-        "stack": ["html", "css", "js", "react", "firebase", "mongodb", "sass"],
+        "content": [
+            {
+                "name": "Note",
+                "content": "This project was associated with The University of Auckland SOFTENG 761 but since 2022, is being developed by WDCC project teams"
+            },
+            {
+                "name": "Personal Contributions",
+                "content": "Responsible for the Help Modal and Scene Navigator."
+            }
+        ],
+        "stack": ["react", "firebase", "mongodb", "sass"],
         "link": {
             "github": "https://github.com/UoaWDCC/VPS",
-            "download": "https://github.com/UoaWDCC/VPS/archive/refs/heads/master.zip",
             "website": "https://vps-uoa.netlify.app/"
         },
-        "tags": ["website", "health", "education", "tool"]
+        "tags": ["web app", "health", "education", "tool"]
     },
     "xivtracker": {
         "title": "XIV Tracker",
         "description": "A tool to help players keep track of their character progress through the critically acclaimed MMORPG Final Fantasy XIV.",
+        "content": [
+            {
+                "name": "Acknowledgements",
+                "content": "XIV Tracker utilizes the community made XIVAPI for all its API requests."
+            },
+            {
+                "name": "Features",
+                "content": "Notable features of XIV Tracker include. Global Search: Every character; past and present; is available. No matter what server or data center they reside in. Character Profile: View basic information about a character (name, title, free company, grand company, attributes, etc).Equipment: View the current job and equipped gear, with tooltips that display stats, glamour and materia affixed to the item (if applicable).Jobs: View the current level and experience points of all jobs; this includes jobs from the disciple of war, magic, hand and land.Collection: View aquired mounts and minions.Quests: View all quests and encounters (trials, dungeons and raids), with indicators for completed activities. Has EorzeaDB tooltip integration.Achievements: View completed achievements.Reference Character: Allows users hide/show sensitive information based on the allocated reference character.Themes: Supports two themes, dark and light.Dynamic Backgrounds: Dynamically changes the background splash to reflect the current expansion most relevant to the reference character.FAQ: Frequently Asked Questions (FAQ) and instructions to identify the Lodestone ID of a character.Completion Metric: Jobs, Collection, Quests and Achievements all have an associated completion metric to indicate overall progress with respect to each aspect."
+            },
+            {
+                "name": "License",
+                "content": "XIV Tracker is released under the MIT license."
+            },
+            {
+                "name": "Disclaimer",
+                "content": "XIV Tracker is not affiliated with SQUARE ENIX CO,. LTD. FINAL FANTASY XIV CONTENT IS PROPERTY OF SQUARE ENIX CO,. LTD."
+            }
+        ],
         "stack": ["html", "css", "js", "react"],
         "link": {
             "github": "https://github.com/DamonGreenhalgh/xivtracker",
-            "download": "https://github.com/DamonGreenhalgh/xivtracker/archive/refs/heads/main.zip",
             "website": "https://www.xivtracker.gg/"
         },
-        "tags": ["website", "stats", "profile"]
+        "tags": ["web app", "stats", "profile"]
     },
     "gameoflife": {
         "title": "Conway's Game of Life",
         "description": "A Java application that simulates the cellular automaton.",
+        "content": [],
         "stack": ["java"],
         "link": {
-            "github": "https://github.com/DamonGreenhalgh/conways-game-of-life",
-            "download": "https://github.com/DamonGreenhalgh/conways-game-of-life/archive/refs/heads/main.zip"
+            "github": "https://github.com/DamonGreenhalgh/conways-game-of-life"
         },
         "tags": ["app", "simulation", "game"]
     },
     "matrix": {
         "title": "Matrix Package",
         "description": "A package for Java that implements the Matrix mathematical structure.",
+        "content": [],
         "stack": ["java"],
         "link": {
-            "github": "https://github.com/DamonGreenhalgh/matrix-package",
-            "download": "https://github.com/DamonGreenhalgh/matrix-package/archive/refs/heads/main.zip"
+            "github": "https://github.com/DamonGreenhalgh/matrix-package"
         },
-        "tags": ["matrix", "math", "tool"]
+        "tags": ["matrix", "math", "tool", "package"]
     }
 }

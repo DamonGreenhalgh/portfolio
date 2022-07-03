@@ -54,5 +54,13 @@
     "sass": {
         "name": "Sass",
         "icon": "/sass/sass-original.svg"
+    },
+    "numpy": {
+        "name": "NumPy",
+        "icon": "/numpy/numpy-original.svg"
+    },
+    "pandas": {
+        "name": "Pandas",
+        "icon": "/pandas/pandas-original.svg"
     }
 }

@@ -13,7 +13,6 @@
     background-color: var(--base-800);
     box-shadow: 0 .5rem 2rem var(--shadow-500);
     outline: 1px solid var(--base-800);
-    animation: fade-in 1s ease-in-out;
     transition: width .5s, height .5s, left .5s, top .5s, opacity .5s;
 }
 

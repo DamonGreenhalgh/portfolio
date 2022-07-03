@@ -1,6 +1,5 @@
 .projects {
     scroll-snap-align: center;
-    height: 100vh;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -8,73 +7,49 @@
     justify-content: center;
     align-items: center;
     background-color: var(--base-400);
+    border: 1px solid var(--base-500);
 }
 
 .projects-container {
     position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    padding: 1rem calc((100vw - 480px - 1rem) / 2);
-    gap: 8rem;
+    gap: 2rem 1rem;
+    padding: 5rem 2rem;
     transition: padding 1s, translate .5s ease;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    margin: auto;
 }
 
 .projects-container::-webkit-scrollbar {
     display: none;
 }
 
-.projects__navigation {
-    z-index: 3;
-    position: absolute;
-    bottom: 4rem;
+.project__items {
     display: flex;
-    align-items: center;
     gap: 1rem;
+    align-items: center;
+    font-family: "Consola";
+    flex-wrap: wrap;
 }
 
-.project-button {
-    background-color: var(--shadow-500);
-    height: 1rem;
-    width: 1rem;
-    border-radius: 100%;
-    transition: width .25s, height .25s, background-color .25s;
+.project__items--tech {
+    margin-top: auto;
+    padding-top: 2rem;
+    font-family: "Consola";
 }
 
-.project-button:hover {
-    background-color: var(--accent-500);
+@media only screen and (max-device-width: 1400px) {
+
+    .projects-container {
+        grid-template-columns: 400px 400px;
+    }
+
 }
 
-.project-button--active {
-    background-color: var(--accent-500);
-    border-radius: .25rem;
-    width: 3rem;
-    height: 1rem;
-}
+@media only screen and (max-device-width: 1000px) {
 
-.project-arrow {
-    z-index: 3;
-    position: absolute;
-    color: var(--base-500);
-    padding: 1rem;
-    transition: color .25s, transform .25s, left .5s, right .5s;
-}
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
 
-.project-arrow--modal {
-    z-index: 5;
-}
-
-.project-arrow:hover {
-    color: var(--accent-500);
-    transform: scale(1.25, 1.25);
-}
-
-.flair {
-    position: absolute;
-    width: 40rem;
-    height: 40rem;
-    border-radius: 100%;
-    outline: 1px solid var(--base-500);
-    transition: width .5s, height .5s;
 }

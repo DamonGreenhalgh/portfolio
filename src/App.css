@@ -14,7 +14,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
 }
 
 button {
@@ -122,13 +122,6 @@ body {
 @font-face {
   font-family: 'Consola';
   src: url('./fonts/Consola.ttf');
-}
-
-@keyframes scroll-down {
-  0% {opacity: 0;}
-  50% {transform: translate(0, 3rem); opacity: 1;}
-  75% {transform: translate(0, 3rem); opacity: 0;}
-  100% {opacity: 0;}
 }
 
 @keyframes waiting{

@@ -3,144 +3,155 @@ import Modal from './Modal';
 import ProjectCard from './ProjectCard';
 import projectsJSON from '../data/projects.json';
 import techstackJSON from '../data/techstack.json';
-import { useEffect, useState, useRef } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaGithub, FaExternalLinkAlt} from 'react-icons/fa';
 
-// Assets
-import vpsLogo from '../images/projects/vps/vps-logo.png';
-import xivtrackerLogo from '../images/projects/xivtracker/xivtracker-logo.png';
-import gameoflifeLogo from '../images/projects/gameoflife/gameoflife-logo.png';
-import matrixLogo from '../images/projects/matrix/matrix-logo.png';
-import matrixBanner from '../images/projects/matrix/screenshots/1.png';
+// import all logos and banners for each project
+import spaceshiptitanicLogo from '../images/projects/spaceshiptitanic/logo.png'
+import spaceshiptitanicBanner from '../images/projects/spaceshiptitanic/banner.png';
+import vpsLogo from '../images/projects/vps/logo.png';
+import vpsBanner from '../images/projects/vps/banner.png';
+import xivtrackerLogo from '../images/projects/xivtracker/logo.png';
+import xivtrackerBanner from '../images/projects/xivtracker/banner.png';
+import gameoflifeLogo from '../images/projects/gameoflife/logo.png';
+import gameoflifeBanner from '../images/projects/gameoflife/banner.png';
+import matrixLogo from '../images/projects/matrix/logo.png';
+import matrixBanner from '../images/projects/matrix/banner.png';
 
-import { FaGithub, FaDownload} from 'react-icons/fa';
-import { CgWebsite } from 'react-icons/cg';
-const iconSize = "1.25em";
-
-const linkIcons = {
-    "github": <FaGithub size={iconSize} />,
-    "download": <FaDownload size={iconSize} />,
-    "website": <CgWebsite size={iconSize} />
-}
-
-
+// function to import all image assets within a directory
 function importAll(r) {
     let images = {};
-    r.keys().map((item, index) => images[item.replace('./', '')] = r(item));
+    r.keys().map((item) => images[item.replace('./', '')] = r(item));
     return images;
 }
 
+// Import all screenshots for each project
+const spaceshiptitanicImages = Object.values(importAll(require.context('../images/projects/spaceshiptitanic/screenshots', false, /\.png/)));
 const vpsImages = Object.values(importAll(require.context('../images/projects/vps/screenshots', false, /\.png/)));
-const xivImages = Object.values(importAll(require.context('../images/projects/xivtracker/screenshots', false, /\.png/)));
+const xivtrackerImages = Object.values(importAll(require.context('../images/projects/xivtracker/screenshots', false, /\.png/)));
 const gameoflifeImages = Object.values(importAll(require.context('../images/projects/gameoflife/screenshots', false, /\.png/)));
+const matrixImages = Object.values(importAll(require.context('../images/projects/matrix/screenshots', false, /\.png/)));
 
 const projectNames = Object.keys(projectsJSON);
+
+// stores all project logos and banners for easy referencing
 const projectAssets = {
+    "spaceshiptitanic": {
+        "logo": spaceshiptitanicLogo,
+        "banner": spaceshiptitanicBanner,
+        "screenshots": spaceshiptitanicImages
+    },
     "vps": {
         "logo": vpsLogo,
+        "banner": vpsBanner,
         "screenshots": vpsImages
     },
     "xivtracker": {
         "logo": xivtrackerLogo,
-        "screenshots": xivImages
+        "banner": xivtrackerBanner,
+        "screenshots": xivtrackerImages
     },
     "gameoflife": {
         "logo": gameoflifeLogo,
+        "banner": gameoflifeBanner,
         "screenshots": gameoflifeImages
     },
     "matrix": {
         "logo": matrixLogo,
-        "screenshots": [matrixBanner]
+        "banner": matrixBanner,
+        "screenshots": matrixImages
     }
 }
 
+const linkIcons = {
+    "github": <FaGithub size="1.25em" />,
+    "website": <FaExternalLinkAlt size="1.25em" />
+}
 
-
+/**
+ * Projects Container
+ * Contains the Modal and Project Card components. Singular
+ * modal which changes content based on the index variable state.
+ * Multiple Project Card components, each representing a different project.
+ * Project information is drawn from the static projects.json file.
+ */
 const Projects = () => {
     const [index, setIndex] = useState(0);
     const [expanded, setExpanded] = useState(false);
-    const containerRef = useRef(null);
-    const [links, setLinks] = useState(null);
-    const [tech, setTech] = useState(null);
-    useEffect(() => {
-        containerRef.current.style.translate = "calc((-480px - 8rem) *" + index + ")";
-        setLinks(Object.keys(projectsJSON[projectNames[index]].link).map((item, key) => 
-            <a 
-                href={projectsJSON[projectNames[index]].link[item]} 
-                title={item}
-                key={key}
-                className="icon-button"
-            >
-                {linkIcons[item]}
-            </a>
-        ));
-        setTech(projectsJSON[projectNames[index]].stack.map((tool, index) =>
-            <img 
-                src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons" + techstackJSON[tool].icon} 
-                alt={techstackJSON[tool].name} 
-                title={techstackJSON[tool].name}
-                style={{height: "1.25em"}}
-                key={index}
-            />
-        ));
-    }, [index]);
-
     return (
         <div className="projects" id="projects">
-            <h2 className="section-header">PROJECTS</h2>
             <Modal
                 name={projectsJSON[projectNames[index]].title}
                 description={projectsJSON[projectNames[index]].description}
+                content={projectsJSON[projectNames[index]].content.map((section, key) =>
+                        <div className="col gap" key={key}>
+                            <h4>{section.name}</h4>
+                            <p>{section.content}</p>
+                        </div>
+                    )
+                }
+                banner={projectAssets[projectNames[index]].banner}
                 screenshots={projectAssets[projectNames[index]].screenshots}
-                links={links}
-                tech={tech}
+                links={
+                    Object.keys(projectsJSON[projectNames[index]].link).map((item, key) => 
+                        <a 
+                            href={projectsJSON[projectNames[index]].link[item]} 
+                            title={item}
+                            key={key}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="icon-button"
+                        >
+                            {linkIcons[item]}
+                        </a>
+                    )
+                }
+                tech={
+                    projectsJSON[projectNames[index]].stack.map((tech, key) =>
+                        <div className="project__items" key={key}>
+                            <img 
+                                src={"https://cdn.jsdelivr.net/gh/devicons/devicon/icons" + techstackJSON[tech].icon} 
+                                alt={techstackJSON[tech].name} 
+                                title={techstackJSON[tech].name}
+                                style={{height: "1.25em"}}
+                            />
+                            <p>{techstackJSON[tech].name}</p>
+                        </div>
+                    )
+                }
                 logo={projectAssets[projectNames[index]].logo}
                 tags={projectsJSON[projectNames[index]].tags}
                 expanded={expanded}
                 setExpanded={setExpanded}
             />
-            <div className="flair" />
-            <button 
-                className={"project-arrow" + (expanded ? " project-arrow--modal" : "")}
-                style={{right: expanded ? "calc(100vw / 2 + 30%)" : "calc(100vw / 2 + 240px)"}}
-                onClick={() => setIndex(Math.max(index - 1, 0))}
-            >
-                <FaArrowLeft size="2em" />
-            </button>
-            <button 
-                className={"project-arrow" + (expanded ? " project-arrow--modal" : "")}
-                style={{left: expanded ? "calc(100vw / 2 + 30%)" : "calc(100vw / 2 + 240px)"}}
-                onClick={() => setIndex(Math.min(index + 1, 3))}
-            >
-                <FaArrowRight size="2em" />
-            </button>
-            
-            <div className="projects-container" ref={containerRef}>
+            <div className="projects-container">
                 {
                     projectNames.map((project, key) => 
                         <ProjectCard 
-                            banner={projectAssets[project].screenshots[0]}
+                            banner={projectAssets[project].banner}
                             icon={projectAssets[project].logo}
                             title={projectsJSON[project].title}
                             description={projectsJSON[project].description}
-                            tech={tech}
-                            link={links}
+                            link={
+                                Object.keys(projectsJSON[project].link).map((item, key) => 
+                                    <a 
+                                        href={projectsJSON[project].link[item]} 
+                                        title={item}
+                                        key={key}
+                                        className="icon-button"
+                                    >
+                                        {linkIcons[item]}
+                                    </a>
+                                )
+                            }
+                            tech={
+                                projectsJSON[project].stack.map((tech, key) =>
+                                    <p key={key}>{techstackJSON[tech].name}</p>
+                                )
+                            }
                             id={key}
-                            index={index}
                             setIndex={setIndex}
-                            expanded={expanded}
                             setExpanded={setExpanded}
-                            key={key}
-                        />
-                    )
-                }
-            </div>
-            <div className="projects__navigation">
-                {
-                    projectNames.map((project, key) =>
-                        <button 
-                            className={"project-button" + (index === key ? " project-button--active" : "")}
-                            onClick={() => setIndex(key)}
                             key={key}
                         />
                     )

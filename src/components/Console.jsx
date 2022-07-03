@@ -13,13 +13,13 @@ import resume from '../data/Resume.pdf';
 
 
 /**
- * This is a container that houses the console component.
- * @returns Home container
+ * Console component, holds all the logic for parsing 
+ * input and commands.
  */
 const Console = () => {
   const [command, setCommand] = useState("");
   const [maximized, setMaximized] = useState(false);
-  const [minimized, setMinimized] = useState(false);
+  const [minimized, setMinimized] = useState(true);
   const [output, setOutput] = useState([]);
   const [drag, setDrag] = useState(false);
   const [initialMouse, setInitialMouse] = useState([]);
