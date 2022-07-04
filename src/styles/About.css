@@ -5,6 +5,7 @@
     align-items: center;
     width: var(--width);
     margin: auto;
+    min-height: 100vh;
     gap: 3rem;
     padding: 5rem 1rem;
 }
@@ -20,8 +21,8 @@
 
 .techstack {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(7, 1.5rem);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8, 1.5rem);
     grid-auto-flow: column;
     gap: .5rem;
     margin-top: 1rem;
@@ -41,15 +42,15 @@
 @media only screen and (max-device-width: 900px) {
 
     .about {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .about__header-text {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 
-    .about__header-pointer {
-        height: 2.25rem;
+    .about__portrait {
+        margin: 0 auto;
     }
 
 }

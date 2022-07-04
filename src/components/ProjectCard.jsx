@@ -1,6 +1,6 @@
 
 import '../styles/ProjectCard.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef} from 'react';
 
 /**
  * ProjectCard Component
@@ -8,10 +8,8 @@ import { useEffect, useRef, useState } from 'react';
  * on the card will display the Modal component.
  */
 const ProjectCard = (props) => {
-    const [active, setActive] = useState(false);
     const cardRef = useRef(null);
     const { 
-        banner, 
         icon, 
         title, 
         description, 
@@ -22,24 +20,17 @@ const ProjectCard = (props) => {
         setExpanded 
     } = props;
 
-    useEffect(() => {
-        setTimeout(() => {
-            setActive(true);
-        }, id / 4 * 1000)
-    }, [id])
-
     return (
         <div 
             onClick={() => {setIndex(id); setExpanded(true);}} 
-            className={"project-card" + (active ? " project-card--active" : "")}
+            className="project-card"
             ref={cardRef}
         >            
-            <img src={banner} style={{maxHeight: "225px"}} alt="Project banner" />
             <div className="project-card__content">
-                <div className="row align-center justify-between">
+                <div className="row align-center justify-between" style={{maxHeight: "3rem"}}>
                     <img 
                         src={icon} 
-                        style={{maxHeight: "2.5rem", maxWidth: "4rem"}} 
+                        style={{maxHeight: "3rem", maxWidth: "4rem"}} 
                         alt="Project brand" 
                     />
                     <div className="project__items">
@@ -48,7 +39,7 @@ const ProjectCard = (props) => {
                 </div>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <div className="project__items project__items--tech">
+                <div className="project__items project__items--tech" style={{fontFamily: "Consola"}}>
                     {tech}
                 </div>
             </div>

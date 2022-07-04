@@ -16,7 +16,8 @@ import resume from '../data/Resume.pdf';
  * Console component, holds all the logic for parsing 
  * input and commands.
  */
-const Console = () => {
+const Console = (props) => {
+  const { atTop, sectionRefs } = props;
   const [command, setCommand] = useState("");
   const [maximized, setMaximized] = useState(false);
   const [minimized, setMinimized] = useState(true);
@@ -33,19 +34,19 @@ const Console = () => {
     "cd": {
       "..": {
         "content": <p>Return to root directory</p>,
-        "multiplier": 0
+        "index": 0
       },
       "about": {
         "content": <p>Change directory to About</p>,
-        "multiplier": 1
+        "index": 1
       },
       "projects": {
         "content": <p>Change directory to Projects</p>,
-        "multiplier": 2
+        "index": 2
       },
       "contact": {
         "content": <p>Change directory to Contact</p>,
-        "multiplier": 3
+        "index": 3
       },
       "content": null,
       "code": 0,
@@ -78,15 +79,9 @@ const Console = () => {
       <>
         <p>Directory of C:\Users\DamonGreenhalgh</p>
         <nav className="col">
-          <a 
-            href={resume} 
-            target="_blank" 
-            rel="noreferrer" 
-            to="contact" 
-            onMouseEnter={() => setCommand("Resume.pdf")}
-          >
-            {"28/10/2077  03:15 PM                   Resume.pdf"}
-          </a>
+          <Link to="home" onMouseEnter={() => setCommand("cd ..")}>
+            {"30/12/1999  01:42 AM    <DIR>          .."}
+          </Link>
           <Link to="about" onMouseEnter={() => setCommand("cd about")}>
             {"25/12/1999  06:28 PM    <DIR>          about"}
           </Link>
@@ -96,6 +91,15 @@ const Console = () => {
           <Link to="contact" onMouseEnter={() => setCommand("cd contact")}>
             {"14/08/2004  07:04 AM    <DIR>          contact"}
           </Link>
+          <a 
+            href={resume} 
+            target="_blank" 
+            rel="noreferrer" 
+            to="contact" 
+            onMouseEnter={() => setCommand("Resume.pdf")}
+          >
+            {"28/10/2077  03:15 PM                   Resume.pdf"}
+          </a>
         </nav>
       </>,
       "code": -1
@@ -151,7 +155,7 @@ const Console = () => {
     switch (commandCode) {
       case 0:    // 'cd' - change directory
         try {
-          window.scrollTo(0, commandTree[subcommands[0]][subcommands[1]].multiplier * window.innerHeight);
+          sectionRefs[commandTree[subcommands[0]][subcommands[1]].index].current.scrollIntoView();
           commandResponse = commandTree[subcommands[0]][subcommands[1]].content;
         } catch (error) {
           commandResponse = commandTree[subcommands[0]].error;
@@ -199,26 +203,14 @@ const Console = () => {
     inputRef.current.style.width = Math.max(1, command.length * 0.55) + "em";
   }, [command])
 
-  /**
-   * This useEffect hook handles all scroll position dependent states.
-   */
-  useEffect(() => {
-    window.addEventListener("scroll", (event) => {
-      // const windowPos = window.scrollY;
-      // if (windowPos === 0) {    // top of the page
-      //   setMinimized(false);
-      // }
-    });
-  }, [])
-
   return (
     <>
       <button 
-        className={"console__button" + (minimized ? " console__button--minimized" : "")}
+        className={"console__button" + (minimized ? " console__button--minimized" : "") + (atTop ? " console__button--top" : "")}
         onClick={() => setMinimized(minimized ? false : true)}
         title="Display Console"
       >
-        <AiFillCode size="4em" />
+        <AiFillCode size="3.5em" />
       </button>
       <div 
         className={

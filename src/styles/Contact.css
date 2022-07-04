@@ -3,7 +3,8 @@
     position: relative;
     display: flex;
     padding: 5rem 2rem;
-    margin: auto
+    margin: auto;
+    min-height: calc(100vh - 10rem);
 }
 
 .contact h2 {

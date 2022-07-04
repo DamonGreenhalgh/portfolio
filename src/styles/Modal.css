@@ -27,7 +27,7 @@
 }
 
 .modal__banner {
-    height: max-content;
+    height: 55vh;
     object-fit: cover;
 }
 
@@ -35,7 +35,11 @@
     position: relative;
     overflow-y: scroll;
     background-color: var(--base-400);
+    box-shadow: 0 1rem 2rem var(--shadow-500);
+    border-radius: .25rem;
     height: 100%;
+    max-width: calc(350px * 3 + 2rem);
+    max-height: calc(350px * 2 + 3rem);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -46,23 +50,28 @@
     max-width: 100%;
 }
 
-.modal__close-button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    color: var(--base-500);
-    transition: color .25s, transform .25s;
-    padding: 1rem;
+.modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
-.modal__close-button:hover {
-    color: var(--base-300);
-    transform: scale(1.25, 1.25);
+.modal__close-button {
+    color: var(--text-300);
+    margin-left: 1rem;
 }
 
 .modal__content-row {
     display: flex;
     gap: 2rem;
+}
+
+.modal__tag {
+    padding: .5rem;
+    background-color: var(--accent-500);
+    border-radius: .25rem;
+    color: var(--base-400);
 }
 
 @media only screen and (max-device-width: 500px) {
@@ -78,6 +87,11 @@
     .modal__content-row {
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .modal__header {
+        flex-direction: column;
+        gap: 1rem
     }
 
 }

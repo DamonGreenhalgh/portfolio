@@ -18,9 +18,10 @@
         ],
         "stack": ["python", "numpy", "pandas"],
         "link": {
+            "kaggle": "https://www.kaggle.com/damongreenhalgh",
             "github": "https://github.com/DamonGreenhalgh/kaggle/tree/main/spaceship-titanic"
         },
-        "tags": ["machine learning", "data analysis"]
+        "tags": ["Machine Learning", "Data Analysis"]
     },
     "vps": {
         "title": "Virtual Patient Simulator",
@@ -37,10 +38,10 @@
         ],
         "stack": ["react", "firebase", "mongodb", "sass"],
         "link": {
-            "github": "https://github.com/UoaWDCC/VPS",
-            "website": "https://vps-uoa.netlify.app/"
+            "website": "https://vps-uoa.netlify.app/",
+            "github": "https://github.com/UoaWDCC/VPS"
         },
-        "tags": ["web app", "health", "education", "tool"]
+        "tags": ["Web App", "Health", "Education", "Tool"]
     },
     "xivtracker": {
         "title": "XIV Tracker",
@@ -52,7 +53,7 @@
             },
             {
                 "name": "Features",
-                "content": "Notable features of XIV Tracker include. Global Search: Every character; past and present; is available. No matter what server or data center they reside in. Character Profile: View basic information about a character (name, title, free company, grand company, attributes, etc).Equipment: View the current job and equipped gear, with tooltips that display stats, glamour and materia affixed to the item (if applicable).Jobs: View the current level and experience points of all jobs; this includes jobs from the disciple of war, magic, hand and land.Collection: View aquired mounts and minions.Quests: View all quests and encounters (trials, dungeons and raids), with indicators for completed activities. Has EorzeaDB tooltip integration.Achievements: View completed achievements.Reference Character: Allows users hide/show sensitive information based on the allocated reference character.Themes: Supports two themes, dark and light.Dynamic Backgrounds: Dynamically changes the background splash to reflect the current expansion most relevant to the reference character.FAQ: Frequently Asked Questions (FAQ) and instructions to identify the Lodestone ID of a character.Completion Metric: Jobs, Collection, Quests and Achievements all have an associated completion metric to indicate overall progress with respect to each aspect."
+                "content": "Notable features of XIV Tracker include. Global Search - Every character; past and present; is available. No matter what server or data center they reside in. Character Profile - View basic information about a character (name, title, free company, grand company, attributes, etc). Equipment - View the current job and equipped gear, with tooltips that display stats, glamour and materia affixed to the item (if applicable). Jobs - View the current level and experience points of all jobs; this includes jobs from the disciple of war, magic, hand and land. Collection - View aquired mounts and minions. Quests - View all quests and encounters (trials, dungeons and raids), with indicators for completed activities. Has EorzeaDB tooltip integration. Achievements - View completed achievements. Reference Character - Allows users hide/show sensitive information based on the allocated reference character. Themes - Supports two themes, dark and light. Dynamic Backgrounds - Dynamically changes the background splash to reflect the current expansion most relevant to the reference character. FAQ - Frequently Asked Questions (FAQ) and instructions to identify the Lodestone ID of a character. Completion Metric - Jobs, Collection, Quests and Achievements all have an associated completion metric to indicate overall progress with respect to each aspect."
             },
             {
                 "name": "License",
@@ -65,10 +66,10 @@
         ],
         "stack": ["html", "css", "js", "react"],
         "link": {
-            "github": "https://github.com/DamonGreenhalgh/xivtracker",
-            "website": "https://www.xivtracker.gg/"
+            "website": "https://www.xivtracker.gg/",
+            "github": "https://github.com/DamonGreenhalgh/xivtracker"
         },
-        "tags": ["web app", "stats", "profile"]
+        "tags": ["Web App", "Stats", "Profile"]
     },
     "gameoflife": {
         "title": "Conway's Game of Life",
@@ -78,7 +79,7 @@
         "link": {
             "github": "https://github.com/DamonGreenhalgh/conways-game-of-life"
         },
-        "tags": ["app", "simulation", "game"]
+        "tags": ["App", "Simulation", "Game"]
     },
     "matrix": {
         "title": "Matrix Package",
@@ -88,6 +89,6 @@
         "link": {
             "github": "https://github.com/DamonGreenhalgh/matrix-package"
         },
-        "tags": ["matrix", "math", "tool", "package"]
+        "tags": ["Matrix", "Math", "Tool", "Package"]
     }
 }

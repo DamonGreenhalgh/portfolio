@@ -1,9 +1,0 @@
-.socials {
-    border-radius: .5rem;
-    z-index: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: var(--text-500);
-}

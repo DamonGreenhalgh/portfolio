@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     background-color: var(--base-400);
     border: 1px solid var(--base-500);
 }
@@ -13,10 +14,10 @@
 .projects-container {
     position: relative;
     gap: 2rem 1rem;
-    padding: 5rem 2rem;
+    padding: 5rem 1rem;
     transition: padding 1s, translate .5s ease;
     display: grid;
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 350px);
     margin: auto;
 }
 
@@ -28,20 +29,18 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    font-family: "Consola";
     flex-wrap: wrap;
 }
 
 .project__items--tech {
     margin-top: auto;
     padding-top: 2rem;
-    font-family: "Consola";
 }
 
 @media only screen and (max-device-width: 1400px) {
 
     .projects-container {
-        grid-template-columns: 400px 400px;
+        grid-template-columns: 350px 350px;
     }
 
 }

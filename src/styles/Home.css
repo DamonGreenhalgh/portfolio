@@ -2,51 +2,64 @@
     position: relative;
     z-index: 1;
     scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    background-image: url('../images/daggers.png');
+    background-image: url('../images/test.png');
+    /* border-bottom: 1px solid var(--base-500); */
+    /* background-color: var(--base-400); */
     background-position: center;
     background-size: cover;
 }
 
 .home__content {
-    z-index: 3;
-    position: absolute;
-    left: calc(50vw + 2rem);
-    top: 50vh;
-    width: max-content;
+    width: var(--width);
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: 1rem;
 }
 
+.home__content b {
+    font-weight: bold;
+    font-family: "Consola";
+    color: #a0a2f8;
+}
+
 .home__content h1 {
+    color: var(--base-300);
     font-size: 5rem;
 }
 
 .home__content h3 {
-    font-size: 1.5rem;
+    color: var(--base-500);
+    font-size: 2rem;
+    text-align: center;
 }
 
 .home__content button {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.25rem;
-    font-weight: bold;
-    font-family: -apple-system,BlinkMacSystemFont,
-    "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji",
-    "Segoe UI Emoji";
-    color: var(--accent-500);
-    border: 1px solid var(--accent-500);
+    font-family: "Consola";
+    color: var(--base-300);
+    border: 1px solid var(--base-500);
+    border-radius: 2rem;
     padding: 1rem 2rem;
     width: max-content;
-    border-radius: .25rem;
     transition: background-color .5s, color .5s, box-shadow .5s, transform .5s;
 }
 
 .home__content button:hover {
-    background-color: var(--accent-500);
-    color: var(--base-400);
-    box-shadow: 0 .5rem 1rem var(--shadow-500);
+    color: var(--base-300);
+    background-color: #ffffff2d;
     transform: translate(0, -10px);
+}
+
+.home__hero-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .home__hero-text {
@@ -55,11 +68,14 @@
     padding: 1rem;
 }
 
-@media only screen and (max-device-width: 1300px) {
+@media only screen and (max-device-width: 1000px) {
 
     .home__content {
-        left: auto;
-        right: 1rem;
+        justify-content: center;
+        align-items: center;
     }
 
+    .home__hero-container {
+        flex-direction: column;
+    }
 }

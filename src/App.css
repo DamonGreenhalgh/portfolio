@@ -9,12 +9,13 @@
   --text-400: #454b79;
   --text-500: #2f3052;
   --accent-500 : #404eed;
+  /* --accent-500 : #44a52c; */
   --shadow-500 : rgba(42, 41, 124, .15);
 }
 
 html {
   scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; */
+  scroll-snap-type: y mandatory;
 }
 
 button {
@@ -111,17 +112,14 @@ body {
   width: 1rem;
 }
 
-.section-header {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  font-size: 10rem;
-  color: var(--base-500);
-}
-
 @font-face {
   font-family: 'Consola';
   src: url('./fonts/Consola.ttf');
+}
+
+@font-face {
+  font-family: 'ArchitectsDaughter';
+  src: url('./fonts/ArchitectsDaughter.ttf');
 }
 
 @keyframes waiting{
@@ -131,16 +129,38 @@ body {
   100% {opacity: 1;}
 }
 
-@keyframes fade-in {
-  0% {opacity: 0; transform: translate(0, 8rem);}
-  100% {opacity: 1;}
+@keyframes rise-up-from-below {
+  0% {
+    opacity: 0; 
+    transform: translate(0, 8rem);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Phones */
+@keyframes drop-in-from-above {
+  0% {
+    opacity: 0;
+    transform: translate(0, -8rem);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media only screen and (max-device-width: 900px) {
 
   * {
     --width: calc(100vw - 2rem);
+  }
+
+}
+
+@media only screen and (max-device-height: 950px) {
+
+  html {
+    scroll-snap-type: none;
   }
 
 }

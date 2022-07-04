@@ -3,8 +3,8 @@ import Modal from './Modal';
 import ProjectCard from './ProjectCard';
 import projectsJSON from '../data/projects.json';
 import techstackJSON from '../data/techstack.json';
-import { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt} from 'react-icons/fa';
+import { useState, useRef } from 'react';
+import { FaGithub, FaExternalLinkAlt, FaKaggle} from 'react-icons/fa';
 
 // import all logos and banners for each project
 import spaceshiptitanicLogo from '../images/projects/spaceshiptitanic/logo.png'
@@ -17,6 +17,7 @@ import gameoflifeLogo from '../images/projects/gameoflife/logo.png';
 import gameoflifeBanner from '../images/projects/gameoflife/banner.png';
 import matrixLogo from '../images/projects/matrix/logo.png';
 import matrixBanner from '../images/projects/matrix/banner.png';
+import { useAnimationDelay } from '../hooks/useAnimationDelay';
 
 // function to import all image assets within a directory
 function importAll(r) {
@@ -65,7 +66,8 @@ const projectAssets = {
 
 const linkIcons = {
     "github": <FaGithub size="1.25em" />,
-    "website": <FaExternalLinkAlt size="1.25em" />
+    "website": <FaExternalLinkAlt size="1.25em" />,
+    "kaggle": <FaKaggle size="1.25em" />
 }
 
 /**
@@ -75,11 +77,14 @@ const linkIcons = {
  * Multiple Project Card components, each representing a different project.
  * Project information is drawn from the static projects.json file.
  */
-const Projects = () => {
+const Projects = (props) => {
+    const { sectionIndex, sectionRef } = props;
     const [index, setIndex] = useState(0);
     const [expanded, setExpanded] = useState(false);
+    const animationRef = useRef(null);
+    useAnimationDelay(animationRef, true, 1, 0, 4, .5, sectionIndex === 2);
     return (
-        <div className="projects" id="projects">
+        <div className="projects" id="projects" ref={sectionRef}>
             <Modal
                 name={projectsJSON[projectNames[index]].title}
                 description={projectsJSON[projectNames[index]].description}
@@ -124,11 +129,10 @@ const Projects = () => {
                 expanded={expanded}
                 setExpanded={setExpanded}
             />
-            <div className="projects-container">
+            <div className="projects-container" ref={animationRef}>
                 {
                     projectNames.map((project, key) => 
                         <ProjectCard 
-                            banner={projectAssets[project].banner}
                             icon={projectAssets[project].logo}
                             title={projectsJSON[project].title}
                             description={projectsJSON[project].description}
@@ -138,6 +142,8 @@ const Projects = () => {
                                         href={projectsJSON[project].link[item]} 
                                         title={item}
                                         key={key}
+                                        target="_blank"
+                                        rel="noreferrer"
                                         className="icon-button"
                                     >
                                         {linkIcons[item]}

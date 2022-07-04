@@ -2,11 +2,14 @@ import '../styles/About.css';
 import portrait from '../images/portrait.png';
 import techJSON from '../data/techstack.json';
 import Divider from './Divider';
+import { useAnimationDelay } from '../hooks/useAnimationDelay';
 
-const About = () => {
+const About = (props) => {
+    const { sectionIndex, sectionRef } = props;
     const linkBase = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+    useAnimationDelay(sectionRef, false, 1, 0, 4, 1, sectionIndex === 1);
     return (
-        <div className="about" id="about">
+        <div className="about" id="about" ref={sectionRef}>
             <div className="col gap">
                 <div className="row max-width">
                     <h2 className="about__header-text">"Hello, World!"</h2>
@@ -29,13 +32,13 @@ const About = () => {
                     strive to build <b><i>beautiful awe-inspiring products</i></b>.
                 </p>
                 <Divider />
-                <p>
+                <p >
                     I'm currently developing web applications using <b>HTML, CSS,
                     </b> and <b> JavaScript</b> with <b>ReactJS</b>. But look 
                     forward to pushing my web apps to the desktop environment 
                     through technologies like <b>ElectronJS</b>.
                 </p>
-                <p>
+                <p >
                     <i>The following are <b>technologies</b> i've worked with ...</i>
                 </p>
                 <div className="techstack">

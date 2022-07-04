@@ -28,19 +28,13 @@ const Modal = (props) => {
                 + (expanded ? " modal__panel--expanded" : "")
                 }
             >
-                <button 
-                    className="modal__close-button" 
-                    onClick={() => setExpanded(false)}
-                >
-                    <IoClose size="2.5em" />
-                </button>
                 <img 
                     src={banner} 
                     className="modal__banner" 
                     alt="Project banner"
                 />
                 <div className="modal__content">
-                    <div className="row justify-between">
+                    <div className="modal__header">
                         <div className="row gap align-center">
                             <img 
                                 src={logo} 
@@ -51,6 +45,12 @@ const Modal = (props) => {
                         </div>
                         <div className="project__items">
                             {links}
+                            <button 
+                                className="icon-button modal__close-button" 
+                                onClick={() => setExpanded(false)}
+                            >
+                                <IoClose size="2.5em" />
+                            </button>
                         </div>
                     </div>
                     <Divider />
@@ -60,14 +60,14 @@ const Modal = (props) => {
                             <p>{description}</p>
                             {content}
                             <h4>Tools</h4>
-                            <div className="project__items">
+                            <div className="project__items" style={{fontFamily: "Consola"}}>
                                 {tech}
                             </div>
                             <h4>Tags</h4>
                             <div className="project__items">
                             {
                                 tags.map((tag, key) =>
-                                    <p key={key}>{tag}</p>
+                                    <p className="modal__tag" key={key}>{tag}</p>
                                 )
                             }
                             </div>
