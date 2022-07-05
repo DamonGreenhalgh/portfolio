@@ -21,10 +21,10 @@ const Navbar = (props) => {
             <button onClick={() => window.location.reload()} >
                 <img src={brand} className="navbar__brand" alt="Brand" />
             </button>
-            <a href="#home" className="navbar__item">/ home</a>
-            <a href="#about" className="navbar__item">/ about</a>
-            <a href="#projects" className="navbar__item">/ projects</a>
-            <a href="#contact" className="navbar__item">/ contact</a>
+            <a href="#home" className="navbar__item navbar__item--section">/ home</a>
+            <a href="#about" className="navbar__item navbar__item--section">/ about</a>
+            <a href="#projects" className="navbar__item navbar__item--section">/ projects</a>
+            <a href="#contact" className="navbar__item navbar__item--section">/ contact</a>
             <a
                 href="https://github.com/DamonGreenhalgh"
                 target="_blank"

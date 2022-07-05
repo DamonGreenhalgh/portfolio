@@ -28,26 +28,31 @@
 
 .navbar__item {
     font-size: large;
-    padding: .5rem 1rem;
-    border-radius: 1rem;
+    padding: .25rem;
     transition: transform .25s ease, color .5s;
 }
 
 .navbar__item:hover {
     outline: 1px solid var(--accent-300);
-    /* border-bottom: 1px solid var(--accent-500); */
     transform: translate(0, -3px);
 }
 
 .navbar--top .navbar__item:hover {
     color: var(--base-300);
+}
+
+.navbar__item--section {
+    padding: .5rem 1rem;
+}
+
+.navbar--top .navbar__item--section:hover {
+    border-radius: .5rem;
     background-color: #ffffff2d;
-    outline: 1px solid var(--base-500);
-    /* border-bottom: 1px solid var(--base-500); */
 }
 
 .navbar__brand {
     max-height: 3rem;
+    margin-right: 1rem;
 }
 
 @media only screen and (max-device-width: 800px) {

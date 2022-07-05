@@ -1,5 +1,5 @@
 import '../styles/About.css';
-import portrait from '../images/portrait.png';
+import profile from '../images/profile.png';
 import techJSON from '../data/techstack.json';
 import Divider from './Divider';
 import { useAnimationDelay } from '../hooks/useAnimationDelay';
@@ -20,8 +20,8 @@ const About = (props) => {
                     <b>Hi there!</b> My name is <b>Damon Greenhalgh</b>. I'm a <i><b>Software 
                     Developer</b></i> based in <i>Auckland, New Zealand</i>. I'm currently 
                     studying towards a <b>Bachelor of Science (Bsc)</b> majoring 
-                    in <b> Computer Science </b>and <b>  Mathematics </b>at the 
-                    <i> University of Auckland</i>.
+                    in <b> Computer Science </b>and <b>  Mathematics </b>at the  
+                    <i><b> University of Auckland</b></i>.
                 </p>
                 <p>
                     I have a strong background in <b>Illustration</b> and 
@@ -32,12 +32,6 @@ const About = (props) => {
                     strive to build <b><i>beautiful awe-inspiring products</i></b>.
                 </p>
                 <Divider />
-                <p >
-                    I'm currently developing web applications using <b>HTML, CSS,
-                    </b> and <b> JavaScript</b> with <b>ReactJS</b>. But look 
-                    forward to pushing my web apps to the desktop environment 
-                    through technologies like <b>ElectronJS</b>.
-                </p>
                 <p >
                     <i>The following are <b>technologies</b> i've worked with ...</i>
                 </p>
@@ -50,7 +44,7 @@ const About = (props) => {
                     )}
                 </div>   
             </div>
-            <img src={portrait} className="about__portrait" alt="Portrait" />
+            <img src={profile} className="about__portrait" alt="Portrait" />
         </div>
     );
 }

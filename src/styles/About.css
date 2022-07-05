@@ -13,8 +13,8 @@
 .about__portrait {
     align-self: flex-start;
     max-height: 15rem;
-    max-width: 15rem;
-    margin-top: 5rem;
+    aspect-ratio: 1 / 1;
+    margin-top: 10rem;
     border: 1rem solid transparent;
     outline: 1px solid var(--base-500);
 }

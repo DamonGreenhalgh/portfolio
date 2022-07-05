@@ -39,10 +39,6 @@
         "name": "React",
         "icon": "/react/react-original.svg"
     },
-    "electronjs": {
-        "name": "ElectronJS",
-        "icon": "/electron/electron-original.svg"
-    },
     "firebase": {
         "name": "Firebase",
         "icon": "/firebase/firebase-plain.svg"

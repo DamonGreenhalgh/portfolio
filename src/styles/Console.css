@@ -1,5 +1,5 @@
 .console {
-    z-index: 3;
+    z-index: 4;
     word-wrap: break-word;
     resize: both;
     position: fixed;
@@ -63,7 +63,7 @@
     position: fixed;
     top: 5rem;
     left: 1rem;
-    z-index: 5;
+    z-index: 4;
     color: var(--text-500);
     margin-bottom: auto;
     transition: color .5s;
