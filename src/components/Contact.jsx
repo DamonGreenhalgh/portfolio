@@ -4,7 +4,7 @@ import Divider from './Divider';
 
 const Contact = (props) => {
     const { sectionIndex, sectionRef } = props;
-    useAnimationDelay(sectionRef, true, 1, 0, 4, 1, sectionIndex === 3);
+    useAnimationDelay(sectionRef, true, 1, 0, 4, 1, sectionIndex === 4);
     return (
         <div className="contact" action="https://public.herotofu.com/v1/5adb50a0-91ea-11ec-8462-6960be7ce578" method="post" id="contact" ref={sectionRef}>
             <form className="col gap-lg text-center">

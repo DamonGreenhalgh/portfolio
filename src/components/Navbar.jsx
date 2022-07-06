@@ -24,6 +24,7 @@ const Navbar = (props) => {
             <a href="#home" className="navbar__item navbar__item--section">/ home</a>
             <a href="#about" className="navbar__item navbar__item--section">/ about</a>
             <a href="#projects" className="navbar__item navbar__item--section">/ projects</a>
+            <a href="#gallery" className="navbar__item navbar__item--section">/ gallery</a>
             <a href="#contact" className="navbar__item navbar__item--section">/ contact</a>
             <a
                 href="https://github.com/DamonGreenhalgh"

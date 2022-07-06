@@ -5,6 +5,7 @@ import Console from './components/Console';
 import Home from './components/Home';
 import About from './components/About';
 import Projects from './components/Projects';
+import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useState, useEffect, useRef, useMemo } from 'react';
@@ -20,8 +21,9 @@ function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
+  const galleryRef = useRef(null);
   const contactRef = useRef(null);
-  const sectionRefs = useMemo(() => [homeRef, aboutRef, projectsRef, contactRef], []);
+  const sectionRefs = useMemo(() => [homeRef, aboutRef, projectsRef, galleryRef, contactRef], []);
 
   /**
    * This useEffect hook handles all scroll position dependent states.
@@ -60,6 +62,7 @@ function App() {
       <Home sectionIndex={sectionIndex} sectionRef={homeRef} />
       <About sectionIndex={sectionIndex} sectionRef={aboutRef} />
       <Projects sectionIndex={sectionIndex} sectionRef={projectsRef} />
+      <Gallery sectionIndex={sectionIndex} sectionRef={galleryRef} />
       <Contact sectionIndex={sectionIndex} sectionRef={contactRef} />
       <Footer />
     </div>

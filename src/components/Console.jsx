@@ -44,9 +44,13 @@ const Console = (props) => {
         "content": <p>Change directory to Projects</p>,
         "index": 2
       },
+      "gallery": {
+        "content": <p>Change directory to Gallery</p>,
+        "index": 3
+      },
       "contact": {
         "content": <p>Change directory to Contact</p>,
-        "index": 3
+        "index": 4
       },
       "content": null,
       "code": 0,
