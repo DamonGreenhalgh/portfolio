@@ -86,6 +86,7 @@ const Projects = (props) => {
     return (
         <div className="projects" id="projects" ref={sectionRef}>
             <Modal
+                type={0}
                 name={projectsJSON[projectNames[index]].title}
                 description={projectsJSON[projectNames[index]].description}
                 content={projectsJSON[projectNames[index]].content.map((section, key) =>

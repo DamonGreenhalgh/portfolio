@@ -1,11 +1,6 @@
 .projects {
     scroll-snap-align: center;
     position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background-color: var(--base-400);
     border-top: 1px solid var(--base-500);
@@ -15,10 +10,12 @@
     position: relative;
     gap: 2rem 1rem;
     padding: 5rem 1rem;
-    transition: padding 1s, translate .5s ease;
     display: grid;
+    max-width: calc(350px * 3 + 4rem);
+    width: min-content;
     grid-template-columns: repeat(3, 350px);
     margin: auto;
+    transition: padding 1s, translate .5s ease;
 }
 
 .projects-container::-webkit-scrollbar {
@@ -37,7 +34,7 @@
     padding-top: 2rem;
 }
 
-@media only screen and (max-device-width: 1400px) {
+@media only screen and (max-device-width: 1100px) {
 
     .projects-container {
         grid-template-columns: 350px 350px;
@@ -45,10 +42,20 @@
 
 }
 
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (max-device-width: 750px) {
 
     .projects-container {
         grid-template-columns: 1fr;
+        width: max-content;
     }
 
+}
+
+@media only screen and (max-device-width: 400px) {
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    
 }

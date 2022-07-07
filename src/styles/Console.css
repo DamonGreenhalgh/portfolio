@@ -12,7 +12,6 @@
     top: 5rem;
     color: var(--base-500);
     background-color: var(--base-800);
-    box-shadow: 0 .5rem 2rem var(--shadow-500);
     outline: 1px solid var(--base-800);
     transition: opacity .5s;
 }
@@ -64,7 +63,7 @@
     top: 5rem;
     left: 1rem;
     z-index: 4;
-    color: var(--text-500);
+    color: var(--base-800);
     margin-bottom: auto;
     transition: color .5s;
 }

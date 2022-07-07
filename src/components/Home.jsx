@@ -13,7 +13,7 @@ const Home = (props) => {
           <h1>Hi! I'm</h1>
           <h1 className="home__hero-text">Damon.</h1>
         </div>
-        <h3>I like to <b>build</b> and <b style={{fontFamily: "ArchitectsDaughter"}}>draw</b> stuff.</h3>
+        <h3>I like to <b>build</b> and <b style={{fontFamily: "ArchitectsDaughter"}}>doodle</b> stuff.</h3>
         <button 
           onClick={() => window.scrollTo(0, window.innerHeight)} 
           title="Show More"

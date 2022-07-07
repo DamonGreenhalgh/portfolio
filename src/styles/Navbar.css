@@ -43,10 +43,14 @@
 
 .navbar__item--section {
     padding: .5rem 1rem;
+    border-radius: .5rem;
+}
+
+.navbar__item--section:hover {
+    background-color: #cac7da2d;
 }
 
 .navbar--top .navbar__item--section:hover {
-    border-radius: .5rem;
     background-color: #ffffff2d;
 }
 

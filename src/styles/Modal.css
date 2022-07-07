@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
     opacity: 0;
     top: 0;
     width: 100vw;
@@ -35,7 +36,7 @@
     position: relative;
     overflow-y: scroll;
     background-color: var(--base-400);
-    box-shadow: 0 1rem 2rem var(--shadow-500);
+    box-shadow: 0 1rem 2rem var(--shadow-800);
     border-radius: .25rem;
     height: 100%;
     max-width: calc(350px * 3 + 2rem);
@@ -57,11 +58,6 @@
 
 }
 
-.modal__close-button {
-    color: var(--text-300);
-    margin-left: 1rem;
-}
-
 .modal__content-row {
     display: flex;
     gap: 2rem;
@@ -72,6 +68,12 @@
     background-color: var(--accent-500);
     border-radius: .25rem;
     color: var(--base-400);
+}
+
+.modal__art {
+    max-height: calc(350px * 2 + 3rem);
+    height: 100%;
+    box-shadow: 0 1rem 2rem var(--shadow-800);
 }
 
 @media only screen and (max-device-width: 500px) {

@@ -15,7 +15,8 @@ import { useEffect, useState } from "react";
 
 const animationTypes = [
     "drop-in-from-above",
-    "rise-up-from-below"
+    "rise-up-from-below",
+    "fade-in"
 ];
 
 export const useAnimationDelay = (ref, toChild, type, delay, speed, duration, trigger) => {
