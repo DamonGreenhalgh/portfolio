@@ -39,7 +39,7 @@ const About = (props) => {
                     {Object.values(techJSON).map((tech, index) => 
                         <div className="tech" title={tech.name} key={index}>
                             <img src={linkBase + tech.icon} alt={tech.name}/>
-                            <p style={{fontFamily: "Consola"}}>{tech.name}</p>
+                            <p style={{fontFamily: "consola"}}>{tech.name}</p>
                         </div>
                     )}
                 </div>   

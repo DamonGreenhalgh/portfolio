@@ -61,7 +61,7 @@ const Modal = (props) => {
                                 <p>{description}</p>
                                 {content}
                                 <h4>Tools</h4>
-                                <div className="project__items" style={{fontFamily: "Consola"}}>
+                                <div className="project__items" style={{fontFamily: "consola"}}>
                                     {tech}
                                 </div>
                                 <h4>Tags</h4>
@@ -89,11 +89,13 @@ const Modal = (props) => {
                         </div>
                     </div>
                 </div> :
-                <img 
-                    src={artwork} 
-                    alt={description} 
-                    className="modal__art" 
-                />
+                <div className="modal__art-container">
+                    <img 
+                        src={artwork} 
+                        alt={description} 
+                        className="modal__art" 
+                    />
+                </div>
             }
         </div>
     );

@@ -70,10 +70,14 @@
     color: var(--base-400);
 }
 
+.modal__art-container {
+    max-width: calc(100vw - 2rem);
+}
+
 .modal__art {
-    max-height: calc(350px * 2 + 3rem);
+    max-height: calc(100vh - 4rem);
     height: 100%;
-    box-shadow: 0 1rem 2rem var(--shadow-800);
+    width: 100%;
 }
 
 @media only screen and (max-device-width: 500px) {

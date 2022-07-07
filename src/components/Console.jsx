@@ -92,6 +92,9 @@ const Console = (props) => {
           <Link to="projects" onMouseEnter={() => setCommand("cd projects")}>
             {"15/02/2022  10:59 PM    <DIR>          projects"}
           </Link>
+          <Link to="gallery" onMouseEnter={() => setCommand("cd gallery")}>
+            {"27/08/2017  10:59 PM    <DIR>          gallery"}
+          </Link>
           <Link to="contact" onMouseEnter={() => setCommand("cd contact")}>
             {"14/08/2004  07:04 AM    <DIR>          contact"}
           </Link>

@@ -39,7 +39,7 @@ const ProjectCard = (props) => {
                 </div>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <div className="project__items project__items--tech" style={{fontFamily: "Consola"}}>
+                <div className="project__items project__items--tech" style={{fontFamily: "consola"}}>
                     {tech}
                 </div>
             </div>

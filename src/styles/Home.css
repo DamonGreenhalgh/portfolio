@@ -22,7 +22,7 @@
 
 .home__content b {
     font-weight: bold;
-    font-family: "Consola";
+    font-family: "consola";
     color: #a0a2f8;
 }
 
@@ -33,6 +33,7 @@
 
 .home__content h3 {
     color: var(--base-500);
+    font-family: 'Comfortaa';
     font-size: 2rem;
     text-align: center;
 }
@@ -40,7 +41,7 @@
 .home__content button {
     margin-top: 1rem;
     font-size: 1.25rem;
-    font-family: "Consola";
+    font-family: "consola";
     color: var(--base-300);
     border: 1px solid var(--base-500);
     border-radius: 2rem;
