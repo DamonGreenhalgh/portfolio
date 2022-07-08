@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box; 
-  --width: 50rem;
   --base-300: #ffffff;
   --base-400: #f5f7f9;
   --base-500: #d7d8e6;
@@ -17,7 +16,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; */
 }
 
 button {
@@ -34,6 +32,7 @@ textarea {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color .5s;
 }
 
 a:hover {
@@ -71,6 +70,11 @@ body {
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
 } 
 
+::selection {
+  background-color: var(--accent-300);
+  color: var(--base-300);
+}
+
 .app {
   position: relative;
   display: flex;
@@ -81,20 +85,6 @@ body {
   width: 100%;
   height: 1px;
   background-color: var(--base-500);
-}
-
-.console__text {
-  color: var(--base-400);
-  font-weight: 500;
-}
-
-.icon-button {
-  transition: transform .25s, color .25s;
-}
-
-.icon-button:hover {
-  transform: scale(1.25, 1.25);
-  color: var(--accent-500);
 }
 
 .waiting-pointer {
@@ -112,11 +102,6 @@ body {
   background-color: var(--text-500);
   height: .5rem;
   width: 1rem;
-}
-
-::selection {
-  background-color: var(--accent-300);
-  color: var(--base-300);
 }
 
 @font-face {
@@ -145,10 +130,18 @@ body {
 }
 
 @keyframes waiting{
-  0% {opacity: 0;}
-  49% {opacity: 0;}
-  50% {opacity: 1;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes rise-up-from-below {
@@ -180,20 +173,4 @@ body {
     transform: scale(1);
     opacity: 1;
   }
-}
-
-@media only screen and (max-device-width: 900px) {
-
-  * {
-    --width: calc(100vw - 2rem);
-  }
-
-}
-
-@media only screen and (max-device-height: 950px) {
-
-  html {
-    scroll-snap-type: none;
-  }
-
 }

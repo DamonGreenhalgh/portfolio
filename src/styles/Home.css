@@ -7,13 +7,11 @@
     justify-content: center;
     height: 100vh;
     background-image: url('../images/home.png');
-    /* background-color: var(--base-800); */
     background-position: center;
     background-size: cover;
 }
 
 .home__content {
-    width: var(--width);
     display: flex;
     flex-direction: column;
     align-items: flex-end;

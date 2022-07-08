@@ -106,7 +106,6 @@ const Projects = (props) => {
                             key={key}
                             target="_blank"
                             rel="noreferrer"
-                            className="icon-button"
                         >
                             {linkIcons[item]}
                         </a>
@@ -148,7 +147,6 @@ const Projects = (props) => {
                                         key={key}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="icon-button"
                                     >
                                         {linkIcons[item]}
                                     </a>
