@@ -120,7 +120,7 @@ const Modal = (props) => {
                 <button onClick={() => setExpanded(false)} style={{position: "absolute"}} className="modal__button modal__button--close">
                     <MdClose size="2em" />
                 </button>
-                <button onClick={() => {setIndex(Math.min(index + 1, maxIndex)); console.log(index + 1)}} className="modal__button">
+                <button onClick={() => setIndex(Math.min(index + 1, maxIndex))} className="modal__button">
                     <MdArrowForwardIos size="2em" />
                 </button>
             </div>

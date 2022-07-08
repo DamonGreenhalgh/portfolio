@@ -13,7 +13,7 @@ function importAll(r) {
 }
 
 // Import all screenshots for each project
-const thumbnails = Object.values(importAll(require.context('../images/gallery/thumbnails', false, /\.png/))).reverse();
+const thumbnails = Object.values(importAll(require.context('../images/gallery/thumbnails', false, /\.png/)));
 const artworks = Object.values(importAll(require.context('../images/gallery/artwork', false, /\.png/)));
 const maxIndex = artworks.length - 1;
 
@@ -37,11 +37,11 @@ const Gallery = (props) => {
             galleryCols.push(
                 <button 
                 className="art__wrapper"
-                key={maxIndex - index}
-                onClick={() => {setExpanded(true); setContentIndex(maxIndex - index)}}
+                key={index}
+                onClick={() => {setExpanded(true); setContentIndex(index)}}
                 >
                     <div className="art__overlay">
-                        <p>{artworksJSON[maxIndex - index].name}</p>
+                        <p>{artworksJSON[index].name}</p>
                     </div>
                     <img src={thumbnail} alt="Art" className="art" />
                 </button>
