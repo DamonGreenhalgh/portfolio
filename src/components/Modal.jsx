@@ -1,6 +1,6 @@
 import '../styles/Modal.css';
 import Divider from './Divider';
-import { MdClose, MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md';
+import { MdClose, MdArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 /**
  * Modal Component
@@ -29,10 +29,9 @@ const Modal = (props) => {
     return (
         <div 
             className={"modal" + (expanded ? " modal--expanded" : "")}
-            // onClick={() => setExpanded(false)}
         >
-            <button onClick={() => setIndex(Math.max(index - 1, 0))}>
-                <MdArrowBackIos size="2em" />
+            <button onClick={() => setIndex(Math.max(index - 1, 0))} className="modal__button">
+                <MdOutlineArrowBackIosNew size="2em" />
             </button>
             {
                 type === 0 ?
@@ -49,14 +48,12 @@ const Modal = (props) => {
                     />
                     <div className="modal__content">
                         <div className="modal__header">
-                            <div className="row gap align-center">
-                                <img 
-                                    src={logo} 
-                                    style={{height: "2.5rem"}} 
-                                    alt="Project brand"
-                                />
-                                <h2>{name}</h2>
-                            </div>
+                            <img 
+                                src={logo} 
+                                style={{height: "2.5rem"}} 
+                                alt="Project brand"
+                            />
+                            <h2>{name}</h2>
                             <div className="project__items">
                                 {links}
                             </div>
@@ -104,12 +101,14 @@ const Modal = (props) => {
                     />
                 </div>
             }
-            <button onClick={() => {setIndex(Math.min(index + 1, maxIndex)); console.log(index + 1)}}>
-                <MdArrowForwardIos size="2em" />
-            </button>
-            <button onClick={() => setExpanded(false)}>
-                <MdClose size="2em" />
-            </button>
+            <div className="modal__button-container">
+                <button onClick={() => setExpanded(false)} style={{position: "absolute"}} className="modal__button modal__button--close">
+                    <MdClose size="2em" />
+                </button>
+                <button onClick={() => {setIndex(Math.min(index + 1, maxIndex)); console.log(index + 1)}} className="modal__button">
+                    <MdArrowForwardIos size="2em" />
+                </button>
+            </div>
         </div>
     );
 }
