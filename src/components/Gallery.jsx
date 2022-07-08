@@ -56,6 +56,9 @@ const Gallery = (props) => {
                 setExpanded={setExpanded}
                 type={1}
                 artwork={artworks[contentIndex]}
+                index={contentIndex}
+                maxIndex={artworks.length - 1}
+                setIndex={setContentIndex}
             />
             <div className="gallery__content" ref={animationRef}>
                 {content}

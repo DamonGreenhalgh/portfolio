@@ -129,6 +129,9 @@ const Projects = (props) => {
                 tags={projectsJSON[projectNames[index]].tags}
                 expanded={expanded}
                 setExpanded={setExpanded}
+                index={index}
+                setIndex={setIndex}
+                maxIndex={projectNames.length - 1}
             />
             <div className="projects-container" ref={animationRef}>
                 {

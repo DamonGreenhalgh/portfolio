@@ -23,7 +23,7 @@
 .home__content b {
     font-weight: bold;
     font-family: "consola";
-    color: #a0a2f8;
+    color: var(--accent-300);
 }
 
 .home__content h1 {

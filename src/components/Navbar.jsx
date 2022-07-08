@@ -55,7 +55,7 @@ const Navbar = (props) => {
                     <a href="#projects" className="navbar__item navbar__item--section">Projects</a>
                     <a href="#gallery" className="navbar__item navbar__item--section">Artworks</a>
                     <a href="#contact" className="navbar__item navbar__item--section">Contact</a>
-                    <div className="row gap" style={{margin: burger ? "auto 0 0 0" : "0 0 0 auto"}}>
+                    <div className="row" style={{margin: burger ? "auto 0 0 0" : "0 0 0 auto"}}>
                         <a
                             href="https://github.com/DamonGreenhalgh"
                             target="_blank"

@@ -2,19 +2,37 @@
     position: relative;
     scroll-snap-align: center;
     display: flex;
-    align-items: center;
-    width: var(--width);
+    max-width: 60rem;
     margin: auto;
-    min-height: 100vh;
-    gap: 3rem;
+    gap: 5rem;
     padding: 5rem 1rem;
+}
+
+.about__header-container {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 5rem;
+}
+
+.about__profile-container {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
 }
 
 .about__portrait {
     align-self: flex-start;
     max-height: 15rem;
     border-radius: 100%;
-    margin-top: 10rem;
+    margin: 0 auto;
+}
+
+.about__quote {
+    font-size: 1.2rem;
+    font-family: 'Comfortaa';
 }
 
 .techstack {
@@ -49,6 +67,14 @@
 
     .about__portrait {
         margin: 0 auto;
+    }
+
+    .about__profile-container {
+        margin-top: 0;
+    }
+
+    .about__header-container {
+        min-height: auto;
     }
 
 }

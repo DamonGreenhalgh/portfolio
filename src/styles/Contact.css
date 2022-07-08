@@ -29,7 +29,7 @@
 
 .contact__input:focus {
     outline: none;
-    border: 1px solid #a0a2f8;
+    border: 1px solid var(--accent-300);
     color: var(--accent-500);
 }
 

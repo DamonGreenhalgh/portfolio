@@ -11,40 +11,47 @@ const About = (props) => {
     return (
         <div className="about" id="about" ref={sectionRef}>
             <div className="col gap">
-                <div className="row max-width">
+                <div className="about__header-container">
                     <h2 className="about__header-text">"Hello, World!"</h2>
                     <div className="waiting-pointer waiting-pointer--about" />
                 </div>
                 <Divider />
                 <p>
-                    <b>Hi there!</b> My name is <b>Damon Greenhalgh</b>. I'm a <i><b>Software 
-                    Developer</b></i> based in <i>Auckland, New Zealand</i>. I'm currently 
-                    studying towards a <b>Bachelor of Science (Bsc)</b> majoring 
+                    Hi there! My name is <b>Damon Greenhalgh</b>. I'm a <b>Software 
+                    Developer</b> based in <i>Auckland, New Zealand</i>. I'm currently 
+                    studying towards a <i>Bachelor of Science (Bsc)</i> majoring 
                     in <b> Computer Science </b>and <b>  Mathematics </b>at the  
-                    <i><b> University of Auckland</b></i>.
+                    <i> University of Auckland</i>.
                 </p>
                 <p>
-                    I have a strong background in <b>Illustration</b> and 
-                    <b> Concept Art</b>. The former has trained my eye to develop 
-                    a strong understanding of <i>color, light</i> and <i>form</i>, 
-                    allowing me to deliver pleasing <b>UI/UX</b> designs. The latter 
-                    trained my design methodology. Be it by canvas or code. I 
-                    strive to build <b><i>beautiful awe-inspiring products</i></b>.
+                    One of my core passions is <b>Visual Art</b>. From little doodles to full digital illustrations. 
+                    I'm always striving to improve my skills. Many of which are applicable to 
+                    <b> Front-end UI/UX</b> design. Concepts like <i>color, contrast</i> and <i>form</i> are foundations 
+                    for building <b>coherent</b>, <b>accessible</b> and <b>beautiful products</b>. 
+                </p>
+                <p>
+                    I'm currently building upon the foundations of front-end web development by integrating 
+                    <b> CI/CD</b> pipelines into my existing projects. 
                 </p>
                 <Divider />
+                
                 <p >
-                    <i>The following are <b>technologies</b> i've worked with ...</i>
+                    The following are <b>technologies</b> i've worked with in the past,
                 </p>
                 <div className="techstack">
                     {Object.values(techJSON).map((tech, index) => 
                         <div className="tech" title={tech.name} key={index}>
                             <img src={linkBase + tech.icon} alt={tech.name}/>
-                            <p style={{fontFamily: "consola"}}>{tech.name}</p>
+                            <p>{tech.name}</p>
                         </div>
                     )}
                 </div>   
             </div>
-            <img src={profile} className="about__portrait" alt="Portrait" />
+            <div className="about__profile-container">
+                <img src={profile} className="about__portrait" alt="Portrait" />
+                <p className="about__quote">"Be it by canvas or code, I strive to build awe-inspiring products"</p>
+            </div>
+            
         </div>
     );
 }

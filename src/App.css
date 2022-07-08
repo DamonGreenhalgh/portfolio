@@ -6,9 +6,10 @@
   --base-500: #d7d8e6;
   --base-800: #221f2b;
   --base-800: #171717;
-  --text-300: #646d96;
-  --text-400: #454b79;
-  --text-500: #2f3052;
+  --text-300: #797e99;
+  --text-400: #565a75;
+  --text-500: #323346;
+  --accent-300: #a0a2f8;
   --accent-500: #404eed;
   --shadow-500: rgba(42, 41, 124, .15);
   --shadow-800: rgba(19, 19, 26, 0.5);
@@ -40,7 +41,7 @@ a:hover {
 }
 
 b {
-  color: #5152a7;
+  color: #6b6ea7;
   font-weight: 600;
 }
 
@@ -67,7 +68,7 @@ body {
   color: var(--text-300);
   background-color: var(--base-300);
   overflow-x: hidden;
-  font-family: open sans,helvetica neue,Helvetica,Arial,sans-serif;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
 } 
 
 .app {
@@ -113,6 +114,11 @@ body {
   width: 1rem;
 }
 
+::selection {
+  background-color: var(--accent-300);
+  color: var(--base-300);
+}
+
 @font-face {
   font-family: 'Consola';
   src: url('./fonts/Consola.ttf');
@@ -131,6 +137,11 @@ body {
 @font-face {
   font-family: 'Montserrat';
   src: url('./fonts/Montserrat.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter.ttf');
 }
 
 @keyframes waiting{

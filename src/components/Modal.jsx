@@ -1,5 +1,6 @@
 import '../styles/Modal.css';
 import Divider from './Divider';
+import { MdClose, MdArrowForwardIos, MdArrowBackIos } from 'react-icons/md';
 
 /**
  * Modal Component
@@ -19,14 +20,20 @@ const Modal = (props) => {
         tags,
         expanded,
         setExpanded,
+        index,
+        maxIndex,
+        setIndex,
         type,
         artwork
     } = props;
     return (
         <div 
             className={"modal" + (expanded ? " modal--expanded" : "")}
-            onClick={() => setExpanded(false)}
+            // onClick={() => setExpanded(false)}
         >
+            <button onClick={() => setIndex(Math.max(index - 1, 0))}>
+                <MdArrowBackIos size="2em" />
+            </button>
             {
                 type === 0 ?
                 <div 
@@ -97,6 +104,12 @@ const Modal = (props) => {
                     />
                 </div>
             }
+            <button onClick={() => {setIndex(Math.min(index + 1, maxIndex)); console.log(index + 1)}}>
+                <MdArrowForwardIos size="2em" />
+            </button>
+            <button onClick={() => setExpanded(false)}>
+                <MdClose size="2em" />
+            </button>
         </div>
     );
 }
