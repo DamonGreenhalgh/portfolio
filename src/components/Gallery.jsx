@@ -2,7 +2,7 @@ import '../styles/Gallery.css';
 import '../styles/Modal.css';
 import { useAnimationDelay } from '../hooks/useAnimationDelay';
 import { useEffect, useRef, useState } from "react";
-import artJSON from '../data/art.json';
+import artworksJSON from '../data/artworks.json';
 import Modal from './Modal';
 
 // function to import all image assets within a directory
@@ -13,8 +13,9 @@ function importAll(r) {
 }
 
 // Import all screenshots for each project
-const thumbnails = Object.values(importAll(require.context('../images/gallery/thumbnails', false, /\.png/)));
+const thumbnails = Object.values(importAll(require.context('../images/gallery/thumbnails', false, /\.png/))).reverse();
 const artworks = Object.values(importAll(require.context('../images/gallery/artwork', false, /\.png/)));
+const maxIndex = artworks.length - 1;
 
 /**
  * Gallery container
@@ -32,20 +33,20 @@ const Gallery = (props) => {
 
     useEffect(() => {
         const galleryCols = [];
-        for (let index = thumbnails.length - 1; index > -1; index--) {
+        thumbnails.forEach((thumbnail, index) => {
             galleryCols.push(
                 <button 
                 className="art__wrapper"
-                key={index}
-                onClick={() => {setExpanded(true); setContentIndex(index)}}
+                key={maxIndex - index}
+                onClick={() => {setExpanded(true); setContentIndex(maxIndex - index)}}
                 >
                     <div className="art__overlay">
-                        <p>{artJSON[index].name}</p>
+                        <p>{artworksJSON[maxIndex - index].name}</p>
                     </div>
-                    <img src={thumbnails[index]} alt="Art" className="art" />
+                    <img src={thumbnail} alt="Art" className="art" />
                 </button>
             )
-        }
+        });
         setContent(galleryCols); 
     }, [])
 
@@ -57,7 +58,7 @@ const Gallery = (props) => {
                 type={1}
                 artwork={artworks[contentIndex]}
                 index={contentIndex}
-                maxIndex={artworks.length - 1}
+                maxIndex={maxIndex}
                 setIndex={setContentIndex}
             />
             <div className="gallery__content" ref={animationRef}>
