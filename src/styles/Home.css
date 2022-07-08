@@ -6,7 +6,8 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('../images/home.png');
+    /* background-image: url('../images/home.png'); */
+    background-color: #090814;
     background-position: center;
     background-size: cover;
 }

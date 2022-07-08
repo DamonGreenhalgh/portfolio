@@ -1,14 +1,13 @@
 .gallery {
-    scroll-snap-align: center;
-    background-color: var(--base-400);
-    background-color: var(--base-800);
-    border-bottom: 1px solid var(--base-500);
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery__content {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--base-800);
 }
 
 .art__wrapper {

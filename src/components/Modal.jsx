@@ -1,6 +1,12 @@
 import '../styles/Modal.css';
 import Divider from './Divider';
-import { MdClose, MdArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/md';
+import { 
+    MdClose, 
+    MdArrowForwardIos, 
+    MdOutlineArrowBackIosNew 
+} from 'react-icons/md';
+import { useState, useEffect } from 'react';
+import { VscLoading } from 'react-icons/vsc';
 
 /**
  * Modal Component
@@ -8,6 +14,7 @@ import { MdClose, MdArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icon
  * based on the current index state.
  */
 const Modal = (props) => {
+    const [loading, setLoading] = useState(false);
     const {
         name,
         description,
@@ -26,14 +33,22 @@ const Modal = (props) => {
         type,
         artwork
     } = props;
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, [500])
+    }, [index])
+
     return (
-        <div 
-            className={"modal" + (expanded ? " modal--expanded" : "")}
-        >
+        <div className={"modal" + (expanded ? " modal--expanded" : "")}>
             <button onClick={() => setIndex(Math.max(index - 1, 0))} className="modal__button">
                 <MdOutlineArrowBackIosNew size="2em" />
             </button>
             {
+                loading ? 
+                <VscLoading size="3em" className="modal__loading" /> :
                 type === 0 ?
                 <div 
                     className={
