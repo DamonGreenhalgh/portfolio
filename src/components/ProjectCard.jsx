@@ -21,29 +21,27 @@ const ProjectCard = (props) => {
     } = props;
 
     return (
-        <div 
+        <button 
             onClick={() => {setIndex(id); setExpanded(true);}} 
             className="project-card"
             ref={cardRef}
         >            
-            <div className="project-card__content">
-                <div className="row align-center justify-between" style={{maxHeight: "3rem"}}>
-                    <img 
-                        src={icon} 
-                        style={{maxHeight: "3rem", maxWidth: "4rem"}} 
-                        alt="Project brand" 
-                    />
-                    <div className="project__items">
-                        {link}
-                    </div>
-                </div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <div className="project__items project__items--tech" style={{fontFamily: "consola"}}>
-                    {tech}
+            <div className="project-card__header">
+                <img 
+                    src={icon} 
+                    style={{maxHeight: "3rem", maxWidth: "4rem"}} 
+                    alt="Project brand" 
+                />
+                <div className="project__items">
+                    {link}
                 </div>
             </div>
-        </div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <div className="project__items project__items--tech" style={{fontFamily: "consola"}}>
+                {tech}
+            </div>
+        </button>
     );
 }
 
