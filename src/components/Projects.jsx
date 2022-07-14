@@ -7,8 +7,6 @@ import { useState, useRef } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaKaggle} from 'react-icons/fa';
 
 // import all logos and banners for each project
-import spaceshiptitanicLogo from '../images/projects/spaceshiptitanic/logo.png'
-import spaceshiptitanicBanner from '../images/projects/spaceshiptitanic/banner.png';
 import vpsLogo from '../images/projects/vps/logo.png';
 import vpsBanner from '../images/projects/vps/banner.png';
 import xivtrackerLogo from '../images/projects/xivtracker/logo.png';
@@ -27,7 +25,6 @@ function importAll(r) {
 }
 
 // Import all screenshots for each project
-const spaceshiptitanicImages = Object.values(importAll(require.context('../images/projects/spaceshiptitanic/screenshots', false, /\.png/)));
 const vpsImages = Object.values(importAll(require.context('../images/projects/vps/screenshots', false, /\.png/)));
 const xivtrackerImages = Object.values(importAll(require.context('../images/projects/xivtracker/screenshots', false, /\.png/)));
 const gameoflifeImages = Object.values(importAll(require.context('../images/projects/gameoflife/screenshots', false, /\.png/)));
@@ -37,11 +34,6 @@ const projectNames = Object.keys(projectsJSON);
 
 // stores all project logos and banners for easy referencing
 const projectAssets = {
-    "spaceshiptitanic": {
-        "logo": spaceshiptitanicLogo,
-        "banner": spaceshiptitanicBanner,
-        "screenshots": spaceshiptitanicImages
-    },
     "vps": {
         "logo": vpsLogo,
         "banner": vpsBanner,
