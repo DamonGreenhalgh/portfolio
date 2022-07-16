@@ -14,7 +14,7 @@
     visibility: hidden;
     overflow: hidden;
     position: relative;
-    width: 14.286%;
+    width: 14.285714%;
     aspect-ratio: 1 / 1;
 }
 
@@ -52,7 +52,7 @@
 @media only screen and (max-device-width: 1500px) {
 
     .art__wrapper {
-        width: 16.667%;
+        width: 16.666667%;
     }
 
 }
@@ -76,7 +76,7 @@
 @media only screen and (max-device-width: 800px) {
 
     .art__wrapper {
-        width: 33.333%;
+        width: 33.333333%;
     }
 
 }
