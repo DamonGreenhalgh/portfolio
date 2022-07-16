@@ -185,7 +185,7 @@ const Console = (props) => {
         setOutput([]);    
         break;
       case 2:    // 'exit' - close window
-        window.open('','_self').close();
+        setMinimized(true);
         break;
       case 3:    // 'max' - maximize window
         setMaximized(true);
@@ -269,7 +269,7 @@ const Console = (props) => {
           </button>
           <button 
             className="titlebar__button titlebar__button--close"
-            onClick={() => window.open('','_self').close()}
+            onClick={() => setMinimized(true)}
             title="Close"
           >
             <VscClose size="1.25em" />
