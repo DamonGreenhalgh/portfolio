@@ -76,7 +76,7 @@
 }
 
 .console__button--minimized {
-    color: var(--text-300);
+    color: var(--text-500);
     transform: scale(1);
 }
   

@@ -95,9 +95,9 @@ const Console = () => {
             target="_blank" 
             rel="noreferrer" 
             to="contact" 
-            onMouseEnter={() => setCommand("Resume.pdf")}
+            onMouseEnter={() => setCommand("resume.pdf")}
           >
-            {"28/10/2077  03:15 PM                   Resume.pdf"}
+            {"28/10/2077  03:15 PM                   resume.pdf"}
           </a>
         </nav>
       </>,
