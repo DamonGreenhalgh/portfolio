@@ -16,8 +16,7 @@ import resume from '../data/Resume.pdf';
  * Console component, holds all the logic for parsing 
  * input and commands.
  */
-const Console = (props) => {
-  const { atTop, sectionRefs } = props;
+const Console = () => {
   const [command, setCommand] = useState("");
   const [maximized, setMaximized] = useState(false);
   const [minimized, setMinimized] = useState(true);
@@ -162,7 +161,6 @@ const Console = (props) => {
     switch (commandCode) {
       case 0:    // 'cd' - change directory
         try {
-          sectionRefs[commandTree[subcommands[0]][subcommands[1]].index].current.scrollIntoView();
           commandResponse = commandTree[subcommands[0]][subcommands[1]].content;
         } catch (error) {
           commandResponse = commandTree[subcommands[0]].error;
@@ -213,7 +211,7 @@ const Console = (props) => {
   return (
     <>
       <button 
-        className={"console__button" + (minimized ? " console__button--minimized" : "") + (atTop ? " console__button--top" : "")}
+        className={"console__button" + (minimized ? " console__button--minimized" : "")}
         onClick={() => setMinimized(minimized ? false : true)}
         title="Display Console"
       >

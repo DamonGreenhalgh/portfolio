@@ -9,7 +9,6 @@
     font-size: .8rem;
     gap: 2rem;
     background-color: var(--base-400);
-    border: 1px solid var(--base-500);
 }
 
 .footer__socials {

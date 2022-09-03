@@ -4,18 +4,17 @@ import ProjectCard from './ProjectCard';
 import projectsJSON from '../data/projects.json';
 import techstackJSON from '../data/techstack.json';
 import { useState, useRef } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaKaggle} from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 // import all logos and banners for each project
-import vpsLogo from '../images/projects/vps/logo.png';
-import vpsBanner from '../images/projects/vps/banner.png';
-import xivtrackerLogo from '../images/projects/xivtracker/logo.png';
-import xivtrackerBanner from '../images/projects/xivtracker/banner.png';
-import gameoflifeLogo from '../images/projects/gameoflife/logo.png';
-import gameoflifeBanner from '../images/projects/gameoflife/banner.png';
-import matrixLogo from '../images/projects/matrix/logo.png';
-import matrixBanner from '../images/projects/matrix/banner.png';
-import { useAnimationDelay } from '../hooks/useAnimationDelay';
+import vpsLogo from '../assets/projects/vps/logo.png';
+import vpsBanner from '../assets/projects/vps/banner.png';
+import xivtrackerLogo from '../assets/projects/xivtracker/logo.png';
+import xivtrackerBanner from '../assets/projects/xivtracker/banner.png';
+import gameoflifeLogo from '../assets/projects/gameoflife/logo.png';
+import gameoflifeBanner from '../assets/projects/gameoflife/banner.png';
+import matrixLogo from '../assets/projects/matrix/logo.png';
+import matrixBanner from '../assets/projects/matrix/banner.png';
 
 // function to import all image assets within a directory
 function importAll(r) {
@@ -25,10 +24,10 @@ function importAll(r) {
 }
 
 // Import all screenshots for each project
-const vpsImages = Object.values(importAll(require.context('../images/projects/vps/screenshots', false, /\.png/)));
-const xivtrackerImages = Object.values(importAll(require.context('../images/projects/xivtracker/screenshots', false, /\.png/)));
-const gameoflifeImages = Object.values(importAll(require.context('../images/projects/gameoflife/screenshots', false, /\.png/)));
-const matrixImages = Object.values(importAll(require.context('../images/projects/matrix/screenshots', false, /\.png/)));
+const vpsImages = Object.values(importAll(require.context('../assets/projects/vps/screenshots', false, /\.png/)));
+const xivtrackerImages = Object.values(importAll(require.context('../assets/projects/xivtracker/screenshots', false, /\.png/)));
+const gameoflifeImages = Object.values(importAll(require.context('../assets/projects/gameoflife/screenshots', false, /\.png/)));
+const matrixImages = Object.values(importAll(require.context('../assets/projects/matrix/screenshots', false, /\.png/)));
 
 const projectNames = Object.keys(projectsJSON);
 
@@ -59,7 +58,6 @@ const projectAssets = {
 const linkIcons = {
     "github": <FaGithub size="1.25em" />,
     "website": <FaExternalLinkAlt size="1.25em" />,
-    "kaggle": <FaKaggle size="1.25em" />
 }
 
 /**
@@ -69,14 +67,12 @@ const linkIcons = {
  * Multiple Project Card components, each representing a different project.
  * Project information is drawn from the static projects.json file.
  */
-const Projects = (props) => {
-    const { sectionIndex, sectionRef } = props;
+const Projects = () => {
     const [index, setIndex] = useState(0);
     const [expanded, setExpanded] = useState(false);
     const animationRef = useRef(null);
-    useAnimationDelay(animationRef, true, 1, 0, 4, .5, sectionIndex === 2);
     return (
-        <div className="projects" id="projects" ref={sectionRef}>
+        <div className="projects" id="projects">
             <Modal
                 type={0}
                 name={projectsJSON[projectNames[index]].title}

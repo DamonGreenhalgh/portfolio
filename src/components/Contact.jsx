@@ -1,12 +1,9 @@
 import '../styles/Contact.css';
-import { useAnimationDelay } from '../hooks/useAnimationDelay';
 import Divider from './Divider';
 
-const Contact = (props) => {
-    const { sectionIndex, sectionRef } = props;
-    useAnimationDelay(sectionRef, true, 1, 0, 4, 1, sectionIndex === 4);
+const Contact = () => {
     return (
-        <div className="contact" id="contact" ref={sectionRef}>
+        <div className="contact" id="contact">
             <form 
                 className="contact__form" 
                 action="https://public.herotofu.com/v1/5adb50a0-91ea-11ec-8462-6960be7ce578" 

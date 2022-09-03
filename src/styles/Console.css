@@ -67,10 +67,6 @@
     margin-bottom: auto;
     transition: color .5s;
 }
-
-.console__button--top {
-    color: var(--base-300);
-}
   
 .console a:hover {
     cursor: pointer;
