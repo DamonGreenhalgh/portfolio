@@ -1,11 +1,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import Console from './components/Console';
+import Home from './components/Home';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Gallery from './components/Gallery';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
+import './index.css';
+import './utility.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<App />} 
+        />
+        <Route 
+          path="/dev" 
+          element={
+            <>
+              <Console />
+              <Home />
+              <About />
+              <Projects />
+              <Contact />
+              <Footer />
+            </>
+          } 
+        />
+        <Route 
+          path="/art"
+          element={
+            <Gallery />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
