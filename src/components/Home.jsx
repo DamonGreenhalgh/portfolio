@@ -13,6 +13,7 @@ const Home = () => {
             className='home__button home__button--resume'
             target="_blank"
             rel="noreferrer"
+            download
           >
             {"> resume.pdf"}
           </a> 
