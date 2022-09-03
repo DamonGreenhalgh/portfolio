@@ -9,7 +9,7 @@ import {
   VscClose
 } from 'react-icons/vsc';
 import { AiFillCode } from 'react-icons/ai';
-import resume from '../data/Resume.pdf';
+import resume from '../assets/resume.pdf';
 
 
 /**
@@ -42,10 +42,6 @@ const Console = () => {
       "projects": {
         "content": <p>Change directory to Projects</p>,
         "index": 2
-      },
-      "gallery": {
-        "content": <p>Change directory to Gallery</p>,
-        "index": 3
       },
       "contact": {
         "content": <p>Change directory to Contact</p>,
@@ -90,9 +86,6 @@ const Console = () => {
           </Link>
           <Link to="projects" onMouseEnter={() => setCommand("cd projects")}>
             {"15/02/2022  10:59 PM    <DIR>          projects"}
-          </Link>
-          <Link to="gallery" onMouseEnter={() => setCommand("cd gallery")}>
-            {"27/08/2017  10:59 PM    <DIR>          gallery"}
           </Link>
           <Link to="contact" onMouseEnter={() => setCommand("cd contact")}>
             {"14/08/2004  07:04 AM    <DIR>          contact"}
