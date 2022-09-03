@@ -21,14 +21,10 @@ const About = () => {
                     <i> University of Auckland</i>.
                 </p>
                 <p>
-                    One of my core passions is <b>Visual Art</b>. From little doodles to full digital illustrations. 
-                    I'm always striving to improve my skills. Many of which are applicable to 
-                    <b> Front-end UI/UX</b> design. Concepts like <i>color, contrast</i> and <i>form</i> are foundations 
-                    for building <b>coherent</b>, <b>accessible</b> and <b>beautiful products</b>. 
-                </p>
-                <p>
-                    I'm currently building upon the foundations of front-end web development by integrating 
-                    <b> CI/CD</b> pipelines into my existing projects. 
+                    I'm eager to learn, discover a new way to approach a problem, and 
+                    apply newfound knowledge to solve it. To collaborate with a team 
+                    of like-minded individuals and build software solutions to change 
+                    the world
                 </p>
                 <Divider />
                 

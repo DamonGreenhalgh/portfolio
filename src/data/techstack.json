@@ -1,31 +1,27 @@
 {
-    "python": {
-        "name": "Python",
-        "icon": "/python/python-original.svg"
-    },
-    "java": {
-        "name": "Java",
-        "icon": "/java/java-original.svg"
-    },
-    "c": {
-        "name": "C",
-        "icon": "/c/c-original.svg"
-    },
-    "cpp": {
-        "name": "C++",
-        "icon": "/cplusplus/cplusplus-original.svg"
-    },
     "html": {
-        "name": "HTML5",
+        "name": "HTML",
         "icon": "/html5/html5-plain.svg"
     },
     "css": {
-        "name": "CSS3",
+        "name": "CSS",
         "icon": "/css3/css3-plain.svg"
     },
     "js": {
-        "name": "Javascript",
+        "name": "JavaScript",
         "icon": "/javascript/javascript-plain.svg"
+    },
+    "react" : {
+        "name": "ReactJS",
+        "icon": "/react/react-original.svg"
+    },
+    "express": {
+        "name": "ExpressJS",
+        "icon": "/express/express-original.svg"
+    },
+    "node": {
+        "name": "NodeJS",
+        "icon": "/nodejs/nodejs-original.svg"
     },
     "git": {
         "name": "Git",
@@ -35,10 +31,6 @@
         "name": "Github",
         "icon": "/github/github-original.svg"
     },
-    "react" : {
-        "name": "React",
-        "icon": "/react/react-original.svg"
-    },
     "sass": {
         "name": "Sass",
         "icon": "/sass/sass-original.svg"
@@ -47,8 +39,20 @@
         "name": "Firebase",
         "icon": "/firebase/firebase-plain.svg"
     },
+    "aws": {
+        "name": "Amazon Web Services",
+        "icon": "/amazonwebservices/amazonwebservices-original.svg"
+    },
     "mongodb": {
         "name": "MongoDB",
         "icon": "/mongodb/mongodb-original.svg"
+    },
+    "python": {
+        "name": "Python",
+        "icon": "/python/python-original.svg"
+    },
+    "java": {
+        "name": "Java",
+        "icon": "/java/java-original.svg"
     }
 }

@@ -44,7 +44,7 @@
 .techstack {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(8, 1.5rem);
+    grid-template-rows: repeat(7, 1.5rem);
     grid-auto-flow: column;
     gap: .5rem;
     margin-top: 1rem;
