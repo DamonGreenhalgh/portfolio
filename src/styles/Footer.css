@@ -11,6 +11,11 @@
     color: var(--base-500);
     position: absolute;
     bottom: 0;
+    pointer-events: none;
+}
+
+.footer a, p {
+    pointer-events: all;
 }
 
 .footer--dev {
@@ -23,3 +28,4 @@
     display: flex;
     gap: 1rem;
 }
+
