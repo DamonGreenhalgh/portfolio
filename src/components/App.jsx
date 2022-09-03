@@ -1,5 +1,6 @@
 import '../styles/App.css';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Link to="/dev" className='home__button home__button--dev'>{"$ cd dev"}</Link>
         <div className='section__background section__background--dev' />
       </div>
+      <Footer type="default" />
     </div>
   );
 }

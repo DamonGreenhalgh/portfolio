@@ -7,6 +7,15 @@
     align-items: center;
     font-size: .8rem;
     gap: 1rem;
+    width: 100%;
+    color: var(--base-500);
+    position: absolute;
+    bottom: 0;
+}
+
+.footer--dev {
+    position: relative;
+    color: var(--text-300);
     background-color: var(--base-400);
 }
 

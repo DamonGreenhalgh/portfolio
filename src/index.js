@@ -34,7 +34,7 @@ ReactDOM.render(
               <About />
               <Projects />
               <Contact />
-              <Footer />
+              <Footer type="dev" />
             </>
           } 
         />
