@@ -1,16 +1,16 @@
 
 .footer {
     height: 10rem;
-    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: .8rem;
-    gap: 2rem;
+    gap: 1rem;
     background-color: var(--base-400);
 }
 
 .footer__socials {
-    display: none;
+    display: flex;
+    gap: 1rem;
 }
