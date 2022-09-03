@@ -10,19 +10,19 @@ const Home = () => {
         <div className='home__button-container'>
           <a 
             href={resume}
-            className='home__button home__button--resume'
+            className='home__button home__button--alt'
             target="_blank"
             rel="noreferrer"
             download
           >
-            {"> resume.pdf"}
+            {"$ resume.pdf"}
           </a> 
           <button 
             onClick={() => window.scrollTo(0, window.innerHeight)} 
             title="Show More"
             className='home__button'
           >
-            {"> cd show_more"}
+            {"$ cd show_more"}
           </button>
            
         </div>

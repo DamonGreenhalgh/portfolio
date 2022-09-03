@@ -9,7 +9,7 @@
   --text-400: #565a75;
   --text-500: #323346;
   --accent-300: #a0a2f8;
-  --accent-500: #404eed;
+  --accent-500: #541cdb;
   --shadow-500: rgba(42, 41, 124, .15);
   --shadow-800: rgba(19, 19, 26, 0.5);
 }
@@ -75,35 +75,6 @@ body {
   color: var(--base-300);
 }
 
-.app {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: var(--base-500);
-}
-
-.waiting-pointer {
-  margin: auto auto 0 0;
-  width: .6rem;
-  height: .25rem;
-  opacity: 0;
-  background-color: var(--base-400);
-  animation-name: waiting;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
-.waiting-pointer--about {
-  background-color: var(--text-500);
-  height: .5rem;
-  width: 1rem;
-}
-
 @font-face {
   font-family: 'Consola';
   src: url('./fonts/Consola.ttf');
@@ -140,37 +111,6 @@ body {
     opacity: 1;
   }
   100% {
-    opacity: 1;
-  }
-}
-
-@keyframes rise-up-from-below {
-  0% {
-    opacity: 0; 
-    transform: translate(0, 8rem);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes drop-in-from-above {
-  0% {
-    opacity: 0;
-    transform: translate(0, -8rem);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    transform: scale(.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
     opacity: 1;
   }
 }
