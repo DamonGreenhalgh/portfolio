@@ -1,20 +1,26 @@
 import '../styles/Footer.css';
-import { FaLinkedinIn, FaGithub, FaArtstation } from 'react-icons/fa';
+import { 
+    FaLinkedinIn, 
+    FaGithub, 
+    FaArtstation, 
+    FaTwitter } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import { useLocation } from 'react-router-dom';
 
 const socialSize = "1.5em";
 
-const Footer = (props) => {
-    const { type } = props;
+const Footer = () => {
+    const currentPath = useLocation().pathname;
     return (
-        <div className={`footer ${type === "dev" ? 'footer--dev' : ''}`}>
+        <div className={`footer ${currentPath === "/dev" ? 'footer--dev' : ''}`}>
             <p>
                 Designed and Developed by Damon Greenhalgh<br />
-                © 2022 Damon Greenhalgh. All rights reserved.
+                © {new Date().getFullYear()} Damon Greenhalgh. All rights 
+                reserved.
             </p>
             <div className='footer__socials'>
                 {
-                    type === "art" ?
+                    currentPath === "/art" ?
                     null :
                     <>
                         <a 
@@ -36,16 +42,26 @@ const Footer = (props) => {
                     </>
                 }
                 {
-                    type === "dev" ?
+                    currentPath === "/dev" ?
                     null :
-                    <a 
-                        href="https://www.artstation.com/damongreenhalgh" 
-                        title="Artstation" 
-                        target="_blank" 
-                        rel="noreferrer"
-                    >
-                        <FaArtstation size={socialSize} />
-                    </a>
+                    <>
+                        <a 
+                            href="https://www.artstation.com/damongreenhalgh" 
+                            title="Artstation" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >
+                            <FaArtstation size={socialSize} />
+                        </a>
+                        <a
+                            href="https://twitter.com/damongreenhalgh"
+                            title="Twiiter" 
+                            target="_blank" 
+                            rel="noreferrer"
+                        >
+                            <FaTwitter size={socialSize} />
+                        </a>
+                    </>
                 }
                 <a 
                     href="mailto: damonligreenhalgh@gmail.com" 

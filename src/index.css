@@ -71,7 +71,7 @@ body {
 } 
 
 ::selection {
-  background-color: var(--accent-300);
+  background-color: var(--accent-500);
   color: var(--base-300);
 }
 

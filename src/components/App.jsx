@@ -15,7 +15,6 @@ function App() {
         <Link to="/dev" className='home__button home__button--dev'>{"$ cd dev"}</Link>
         <div className='section__background section__background--dev' />
       </div>
-      <Footer type="default" />
     </div>
   );
 }
