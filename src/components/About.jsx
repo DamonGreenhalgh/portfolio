@@ -1,12 +1,15 @@
 import '../styles/About.css';
-import profile from '../assets/profile.png';
+import profile from '../images/profile.png';
 import techJSON from '../data/techstack.json';
 import Divider from './Divider';
+import { useAnimationDelay } from '../hooks/useAnimationDelay';
 
-const About = () => {
+const About = (props) => {
+    const { sectionIndex, sectionRef } = props;
     const linkBase = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+    useAnimationDelay(sectionRef, false, 1, 0, 4, 1, sectionIndex === 1);
     return (
-        <div className="about" id="about">
+        <div className="about" id="about" ref={sectionRef}>
             <div className="col gap">
                 <div className="about__header-container">
                     <h2 className="about__header-text">"Hello, World!"</h2>

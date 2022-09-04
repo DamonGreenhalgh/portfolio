@@ -9,14 +9,15 @@ import {
   VscClose
 } from 'react-icons/vsc';
 import { AiFillCode } from 'react-icons/ai';
-import resume from '../assets/resume.pdf';
+import resume from '../data/Resume.pdf';
 
 
 /**
  * Console component, holds all the logic for parsing 
  * input and commands.
  */
-const Console = () => {
+const Console = (props) => {
+  const { atTop, sectionRefs } = props;
   const [command, setCommand] = useState("");
   const [maximized, setMaximized] = useState(false);
   const [minimized, setMinimized] = useState(true);
@@ -42,6 +43,10 @@ const Console = () => {
       "projects": {
         "content": <p>Change directory to Projects</p>,
         "index": 2
+      },
+      "gallery": {
+        "content": <p>Change directory to Gallery</p>,
+        "index": 3
       },
       "contact": {
         "content": <p>Change directory to Contact</p>,
@@ -87,6 +92,9 @@ const Console = () => {
           <Link to="projects" onMouseEnter={() => setCommand("cd projects")}>
             {"15/02/2022  10:59 PM    <DIR>          projects"}
           </Link>
+          <Link to="gallery" onMouseEnter={() => setCommand("cd gallery")}>
+            {"27/08/2017  10:59 PM    <DIR>          gallery"}
+          </Link>
           <Link to="contact" onMouseEnter={() => setCommand("cd contact")}>
             {"14/08/2004  07:04 AM    <DIR>          contact"}
           </Link>
@@ -95,9 +103,9 @@ const Console = () => {
             target="_blank" 
             rel="noreferrer" 
             to="contact" 
-            onMouseEnter={() => setCommand("resume.pdf")}
+            onMouseEnter={() => setCommand("Resume.pdf")}
           >
-            {"28/10/2077  03:15 PM                   resume.pdf"}
+            {"28/10/2077  03:15 PM                   Resume.pdf"}
           </a>
         </nav>
       </>,
@@ -154,6 +162,7 @@ const Console = () => {
     switch (commandCode) {
       case 0:    // 'cd' - change directory
         try {
+          sectionRefs[commandTree[subcommands[0]][subcommands[1]].index].current.scrollIntoView();
           commandResponse = commandTree[subcommands[0]][subcommands[1]].content;
         } catch (error) {
           commandResponse = commandTree[subcommands[0]].error;
@@ -204,7 +213,7 @@ const Console = () => {
   return (
     <>
       <button 
-        className={"console__button" + (minimized ? " console__button--minimized" : "")}
+        className={"console__button" + (minimized ? " console__button--minimized" : "") + (atTop ? " console__button--top" : "")}
         onClick={() => setMinimized(minimized ? false : true)}
         title="Display Console"
       >
