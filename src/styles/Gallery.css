@@ -1,0 +1,90 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery__content {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--base-800);
+}
+
+.art__wrapper {
+    visibility: hidden;
+    overflow: hidden;
+    position: relative;
+    width: 14.285714%;
+    aspect-ratio: 1 / 1;
+}
+
+.art__wrapper:hover .art__overlay {
+    opacity: 1;
+}
+
+.art {
+    max-height: 100%;
+    transition: transform .5s ease;
+}
+
+.art__overlay {
+    display: flex;
+    padding: 1rem;
+    z-index: 2;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Comfortaa";
+    position: absolute;
+    background: linear-gradient(to top, var(--shadow-800), transparent);
+    background-blend-mode: multiply;
+    transition: opacity .5s;
+}
+
+.art__overlay p {
+    margin-top: auto;
+    color: var(--base-500);
+    font-size: 1.25rem;
+    text-align: start;
+}
+
+
+@media only screen and (max-device-width: 1500px) {
+
+    .art__wrapper {
+        width: 16.666667%;
+    }
+
+}
+
+@media only screen and (max-device-width: 1300px) {
+
+    .art__wrapper {
+        width: 20%;
+    }
+
+}
+
+@media only screen and (max-device-width: 1000px) {
+
+    .art__wrapper {
+        width: 25%;
+    }
+
+}
+
+@media only screen and (max-device-width: 800px) {
+
+    .art__wrapper {
+        width: 33.333333%;
+    }
+
+}
+
+@media only screen and (max-device-width: 600px) {
+
+    .art__wrapper {
+        width: 50%;
+    }
+
+}

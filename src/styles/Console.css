@@ -13,14 +13,13 @@
     color: var(--base-500);
     background-color: var(--base-800);
     outline: 1px solid var(--base-800);
-    box-shadow: 0 .5rem 1rem var(--shadow-800);
     transition: opacity .5s;
 }
 
 .console--maximized {
-    top: 1rem !important;
+    top: 5rem !important;
     left: 1rem !important;
-    height: calc(100vh - 2rem) !important;
+    height: calc(100vh - 6rem) !important;
     width: calc(100vw - 4rem - 3em) !important;
 }
 
@@ -64,20 +63,13 @@
     bottom: 1rem;
     right: 1rem;
     z-index: 4;
-    color: var(--accent-500);
-    transform: scale(1.25);
+    color: var(--base-800);
     margin-bottom: auto;
-    transition: color .25s, transform .25s;
+    transition: color .5s;
 }
 
-.console__button:hover {
-    color: var(--accent-500);
-    transform: scale(1.25);
-}
-
-.console__button--minimized {
-    color: var(--text-500);
-    transform: scale(1);
+.console__button--top {
+    color: var(--base-300);
 }
   
 .console a:hover {
