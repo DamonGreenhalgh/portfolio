@@ -9,6 +9,9 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
+
+import Art from './pages/Art';
+import Dev from './pages/Dev';
 import {
   BrowserRouter,
   Routes,
@@ -40,9 +43,7 @@ ReactDOM.render(
         />
         <Route 
           path="/art"
-          element={
-            <Gallery />
-          }
+          element={<Art />}
         />
       </Routes>
     </BrowserRouter>
