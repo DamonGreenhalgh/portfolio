@@ -30,8 +30,6 @@ const Modal = (props) => {
         index,
         maxIndex,
         setIndex,
-        type,
-        artwork
     } = props;
 
     useEffect(() => {
@@ -49,7 +47,6 @@ const Modal = (props) => {
             {
                 loading ? 
                 <VscLoading size="3em" className="modal__loading" /> :
-                type === 0 ?
                 <div 
                     className={
                         "modal__panel" 
@@ -107,13 +104,6 @@ const Modal = (props) => {
                             </div>
                         </div>
                     </div>
-                </div> :
-                <div className="modal__art-container">
-                    <img 
-                        src={artwork} 
-                        alt={description} 
-                        className="modal__art" 
-                    />
                 </div>
             }
             <div className="modal__button-container">

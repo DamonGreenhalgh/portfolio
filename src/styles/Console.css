@@ -13,13 +13,14 @@
     color: var(--base-500);
     background-color: var(--base-800);
     outline: 1px solid var(--base-800);
+    box-shadow: 0 .5rem 1rem var(--shadow-800);
     transition: opacity .5s;
 }
 
 .console--maximized {
-    top: 5rem !important;
+    top: 1rem !important;
     left: 1rem !important;
-    height: calc(100vh - 6rem) !important;
+    height: calc(100vh - 2rem) !important;
     width: calc(100vw - 4rem - 3em) !important;
 }
 
@@ -63,13 +64,20 @@
     bottom: 1rem;
     right: 1rem;
     z-index: 4;
-    color: var(--base-800);
+    color: var(--accent-500);
+    transform: scale(1.25);
     margin-bottom: auto;
-    transition: color .5s;
+    transition: color .25s, transform .25s;
 }
 
-.console__button--top {
-    color: var(--base-300);
+.console__button:hover {
+    color: var(--accent-500);
+    transform: scale(1.25);
+}
+
+.console__button--minimized {
+    color: var(--text-500);
+    transform: scale(1);
 }
   
 .console a:hover {

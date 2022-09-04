@@ -11,6 +11,9 @@
 # production
 /build
 
+# editor
+.psd
+
 # misc
 .DS_Store
 .env.local
