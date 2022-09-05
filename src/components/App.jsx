@@ -1,20 +1,19 @@
 import '../styles/App.css';
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
 
 function App() {
   return (
     <div className="app">
-      <div className='section'>
-        <h2>ART</h2>
-        <Link to="/art" className='home__button home__button--art'>Show Me!</Link>
-        <div className='section__background section__background--art' />  
-      </div>
-      <div className='section'>
+      <Link to="/dev" className='section section--dev'>
         <h2>DEV</h2>
-        <Link to="/dev" className='home__button home__button--dev'>{"$ cd dev"}</Link>
+        <button className='home__button home__button--dev'>{"$ cd dev"}</button>
         <div className='section__background section__background--dev' />
-      </div>
+      </Link>
+      <Link to="/art" className='section section--art'>
+        <h2>ART</h2>
+        <button className='home__button home__button--art'>Show Me!</button>
+        <div className='section__background section__background--art' />  
+      </Link>
     </div>
   );
 }

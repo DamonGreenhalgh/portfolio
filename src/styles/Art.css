@@ -1,7 +1,7 @@
 .art {
     display: flex;
     flex-direction: column;
-    background-color: var(--base-600);
+    background-color: var(--base-300);
     padding: 1rem;
 }
 

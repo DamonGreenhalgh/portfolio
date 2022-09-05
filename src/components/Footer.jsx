@@ -12,7 +12,7 @@ const socialSize = "1.5em";
 const Footer = () => {
     const currentPath = useLocation().pathname;
     return (
-        <div className={`footer ${currentPath === "/dev" ? 'footer--dev' : ''}`}>
+        <div className={`footer ${currentPath === '/' ? '' : 'footer--dev'}`}>
             <p>
                 Designed and Developed by Damon Greenhalgh<br />
                 © {new Date().getFullYear()} Damon Greenhalgh. All rights 

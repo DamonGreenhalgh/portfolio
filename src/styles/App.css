@@ -14,6 +14,23 @@
   width: 50vw;
   height: 100vh;
   overflow: hidden;
+  transition: width .25s;
+}
+
+.section--dev:hover .section--art {
+  width: 48vw;
+}
+
+.section--dev:hover {
+  width: 52vw;
+}
+
+.section--art:hover .section--dev {
+  width: 48vw;
+}
+
+.section--art:hover {
+  width: 52vw;
 }
 
 .section h2 {
@@ -30,7 +47,7 @@
   height: 100%;
   background-position: center;
   background-size: cover;
-  filter: grayscale(0.2);
+  filter: grayscale(0.5);
   transition: filter .25s, transform .25s;
 }
 

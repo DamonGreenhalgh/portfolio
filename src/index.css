@@ -71,11 +71,6 @@ body {
   font-family: 'Inter', -apple-system, system-ui, sans-serif;
 } 
 
-::selection {
-  background-color: var(--accent-500);
-  color: var(--base-300);
-}
-
 @font-face {
   font-family: 'Consola';
   src: url('./fonts/Consola.ttf');
