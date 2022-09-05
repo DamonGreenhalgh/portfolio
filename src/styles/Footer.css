@@ -14,10 +14,6 @@
     pointer-events: none;
 }
 
-.footer a, p {
-    pointer-events: all;
-}
-
 .footer--dev {
     position: relative;
     color: var(--text-300);
@@ -28,5 +24,6 @@
 .footer__socials {
     display: flex;
     gap: 1rem;
+    pointer-events: all;
 }
 
